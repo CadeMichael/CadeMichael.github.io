@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome!</title>
+    <link>https://cademichael.github.io/</link>
+    <description>Recent content on Welcome!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 May 2021 11:04:27 +0900</lastBuildDate><atom:link href="https://cademichael.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grappling</title>
+      <link>https://cademichael.github.io/grappling/</link>
+      <pubDate>Wed, 12 May 2021 11:04:37 +0900</pubDate>
+      
+      <guid>https://cademichael.github.io/grappling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>New Website</title>
+      <link>https://cademichael.github.io/posts/new-website/</link>
+      <pubDate>Wed, 12 May 2021 11:04:27 +0900</pubDate>
+      
+      <guid>https://cademichael.github.io/posts/new-website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://cademichael.github.io/about/</link>
+      <pubDate>Wed, 12 May 2021 10:23:17 +0900</pubDate>
+      
+      <guid>https://cademichael.github.io/about/</guid>
+      <description>Cade Lueker aspiring software engineer and current student  Education Case Western Reserve University  Currently a CWRU student studying computer science Going for a B.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://cademichael.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cademichael.github.io/contact/</guid>
+      <description>Email     type address     personal Cade.</description>
+    </item>
+    
+  </channel>
+</rss>
