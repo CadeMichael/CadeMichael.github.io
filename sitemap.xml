@@ -2,16 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cademichael.github.io/posts/new-website/</loc>
+    <lastmod>2021-05-12T11:04:27+09:00</lastmod>
+  </url><url>
     <loc>https://cademichael.github.io/posts/</loc>
-    <lastmod>2021-05-16T01:44:47+09:00</lastmod>
+    <lastmod>2021-05-12T11:04:27+09:00</lastmod>
   </url><url>
     <loc>https://cademichael.github.io/</loc>
-    <lastmod>2021-05-16T01:44:47+09:00</lastmod>
-  </url><url>
-    <loc>https://cademichael.github.io/posts/wrapping-up-training-at-namsan/</loc>
-    <lastmod>2021-05-16T01:44:47+09:00</lastmod>
-  </url><url>
-    <loc>https://cademichael.github.io/posts/new-website/</loc>
     <lastmod>2021-05-12T11:04:27+09:00</lastmod>
   </url><url>
     <loc>https://cademichael.github.io/about/</loc>
