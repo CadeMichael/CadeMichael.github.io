@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cademichael.github.io/posts/linux-opinion-piece/</loc>
-    <lastmod>2021-08-02T18:45:23-07:00</lastmod>
-  </url><url>
     <loc>https://cademichael.github.io/posts/</loc>
-    <lastmod>2021-08-02T18:45:23-07:00</lastmod>
+    <lastmod>2021-09-21T17:43:11-04:00</lastmod>
+  </url><url>
+    <loc>https://cademichael.github.io/posts/ta-java-with-vscode-tutorial/</loc>
+    <lastmod>2021-09-21T17:43:11-04:00</lastmod>
   </url><url>
     <loc>https://cademichael.github.io/</loc>
+    <lastmod>2021-09-21T17:43:11-04:00</lastmod>
+  </url><url>
+    <loc>https://cademichael.github.io/posts/linux-opinion-piece/</loc>
     <lastmod>2021-08-02T18:45:23-07:00</lastmod>
   </url><url>
     <loc>https://cademichael.github.io/posts/making-the-best-of-the-worst/</loc>
