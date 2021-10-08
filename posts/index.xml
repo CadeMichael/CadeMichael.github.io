@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Welcome!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 17:43:11 -0400</lastBuildDate><atom:link href="https://cademichael.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Oct 2021 11:21:20 -0400</lastBuildDate><atom:link href="https://cademichael.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs Native Comp &amp; Nix Package Manager</title>
+      <link>https://cademichael.github.io/posts/emacs-native-comp-nix-package-manager/</link>
+      <pubDate>Sun, 03 Oct 2021 11:21:20 -0400</pubDate>
+      
+      <guid>https://cademichael.github.io/posts/emacs-native-comp-nix-package-manager/</guid>
+      <description>useful links  for the Mac Os general *nix install  What is native comp / GCC emacs ?</description>
+    </item>
+    
     <item>
       <title>TA Java With Vscode Tutorial</title>
       <link>https://cademichael.github.io/posts/ta-java-with-vscode-tutorial/</link>
