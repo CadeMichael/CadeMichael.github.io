@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Oct 2021 11:21:20 -0400</lastBuildDate><atom:link href="https://cademichael.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Videos</title>
+      <link>https://cademichael.github.io/videos/</link>
+      <pubDate>Sat, 09 Oct 2021 15:14:58 -0400</pubDate>
+      
+      <guid>https://cademichael.github.io/videos/</guid>
+      <description>Youtube Videos  List of some videos, the main focus is tutorials / exhibitions of FOSS software  right now I have videos that I did as part of a class project, I will add more and hopefully they will be less mundane!</description>
+    </item>
+    
+    <item>
       <title>Emacs Native Comp &amp; Nix Package Manager</title>
       <link>https://cademichael.github.io/posts/emacs-native-comp-nix-package-manager/</link>
       <pubDate>Sun, 03 Oct 2021 11:21:20 -0400</pubDate>
