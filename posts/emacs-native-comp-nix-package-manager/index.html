@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.91.2" />
 
   <title>Emacs Native Comp &amp; Nix Package Manager &middot; Welcome!</title>
 
@@ -281,7 +281,7 @@
 <li>I find nix extremely fascinating, the idea of a functional package-manager that can make your system much more resistant to breaking and instability and works cross platform is one linux users can rally behind. What&rsquo;s even better is that it works on mac os. This means I can use the same packages across machines. I want to learn about package management accessories if you will like <strong>darwin</strong> and <strong>homemanager</strong> but for know I am sticking with <code>nix-env -iA nixpkgs.[packagename]</code>.</li>
 <li>installing gccEmacs in this manor is extremely simple it first requires adding the correct link to an emacs.nix file and then you&rsquo;re all set!</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">mkdir ~/.config/nixpkgs/overlays/ <span style="color:#6272a4"># if these folders don&#39;t exist you have to make them</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">mkdir ~/.config/nixpkgs/overlays/ <span style="color:#6272a4"># if these folders don&#39;t exist you have to make them</span>
 <span style="color:#8be9fd;font-style:italic">cd</span>  ~/.config/nixpkgs/overlays/
 <span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;import (builtins.fetchTarball {
 </span><span style="color:#f1fa8c">      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;

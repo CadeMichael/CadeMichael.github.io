@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.91.2" />
 
   <title>About &middot; Welcome!</title>
 
@@ -12,9 +12,9 @@
   
 
 <meta itemprop="name" content="About">
-<meta itemprop="description" content="Cade Lueker aspiring software engineer and current student  Education Case Western Reserve University  Currently a CWRU student studying computer science Going for a B."><meta itemprop="datePublished" content="2021-05-12T10:23:17&#43;09:00" />
-<meta itemprop="dateModified" content="2021-05-12T10:23:17&#43;09:00" />
-<meta itemprop="wordCount" content="853">
+<meta itemprop="description" content="Cade Lueker aspiring software engineer and current student  Education Case Western Reserve University  Currently a CWRU student studying computer science Going for a B."><meta itemprop="datePublished" content="2021-05-12T10:23:17+09:00" />
+<meta itemprop="dateModified" content="2021-05-12T10:23:17+09:00" />
+<meta itemprop="wordCount" content="893">
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
@@ -26,8 +26,8 @@
 <meta property="og:description" content="Cade Lueker aspiring software engineer and current student  Education Case Western Reserve University  Currently a CWRU student studying computer science Going for a B." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cademichael.github.io/about/" /><meta property="article:section" content="" />
-<meta property="article:published_time" content="2021-05-12T10:23:17&#43;09:00" />
-<meta property="article:modified_time" content="2021-05-12T10:23:17&#43;09:00" />
+<meta property="article:published_time" content="2021-05-12T10:23:17+09:00" />
+<meta property="article:modified_time" content="2021-05-12T10:23:17+09:00" />
 
 
 
@@ -302,6 +302,21 @@
 <li>worked on several personal projects to sharpen my skills, all of which can be found on my <a href="https://github.com/CadeMichael">github</a></li>
 <li>fully configured in neovim with coc lsp plugin. Haven&rsquo;t ported to native neovim lsp as I only develop apps on my mac, not linux desktop.</li>
 </ul>
+<h3 id="javascript">JavaScript</h3>
+<ul>
+<li>I started learning JS for web development, I didn&rsquo;t plan to do any projects with js but after experimenting with the language I found that
+it was essentially scheme in the browser. I found it a very nice language and started experimenting with <strong>Svelte</strong>.</li>
+<li>I partned with a good friend <a href="https://camfarms.github.io/aboutme/">Cameron Farmer</a> in our computer security course and decided to make a messaging app
+in JS because of <strong>GunDB and Svelte</strong> we called the project&hellip;</li>
+<li><a href="https://github.com/camfarms/spider">SpiderMessenger</a> and the goal was to make a
+<ul>
+<li>Decentralized</li>
+<li>encrypted messenger</li>
+</ul>
+</li>
+<li>The project was a sucess at least as a proof of concept and we were able to get an A+ in our class!</li>
+<li>we will continue developement and hope to make it more than a proof of concept</li>
+</ul>
 <h3 id="java">Java</h3>
 <ul>
 <li>at CWRU we are taught Java in our intro class through data structures. As a result of doing many graded Java projects I feel very comfortable with the language.</li>
@@ -315,71 +330,44 @@
 </li>
 <li>Configured in emacs with <em>lsp-mode</em> and <em>java-lsp</em> (in addition to flycheck and lsp-ui which apply to all languages I use emacs for)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">lsp-java</span> <span style="color:#f1fa8c">:ensure</span> t <span style="color:#f1fa8c">:config</span> (<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;java-mode-hook</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">lsp-deferred</span>))
-(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">dap-mode</span> <span style="color:#f1fa8c">:ensure</span> t <span style="color:#f1fa8c">:after</span> <span style="color:#8be9fd;font-style:italic">lsp-mode</span> <span style="color:#f1fa8c">:config</span> (<span style="color:#8be9fd;font-style:italic">dap-auto-configure-mode</span>))
-(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">dap-java</span> <span style="color:#f1fa8c">:ensure</span> nil)
-</code></pre></div><h3 id="r">R</h3>
+<h3 id="r">R</h3>
 <ul>
 <li>at CWRU taking the <strong>Exploratory Data Science</strong> course we exclusively use R to analyze data, create models, and to make plots. This class is part of my 2021 fall semseter course load.</li>
 <li>Using neovim for most aspects of the course after trying to decide between emacs and nvim (I got some bad freezes with polymode in emacs).</li>
 <li>Neovim Configuration, only including what is set for R, I found these plugins are perfect and with ale and the R package lintr you get great linting.I cannot recommend Nvim-R enough.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#6272a4">-- setup vim plug</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#6272a4">-- setup vim plug</span>
 <span style="color:#8be9fd;font-style:italic">local</span> Plug <span style="color:#ff79c6">=</span> vim.fn[<span style="color:#f1fa8c">&#34;plug#&#34;</span>]
 vim.call(<span style="color:#f1fa8c">&#39;plug#begin&#39;</span>,<span style="color:#f1fa8c">&#39;~/.config/nvim/plugged&#39;</span>)
   Plug <span style="color:#f1fa8c">&#39;jalvesaq/Nvim-R&#39;</span> <span style="color:#6272a4">-- R support</span>
   Plug <span style="color:#f1fa8c">&#39;dense-analysis/ale&#39;</span> <span style="color:#6272a4">-- autoconfigured for lintr</span>
   Plug <span style="color:#f1fa8c">&#39;junegunn/fzf.vim&#39;</span> <span style="color:#6272a4">-- fuzzy finding</span>
 vim.call(<span style="color:#f1fa8c">&#39;plug#end&#39;</span>)
-</code></pre></div><ul>
-<li>emacs configuration</li>
+</code></pre></div><h3 id="golang">Golang</h3>
+<ul>
+<li>very interested in doing server projects with go, this website is made with <strong>Hugo</strong> and I think that go is the future of server development</li>
+<li>built a simple web scraper using <strong>go-colly</strong> to perform data analysis on competition data from Jiu Jitsu competitors</li>
+<li>using vim-go</li>
+<li>some basic projects but not proficient yet</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">ess</span> <span style="color:#f1fa8c">:ensure</span> t)
-(<span style="color:#50fa7b">require</span> <span style="color:#f1fa8c">&#39;ess-site</span>)
-(<span style="color:#ff79c6">setq</span> <span style="color:#8be9fd;font-style:italic">ess-use-flymake</span> nil)
-(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;ess-r-mode-hook</span>
-	  <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">lambda</span> ()
-	     (<span style="color:#8be9fd;font-style:italic">local-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-c C-r d&#34;</span>) <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">ess-rdired</span>)))
-
-(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;ess-rdired-mode-hook</span>
-	  <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">lambda</span> ()
-	     (<span style="color:#8be9fd;font-style:italic">local-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-c C-r d&#34;</span>) <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">kill-buffer-and-window</span>)))
-<span style="color:#6272a4">;; so I don&#39;t have to remap the standard bindings</span>
-(<span style="color:#8be9fd;font-style:italic">evil-set-initial-state</span> <span style="color:#f1fa8c">&#39;ess-rdired-mode</span> <span style="color:#f1fa8c">&#39;emacs</span>)
-
-(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">poly-markdown</span> <span style="color:#f1fa8c">:ensure</span> t)
-(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">poly-R</span> <span style="color:#f1fa8c">:ensure</span> t)
-(<span style="color:#50fa7b">require</span> <span style="color:#f1fa8c">&#39;poly-markdown</span>)
-(<span style="color:#50fa7b">require</span> <span style="color:#f1fa8c">&#39;poly-R</span>)
-
-<span style="color:#6272a4">;; MARKDOWN</span>
-
-(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;auto-mode-alist</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;\\.md&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">poly-markdown-mode</span>))
-
-<span style="color:#6272a4">;; R modes</span>
-
-(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;auto-mode-alist</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;\\.Snw&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">poly-noweb+r-mode</span>))
-(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;auto-mode-alist</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;\\.Rnw&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">poly-noweb+r-mode</span>))
-(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;auto-mode-alist</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;\\.Rmd&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">poly-markdown+r-mode</span>))
-</code></pre></div><h3 id="python">Python</h3>
+<h3 id="python">Python</h3>
 <ul>
 <li>at <strong>Stuyvesant</strong> we were required to take a year of CS, half of which was spent on python</li>
 <li>during my second year of college I brushed up on my python doing some personal projects and creating a basic web application.</li>
 <li>at Yonsei the machine learning class focused heavily on <strong>scikit-learn</strong> and <strong>pytorch</strong></li>
 <li>make use of the very fast <em>pyright</em> language server, which is extremely easy to configure in emacs</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">lsp-pyright</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#50fa7b">use-package</span> <span style="color:#8be9fd;font-style:italic">lsp-pyright</span>
   <span style="color:#f1fa8c">:ensure</span> t
   <span style="color:#f1fa8c">:hook</span> (<span style="color:#8be9fd;font-style:italic">python-mode</span> <span style="color:#ff79c6">.</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> ()
                           (<span style="color:#50fa7b">require</span> <span style="color:#f1fa8c">&#39;lsp-pyright</span>)
                           (<span style="color:#8be9fd;font-style:italic">lsp-deferred</span>))))
-
 </code></pre></div><h3 id="linux">Linux</h3>
 <ul>
 <li>I am a advocate for FOSS and Linux is what got me into computer science</li>
-<li>for the last two years GNU Linux has been my daily driver and I feel that the social / technological advantages of using it has motivated me to start the <strong>CWRU Linux club</strong> which will have it&rsquo;s first meetings in the fall of 2021</li>
+<li>for the last two years GNU Linux has been my daily driver, it helped me learn more about computers, operating systems, sys administration, and programming in a fun way.</li>
 <li>I feel very comfortable with the Linux file structures and after having taken <strong>Intro to OS and concurrent programming</strong> I feel extremely comfortable working with and fixing breaks in my OS.</li>
-<li>Currently I am using a minimal distribution with a tiling window manager</li>
+<li>Currently I am using a minimal distribution with a tiling window manager <strong>(Void Linux / ArchLinux &amp; DWM / AwesomeWM)</strong></li>
 <li>I began using <strong>vim</strong> and <strong>emacs</strong> to prevent application sprawl and for the exercise of configuring my own environments.
 <ul>
 <li>I believe it is a good practice for any kind of engineer to fully understand their tools</li>
@@ -392,34 +380,35 @@ vim.call(<span style="color:#f1fa8c">&#39;plug#end&#39;</span>)
 <li>mainly using for org mode which I find makes taking notes extremely easy and organized</li>
 </ul>
 </li>
-<li><a href="https://github.com/CadeMichael/config_files">os / vim</a>
+<li><a href="https://github.com/CadeMichael/nvim/https://github.com/CadeMichael/nvim/tree/luaCmp">nvim</a>
 <ul>
-<li>using neovim with <em>Coc</em> for autocompletion and <em>ale</em> for linting</li>
+<li>using neovim with <strong>lsp-config</strong> for autocompletion and <em>ale</em> for linting</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="some-experience-with">Some experience with&hellip;</h3>
+<h4 id="c--c">C / C++</h4>
+<ul>
+<li>basic experience with C based languages</li>
+<li>took <strong>Intro to C/C++</strong> and <strong>Intro to OS and Concurrent Programming</strong> both of which had many C based coding assignments</li>
+<li>did some minimal c projects</li>
+</ul>
 <h4 id="haskell">Haskell</h4>
 <ul>
 <li>took <strong>Programming Language Concepts</strong> in the spring of 2021 which spent half of the semester on haskell. Not extremely comfortable with the language but I am very interested in learning more and improving my functional programming skills!</li>
 <li>native neovim lsp configuration with the coq lsp wrapper plugin</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#6272a4">-- Haskell</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#6272a4">-- Haskell</span>
 lsp.hls.setup(coq.lsp_ensure_capabilities({
-	on_attach <span style="color:#ff79c6">=</span> on_attach,
-	root_dir <span style="color:#ff79c6">=</span> vim.loop.cwd,
-	settings <span style="color:#ff79c6">=</span> {
-		rootMarkers <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#34;./git/&#34;</span>,<span style="color:#f1fa8c">&#34;./cabal&#34;</span>}
-	}
-}))
-</code></pre></div><h4 id="golang">Golang</h4>
-<ul>
-<li>very interested in doing server projects with go, this website is made with <strong>Hugo</strong> and I think that go is the future of server development</li>
-<li>some basic projects but not proficient yet&hellip;</li>
-</ul>
-<h4 id="awk">awk</h4>
+      on_attach <span style="color:#ff79c6">=</span> on_attach,
+      root_dir <span style="color:#ff79c6">=</span> vim.loop.cwd,
+      settings <span style="color:#ff79c6">=</span> {
+      rootMarkers <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#34;./git/&#34;</span>,<span style="color:#f1fa8c">&#34;./cabal&#34;</span>}
+      }
+      }))
+</code></pre></div><h4 id="awk">awk</h4>
 <ul>
 <li>fairly proficient mainly because of the simplicity of the language</li>
 <li>sharpened my skills with the <strong>Data Wrangling in Linux</strong> class</li>
@@ -427,14 +416,6 @@ lsp.hls.setup(coq.lsp_ensure_capabilities({
 <h4 id="rust">rust</h4>
 <ul>
 <li>actively learning rust on my own but no where near proficient</li>
-</ul>
-<h4 id="c--c">C / C++</h4>
-<ul>
-<li>basic experience with C based languages
-<ul>
-<li>took <strong>Intro to C/C++</strong> and <strong>Intro to OS and Concurrent Programming</strong> both of which had many C based coding assignments</li>
-</ul>
-</li>
 </ul>
 
   </div>
