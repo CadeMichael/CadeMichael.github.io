@@ -1,0 +1,109 @@
+ h1 {
+     text-shadow: 1px 1px #f8f8f2;
+     color: #bd93f9;
+ }
+ main {
+     background: #282a36;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+ }
+ .title {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     align-items: stretch;
+ }
+ .foreground {
+     background: #6272a4;
+     width: 50%;
+     height: 100%;
+     padding: 75px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     border: 3px solid black;
+     margin: 25px;
+ }
+ .selects {
+   margin-top: 10px;
+ }
+ .board {
+     background: #282a36;
+     padding: 5px;
+     border: 3px solid black;
+     box-shadow: #bd93f9 3px 3px;
+     margin: 15px;
+ }
+ .slot {
+     background: #6272a4;
+     height: 50px;
+     width: 50px;
+     border-radius: 26.5px;
+     border: 3px solid black;
+     box-shadow: #bd93f9 -2px 2px;
+ }
+ .sel1 {
+     background: #bd93f9;
+     height: 50px;
+     width: 50px;
+     border-radius: 26.5px;
+     border: 3px solid black;
+     box-shadow: -2px 2px;
+     margin: 3px;
+ }
+ .sel1:hover {
+   background: #ff5555;
+ }
+ .sel2 {
+     background: grey;
+     height: 50px;
+     width: 50px;
+     border-radius: 26.5px;
+     border: 3px solid black;
+     box-shadow: -2px 2px;
+     margin: 3px;
+ }
+ .sel2:hover {
+   background: #50fa7b;
+ }
+ .takenP1 {
+     background: #50fa7b;
+     height: 50px;
+     width: 50px;
+     border-radius: 26.5px;
+     border: 3px solid black;
+ }
+ .takenP2 {
+     background: #ff5555;
+     height: 50px;
+     width: 50px;
+     border-radius: 26.5px;
+     border: 3px solid black;
+ }
+ .reset {
+   margin: 15px;
+   color: #282a36;
+   background-color: #bd93f9;
+   border-radius: 10px;
+   box-shadow: black 3px 3px;
+ }
+ .reset:hover {
+   background-color: #50fa7b;
+ }
+ .victory {
+   margin: 10px;
+ }
+ .w1 {
+   padding: 15px;
+   border-radius: 15px;
+   color: black;
+   background-color: #50fa7b;
+ }
+ .w2 {
+   padding: 15px;
+   border-radius: 15px;
+   color: white;
+   background-color: #ff5555;
+ }
