@@ -12,18 +12,18 @@
   
 
 <meta itemprop="name" content="Svelte and Front End">
-<meta itemprop="description" content="Branching into the front end Simple Svelte game Gun Db "><meta itemprop="datePublished" content="2022-02-02T19:46:16-05:00" />
+<meta itemprop="description" content="Branching into the front end  For most developers front end is at the very least a lightly explored skill."><meta itemprop="datePublished" content="2022-02-02T19:46:16-05:00" />
 <meta itemprop="dateModified" content="2022-02-02T19:46:16-05:00" />
-<meta itemprop="wordCount" content="10">
+<meta itemprop="wordCount" content="884">
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Svelte and Front End"/>
-<meta name="twitter:description" content="Branching into the front end Simple Svelte game Gun Db "/>
+<meta name="twitter:description" content="Branching into the front end  For most developers front end is at the very least a lightly explored skill."/>
 
 
 <meta property="og:title" content="Svelte and Front End" />
-<meta property="og:description" content="Branching into the front end Simple Svelte game Gun Db " />
+<meta property="og:description" content="Branching into the front end  For most developers front end is at the very least a lightly explored skill." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cademichael.github.io/posts/svelte-and-front-end/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-02T19:46:16-05:00" />
@@ -72,7 +72,7 @@
       },
       "datePublished": "2022-02-02T19:46:16-05:00",
       "dateModified": "2022-02-02T19:46:16-05:00",
-      "description": "Branching into the front end Simple Svelte game Gun Db ",
+      "description": "Branching into the front end  For most developers front end is at the very least a lightly explored skill.",
       "inLanguage": "en-us",
       "potentialAction": [
         {
@@ -229,7 +229,7 @@
         </li><li>
           <a href="/config.html">Emacs Config</a>
         </li><li>
-          <a href="/public/index.html">Game</a>
+          <a href="/game/">Games</a>
         </li>
       </ul>
     </nav>
@@ -259,14 +259,246 @@
   
 
   <div class="post-date">
-    <time datetime="2022-02-02T19:46:16-0500">Feb 2, 2022</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2022-02-02T19:46:16-0500">Feb 2, 2022</time> <span class="readtime">&middot; 5 min read</span>
   </div>
 
   <div>
   <h2 id="branching-into-the-front-end">Branching into the front end</h2>
-<h2 id="simple-svelte-game">Simple Svelte game</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svelte" data-lang="svelte"></code></pre></div><h2 id="gun-db">Gun Db</h2>
+<ul>
+<li>For most developers front end is at the very least a lightly explored skill.</li>
+<li>I did some HTML in highschool and had enough skill to get a working interface for a proof of concept messenger <a href="https://github.com/camfarms/spider">spider</a>, but was no where near competent.</li>
+<li>I found <strong>svelte</strong> as a perfect entrance into the world of front end as it seems to bundle a psuedo backend with easy access to a front end; this is especially true with <strong>svelte kit</strong>.</li>
+<li>in my CSDS 221 web development course we were offered 3 percent extra credit on our grade if we make a simple js game. So this was my first attempt at such a game&hellip;</li>
+</ul>
+<h2 id="simple-svelte-game-connect4publicindexhtml">Simple Svelte game <a href="/public/index.html">Connect4</a></h2>
+<ul>
+<li><strong>javascript portion of App.svelte</strong>
+<ul>
+<li>the nice thing about svelte is that it allows you to have js in html essentially.</li>
+<li>Some of the scoping was giving me trouble, but I managed to delicately balance everything enough to get it working (and get extra credit)</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svelte" data-lang="svelte">&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#6272a4">// get the stylesheet
+</span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#34;./app.css&#34;</span>;
 
+  <span style="color:#6272a4">// game state
+</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">let</span> win <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span>;
+  <span style="color:#6272a4">// current player
+</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">let</span> player <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+ 
+  <span style="color:#6272a4">/*
+</span><span style="color:#6272a4">   * create the new board and reset game state
+</span><span style="color:#6272a4">   */</span>
+  <span style="color:#ff79c6">const</span> newBoard <span style="color:#ff79c6">=</span> () =&gt; {
+    win <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">false</span>; <span style="color:#6272a4">/* reset state */</span>
+      <span style="color:#ff79c6">return</span> [[<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>],
+			  [<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>],
+			  [<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>],
+			  [<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>],
+			  [<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>],
+			  [<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>]];
+  };
+ 
+  <span style="color:#6272a4">// game board 
+</span><span style="color:#6272a4"></span>  <span style="color:#8be9fd;font-style:italic">let</span> board <span style="color:#ff79c6">=</span> newBoard();
+
+  <span style="color:#6272a4">/*
+</span><span style="color:#6272a4">   * Select the column to &#39;drop&#39; a chip in, see if there is a winner
+</span><span style="color:#6272a4">   */</span>
+  <span style="color:#ff79c6">const</span> selectMe <span style="color:#ff79c6">=</span> (col) =&gt; {
+    <span style="color:#ff79c6">if</span> (win) <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;  
+    <span style="color:#8be9fd;font-style:italic">let</span> rowS <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+    <span style="color:#8be9fd;font-style:italic">let</span> colS <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>;
+    <span style="color:#ff79c6">if</span> (player <span style="color:#ff79c6">===</span> <span style="color:#bd93f9">1</span>)
+	  player <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>;
+	<span style="color:#ff79c6">else</span>
+	  player <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+	<span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">let</span> i <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>; i <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; i<span style="color:#ff79c6">--</span>) {  <span style="color:#6272a4">// start in the last row
+</span><span style="color:#6272a4"></span>	    <span style="color:#ff79c6">if</span> (board[i][col] <span style="color:#ff79c6">===</span> <span style="color:#bd93f9">0</span>) {  <span style="color:#6272a4">// empty entry in col
+</span><span style="color:#6272a4"></span>	      board[i][col] <span style="color:#ff79c6">=</span> player;   <span style="color:#6272a4">// fill
+</span><span style="color:#6272a4"></span>	      rowS <span style="color:#ff79c6">=</span> i; 
+	      colS <span style="color:#ff79c6">=</span> col;
+	      i <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">10</span>;                  <span style="color:#6272a4">// break out of loop
+</span><span style="color:#6272a4"></span>	    }
+	}
+    <span style="color:#ff79c6">if</span> (rowS <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> colS <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>) {       <span style="color:#6272a4">// rowS and colS have been set
+</span><span style="color:#6272a4"></span>      win <span style="color:#ff79c6">=</span> (winH(rowS, player) <span style="color:#ff79c6">||</span>
+			 winV(colS, player) <span style="color:#ff79c6">||</span>
+			 winDU(colS, rowS, player) <span style="color:#ff79c6">||</span>
+			 winDD(colS, rowS, player));
+    }
+  };
+
+  <span style="color:#6272a4">/*
+</span><span style="color:#6272a4">   * determine if there is a winner in a row
+</span><span style="color:#6272a4">   */</span>
+  <span style="color:#ff79c6">const</span> winH <span style="color:#ff79c6">=</span> (rowNum, player) =&gt; {
+    <span style="color:#8be9fd;font-style:italic">let</span> tot <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">let</span> x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; x <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">7</span>; x<span style="color:#ff79c6">++</span>) {
+      <span style="color:#ff79c6">if</span> (board[rowNum][x] <span style="color:#ff79c6">===</span> player) {
+	tot <span style="color:#ff79c6">++</span>;
+	<span style="color:#ff79c6">if</span> (tot <span style="color:#ff79c6">===</span> <span style="color:#bd93f9">4</span>){
+	  tot <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+	  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+	}
+      } <span style="color:#ff79c6">else</span> {
+	tot <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+      }
+    }
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+  };
+
+  <span style="color:#6272a4">/*
+</span><span style="color:#6272a4">   * determine if there is a winner in a column
+</span><span style="color:#6272a4">   */</span>
+  <span style="color:#ff79c6">const</span> winV <span style="color:#ff79c6">=</span> (colNum, player) =&gt; {
+    <span style="color:#8be9fd;font-style:italic">let</span> vtot <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    <span style="color:#ff79c6">for</span>(<span style="color:#8be9fd;font-style:italic">let</span> y <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; y <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">6</span>; y<span style="color:#ff79c6">++</span>) {
+      <span style="color:#ff79c6">if</span> (board[y][colNum] <span style="color:#ff79c6">===</span> player) {
+	vtot <span style="color:#ff79c6">++</span>;
+	<span style="color:#ff79c6">if</span> (vtot <span style="color:#ff79c6">===</span> <span style="color:#bd93f9">4</span>){
+	  vtot <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+	  <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+	}
+      } <span style="color:#ff79c6">else</span> {
+	vtot <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+      }
+    }
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+  };
+
+  <span style="color:#6272a4">/*
+</span><span style="color:#6272a4">   * determine if there is a winner in the diagonal up 
+</span><span style="color:#6272a4">   */</span>
+  <span style="color:#ff79c6">const</span> winDU <span style="color:#ff79c6">=</span> (colNum, rowNum, player) =&gt; {
+    <span style="color:#8be9fd;font-style:italic">let</span> totDU <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    <span style="color:#8be9fd;font-style:italic">let</span> colDU <span style="color:#ff79c6">=</span> colNum;
+    <span style="color:#8be9fd;font-style:italic">let</span> rowDU <span style="color:#ff79c6">=</span> rowNum;
+    <span style="color:#ff79c6">while</span> (colDU <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> rowDU <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">5</span>) {
+      colDU<span style="color:#ff79c6">--</span>;
+      rowDU<span style="color:#ff79c6">++</span>;
+    }
+    <span style="color:#ff79c6">while</span> (rowDU <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> colDU <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">6</span>) {
+      <span style="color:#ff79c6">if</span> (board[rowDU][colDU] <span style="color:#ff79c6">===</span> player) {
+	totDU<span style="color:#ff79c6">++</span>;
+	<span style="color:#ff79c6">if</span> (totDU <span style="color:#ff79c6">===</span> <span style="color:#bd93f9">4</span>) <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+      }
+      <span style="color:#ff79c6">else</span> totDU <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+      rowDU<span style="color:#ff79c6">--</span>;
+      colDU<span style="color:#ff79c6">++</span>;
+    }
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+  }
+
+  <span style="color:#6272a4">/*
+</span><span style="color:#6272a4">   * determine if there is a winner in the diagonal down
+</span><span style="color:#6272a4">   */</span>
+  <span style="color:#ff79c6">const</span> winDD <span style="color:#ff79c6">=</span> (colNum, rowNum, player) =&gt; {
+    <span style="color:#8be9fd;font-style:italic">let</span> totDD <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    <span style="color:#8be9fd;font-style:italic">let</span> colDD <span style="color:#ff79c6">=</span> colNum;
+    <span style="color:#8be9fd;font-style:italic">let</span> rowDD <span style="color:#ff79c6">=</span> rowNum;
+    <span style="color:#ff79c6">while</span> (colDD <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">6</span> <span style="color:#ff79c6">&amp;&amp;</span> rowDD <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">5</span>) {
+      colDD<span style="color:#ff79c6">++</span>;
+      rowDD<span style="color:#ff79c6">++</span>;
+    }
+    <span style="color:#ff79c6">while</span> (rowDD <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> colDD <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>) { <span style="color:#6272a4">// need &#39;or eq&#39;
+</span><span style="color:#6272a4"></span>      <span style="color:#ff79c6">if</span> (board[rowDD][colDD] <span style="color:#ff79c6">===</span> player) {
+	totDD<span style="color:#ff79c6">++</span>;
+	<span style="color:#ff79c6">if</span> (totDD <span style="color:#ff79c6">===</span> <span style="color:#bd93f9">4</span>) <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">true</span>;
+      }
+      <span style="color:#ff79c6">else</span> totDD <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+      rowDD<span style="color:#ff79c6">--</span>;
+      colDD<span style="color:#ff79c6">--</span>;
+    }
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+  }
+&lt;/<span style="color:#ff79c6">script</span>&gt;
+
+</code></pre></div><ul>
+<li><strong>The html portion of Svelte</strong>
+<ul>
+<li>Although I had already done a svelte project, it was more focused on the back end than font end. This game being entirely front end I wanted to see how the iterative properties of svelte worked with HTML generation.</li>
+<li>I was surprised at how clean the syntax turned out to be and using simple if /else blocks I could get the desired &ldquo;chip&rdquo; color placed in the appropriate slot.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">main</span>&gt;
+    &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;foreground&#34;</span>&gt;
+	&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;title&#34;</span>&gt;
+	    &lt;<span style="color:#ff79c6">h1</span>&gt;Connect 4&lt;/<span style="color:#ff79c6">h1</span>&gt;
+	&lt;/<span style="color:#ff79c6">div</span>&gt;
+	<span style="color:#6272a4">&lt;!-- if winner, show banner --&gt;</span>
+	{#if win}
+	  &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;victory&#34;</span>&gt;
+	    {#if player === 1}
+	      &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;w1&#34;</span>&gt;
+		&lt;<span style="color:#ff79c6">h2</span>&gt;We Have a Winner!!!&lt;/<span style="color:#ff79c6">h2</span>&gt;
+	      &lt;/<span style="color:#ff79c6">div</span>&gt;
+	    {:else}
+	      &lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;w2&#34;</span>&gt;
+		&lt;<span style="color:#ff79c6">h2</span>&gt;We Have a Winner!!!&lt;/<span style="color:#ff79c6">h2</span>&gt;
+	      &lt;/<span style="color:#ff79c6">div</span>&gt;
+	    {/if}
+	  &lt;/<span style="color:#ff79c6">div</span>&gt;
+	{/if}
+	<span style="color:#6272a4">&lt;!-- Create the buttons that determine column to drop chip --&gt;</span>
+	&lt;<span style="color:#ff79c6">table</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;selects&#34;</span>&gt;
+	   &lt;<span style="color:#ff79c6">tr</span>&gt;
+	    {#each board[0] as column, i}
+	      &lt;<span style="color:#ff79c6">td</span>&gt;
+		<span style="color:#6272a4">&lt;!-- conditional logic to determine color of chip --&gt;</span>
+		{#if player === 1}
+		    &lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;sel1&#34;</span> <span style="color:#50fa7b">on:click</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{()</span> =&gt; {
+						  selectMe(i);
+						  /* play against comp */
+						  selectMe(Math.floor(Math.random() * 7));
+						  }}&gt;
+		    &amp;#8595; 
+		  &lt;/<span style="color:#ff79c6">button</span>&gt;
+		{:else}
+		  &lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;sel2&#34;</span> <span style="color:#50fa7b">on:click</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{()</span> =&gt; {
+						selectMe(i);
+						/* play against comp */
+						selectMe(Math.floor(Math.random() * 7));
+						}}&gt;
+		    &amp;#8595; 
+		  &lt;/<span style="color:#ff79c6">button</span>&gt;
+		{/if}
+	      &lt;/<span style="color:#ff79c6">td</span>&gt;
+	    {/each}
+	  &lt;/<span style="color:#ff79c6">tr</span>&gt;
+	&lt;/<span style="color:#ff79c6">table</span>&gt;
+	&lt;<span style="color:#ff79c6">table</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;board&#34;</span>&gt;
+	  &lt;<span style="color:#ff79c6">tbody</span>&gt;
+	      <span style="color:#6272a4">&lt;!-- instantiate the table &#34;slots&#34; based on corresponding board value --&gt;</span>
+	      {#each board as row}
+		&lt;<span style="color:#ff79c6">tr</span>&gt;
+		  {#each row as i}
+		    {#if i === 0}
+		      &lt;<span style="color:#ff79c6">td</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;slot&#34;</span>&gt;&lt;/<span style="color:#ff79c6">td</span>&gt;
+		    {:else if i === 1}
+		      &lt;<span style="color:#ff79c6">td</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;takenP1&#34;</span>&gt;&lt;/<span style="color:#ff79c6">td</span>&gt;
+		  {:else}
+		    &lt;<span style="color:#ff79c6">td</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;takenP2&#34;</span>&gt;&lt;/<span style="color:#ff79c6">td</span>&gt;
+		  {/if}
+		{/each}
+	      &lt;/<span style="color:#ff79c6">tr</span>&gt; 
+	    {/each}
+	  &lt;/<span style="color:#ff79c6">tbody</span>&gt;
+	&lt;/<span style="color:#ff79c6">table</span>&gt;
+	<span style="color:#6272a4">&lt;!-- reset the game state --&gt;</span>
+	&lt;<span style="color:#ff79c6">button</span> <span style="color:#50fa7b">on:click</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">{()</span> =&gt; {
+	  board = newBoard();
+	  player = 1;
+	  }} class=&#34;reset&#34;&gt;
+	  new game!
+	&lt;/<span style="color:#ff79c6">button</span>&gt;
+    &lt;/<span style="color:#ff79c6">div</span>&gt;
+&lt;/<span style="color:#ff79c6">main</span>&gt;
+
+</code></pre></div>
   </div>
 
   

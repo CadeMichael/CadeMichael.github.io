@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-02 Wed 19:32 -->
+<!-- 2022-02-03 Thu 19:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Vanilla Emacs &#x2013;&gt; Cade's Emacs</title>
@@ -227,81 +227,80 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4dc05a0">1. Packages</a>
+<li><a href="#orgb2ab2a5">1. Packages</a>
 <ul>
-<li><a href="#org41c627e">1.1. connect package.el with MELPA</a></li>
-<li><a href="#org72fc573">1.2. Straight el</a></li>
-<li><a href="#org8b89924">1.3. installing use-package</a></li>
-<li><a href="#orgb887ae0">1.4. Making sure the shell doesn't get messed up</a></li>
-<li><a href="#org54acc9f">1.5. Extensible VI Layer</a></li>
-<li><a href="#orgd1b981e">1.6. General for Key-remaps</a></li>
-<li><a href="#orgec00280">1.7. Org-packages</a></li>
-<li><a href="#orgf04bff2">1.8. Which Key</a></li>
-<li><a href="#org552a409">1.9. Vertico</a></li>
-<li><a href="#org5f5ec94">1.10. V Terminal</a></li>
-<li><a href="#orgd17afc6">1.11. Git integration</a></li>
-<li><a href="#org41b11ee">1.12. File Browser</a></li>
-<li><a href="#orgee16574">1.13. Language support</a>
+<li><a href="#orge8a19d7">1.1. connect package.el with MELPA</a></li>
+<li><a href="#org7ff34ea">1.2. Straight el</a></li>
+<li><a href="#org43132a2">1.3. installing use-package</a></li>
+<li><a href="#orgb6bdcb1">1.4. Making sure the shell doesn't get messed up</a></li>
+<li><a href="#orgd6418b0">1.5. Extensible VI Layer</a></li>
+<li><a href="#org98c3c38">1.6. General for Key-remaps</a></li>
+<li><a href="#orgaf83a11">1.7. Org-packages</a></li>
+<li><a href="#org51ae389">1.8. Which Key</a></li>
+<li><a href="#org4849b6f">1.9. V Terminal</a></li>
+<li><a href="#org9d20718">1.10. Git integration</a></li>
+<li><a href="#orge4fd7fd">1.11. File Browser</a></li>
+<li><a href="#org807bd7b">1.12. Language support</a>
 <ul>
-<li><a href="#org92b366c">1.13.1. Flycheck</a></li>
-<li><a href="#org93802c5">1.13.2. LSP-mode</a></li>
-<li><a href="#org1cc8450">1.13.3. Company-mode</a></li>
-<li><a href="#orgb2728f5">1.13.4. Yas Snippet</a></li>
-<li><a href="#orgaf95e40">1.13.5. Projectile</a></li>
-<li><a href="#orgf31a691">1.13.6. colored parens</a></li>
-<li><a href="#orgf41d0cb">1.13.7. Helm</a></li>
-<li><a href="#org460e7af">1.13.8. Haskell</a></li>
-<li><a href="#org8437dd9">1.13.9. Lua</a></li>
-<li><a href="#orgb0de94c">1.13.10. GoLang</a></li>
-<li><a href="#orgb8f9e1a">1.13.11. Rust</a></li>
-<li><a href="#orgdf8457e">1.13.12. JS</a></li>
-<li><a href="#org7afa57e">1.13.13. Java</a></li>
-<li><a href="#org6ae8c67">1.13.14. Python</a></li>
-<li><a href="#orgf7b7829">1.13.15. Lisp(s)</a></li>
-<li><a href="#orgf2f52c8">1.13.16. Markdown</a></li>
-<li><a href="#org982fc92">1.13.17. R</a></li>
-<li><a href="#org5f09f27">1.13.18. cht.sh</a></li>
+<li><a href="#orgb8e835c">1.12.1. Flycheck</a></li>
+<li><a href="#orgc5f9b51">1.12.2. LSP-mode</a></li>
+<li><a href="#orgcd53313">1.12.3. Company-mode</a></li>
+<li><a href="#orgac60b54">1.12.4. Yas Snippet</a></li>
+<li><a href="#org8bcad83">1.12.5. Projectile</a></li>
+<li><a href="#org1caff48">1.12.6. colored parens</a></li>
+<li><a href="#org4b95415">1.12.7. Helm</a></li>
+<li><a href="#org59c5507">1.12.8. Haskell</a></li>
+<li><a href="#org512de6a">1.12.9. Lua</a></li>
+<li><a href="#org696e778">1.12.10. GoLang</a></li>
+<li><a href="#org6c27f9a">1.12.11. Rust</a></li>
+<li><a href="#orgd94476b">1.12.12. JS</a></li>
+<li><a href="#org3200d6b">1.12.13. Java</a></li>
+<li><a href="#org9a45953">1.12.14. Python</a></li>
+<li><a href="#org05b763a">1.12.15. Lisp(s)</a></li>
+<li><a href="#org840396f">1.12.16. Markdown</a></li>
+<li><a href="#org88f46b8">1.12.17. R</a></li>
+<li><a href="#orge35af80">1.12.18. cht.sh</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org30a40c3">2. Themes</a>
+<li><a href="#org6274fd6">2. Themes</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgc458832">2.0.1. Color theme(s)</a></li>
-<li><a href="#org9cc6d49">2.0.2. modeline</a></li>
-<li><a href="#orgd202a0f">2.0.3. Tabline</a></li>
-<li><a href="#orga60d651">2.0.4. TreeSitter</a></li>
-<li><a href="#org892a432">2.0.5. Font's</a></li>
-<li><a href="#org6b68dbf">2.0.6. Errors &amp; warnings</a></li>
+<li><a href="#org6ea5a23">2.0.1. Color theme(s)</a></li>
+<li><a href="#orgfb827a3">2.0.2. modeline</a></li>
+<li><a href="#org486a650">2.0.3. Tabline</a></li>
+<li><a href="#org7a8c18c">2.0.4. TreeSitter</a></li>
+<li><a href="#org5149c95">2.0.5. Font's</a></li>
+<li><a href="#orgcdf87ba">2.0.6. Errors &amp; warnings</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4759464">3. Org-configuration</a>
+<li><a href="#orgc22f637">3. Org-configuration</a>
 <ul>
-<li><a href="#org01bcb35">3.1. Org Beautification, basics</a></li>
-<li><a href="#org12719b2">3.2. Code-Block highlighting</a></li>
-<li><a href="#orga1146d7">3.3. Babel Code-Block Configuration</a></li>
+<li><a href="#orge57ffa7">3.1. Org Beautification, basics</a></li>
+<li><a href="#org6311ee2">3.2. Code-Block highlighting</a></li>
+<li><a href="#org6584ef0">3.3. Babel Code-Block Configuration</a></li>
 </ul>
 </li>
-<li><a href="#org02fd6b9">4. Key Re-mapping</a>
+<li><a href="#org0455c47">4. Key Re-mapping</a>
 <ul>
-<li><a href="#orge758bab">4.1. zooming</a></li>
+<li><a href="#orge0c7d29">4.1. zooming</a></li>
 </ul>
 </li>
-<li><a href="#org7fbc032">5. Native Comp settings</a></li>
+<li><a href="#orge4d9542">5. Native Comp settings</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4dc05a0" class="outline-2">
-<h2 id="org4dc05a0"><span class="section-number-2">1</span> Packages</h2>
+<div id="outline-container-orgb2ab2a5" class="outline-2">
+<h2 id="orgb2ab2a5"><span class="section-number-2">1</span> Packages</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org41c627e" class="outline-3">
-<h3 id="org41c627e"><span class="section-number-3">1.1</span> connect package.el with MELPA</h3>
+<div id="outline-container-orge8a19d7" class="outline-3">
+<h3 id="orge8a19d7"><span class="section-number-3">1.1</span> connect package.el with MELPA</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>melpa allows package management without needing manual installation</li>
@@ -321,8 +320,8 @@
 </div>
 </div>
 
-<div id="outline-container-org72fc573" class="outline-3">
-<h3 id="org72fc573"><span class="section-number-3">1.2</span> Straight el</h3>
+<div id="outline-container-org7ff34ea" class="outline-3">
+<h3 id="org7ff34ea"><span class="section-number-3">1.2</span> Straight el</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>useful for when use-package fails</li>
@@ -348,8 +347,8 @@
 </div>
 </div>
 
-<div id="outline-container-org8b89924" class="outline-3">
-<h3 id="org8b89924"><span class="section-number-3">1.3</span> installing use-package</h3>
+<div id="outline-container-org43132a2" class="outline-3">
+<h3 id="org43132a2"><span class="section-number-3">1.3</span> installing use-package</h3>
 <div class="outline-text-3" id="text-1-3">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">unless</span> <span style="color: #8be9fd;">(</span>package-installed-p 'use-package<span style="color: #8be9fd;">)</span>
@@ -359,8 +358,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgb887ae0" class="outline-3">
-<h3 id="orgb887ae0"><span class="section-number-3">1.4</span> Making sure the shell doesn't get messed up</h3>
+<div id="outline-container-orgb6bdcb1" class="outline-3">
+<h3 id="orgb6bdcb1"><span class="section-number-3">1.4</span> Making sure the shell doesn't get messed up</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">exec-path-from-shell</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t<span style="color: #f8f8f2;">)</span>
@@ -370,8 +369,8 @@
 </div>
 </div>
 
-<div id="outline-container-org54acc9f" class="outline-3">
-<h3 id="org54acc9f"><span class="section-number-3">1.5</span> Extensible VI Layer</h3>
+<div id="outline-container-orgd6418b0" class="outline-3">
+<h3 id="orgd6418b0"><span class="section-number-3">1.5</span> Extensible VI Layer</h3>
 <div class="outline-text-3" id="text-1-5">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">package used for undoing</span>
@@ -395,8 +394,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgd1b981e" class="outline-3">
-<h3 id="orgd1b981e"><span class="section-number-3">1.6</span> General for Key-remaps</h3>
+<div id="outline-container-org98c3c38" class="outline-3">
+<h3 id="org98c3c38"><span class="section-number-3">1.6</span> General for Key-remaps</h3>
 <div class="outline-text-3" id="text-1-6">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">general</span>
@@ -408,8 +407,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgec00280" class="outline-3">
-<h3 id="orgec00280"><span class="section-number-3">1.7</span> Org-packages</h3>
+<div id="outline-container-orgaf83a11" class="outline-3">
+<h3 id="orgaf83a11"><span class="section-number-3">1.7</span> Org-packages</h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
 <li>styling</li>
@@ -481,8 +480,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgf04bff2" class="outline-3">
-<h3 id="orgf04bff2"><span class="section-number-3">1.8</span> Which Key</h3>
+<div id="outline-container-org51ae389" class="outline-3">
+<h3 id="org51ae389"><span class="section-number-3">1.8</span> Which Key</h3>
 <div class="outline-text-3" id="text-1-8">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">show key binding function</span>
@@ -507,24 +506,9 @@
 </div>
 </div>
 
-<div id="outline-container-org552a409" class="outline-3">
-<h3 id="org552a409"><span class="section-number-3">1.9</span> Vertico</h3>
+<div id="outline-container-org4849b6f" class="outline-3">
+<h3 id="org4849b6f"><span class="section-number-3">1.9</span> V Terminal</h3>
 <div class="outline-text-3" id="text-1-9">
-<div class="org-src-container">
-<pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">vertico</span>
-  <span style="color: #8be9fd; font-style: italic;">:ensure</span> t
-  <span style="color: #8be9fd; font-style: italic;">:init</span>
-  <span style="color: #8be9fd;">(</span>vertico-mode<span style="color: #8be9fd;">)</span>
-  <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">Optionally enable cycling for `</span><span style="color: #bd93f9;">vertico-next</span><span style="color: #6272a4;">' and `</span><span style="color: #bd93f9;">vertico-previous</span><span style="color: #6272a4;">'.</span>
-  <span style="color: #8be9fd;">(</span><span style="color: #ff79c6; font-weight: bold;">setq</span> vertico-cycle t<span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5f5ec94" class="outline-3">
-<h3 id="org5f5ec94"><span class="section-number-3">1.10</span> V Terminal</h3>
-<div class="outline-text-3" id="text-1-10">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">setq</span> shell-file-name <span style="color: #f1fa8c;">"/bin/zsh"</span><span style="color: #f8f8f2;">)</span> <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">this will be different for linux and mac machines</span>
 <span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">vterm</span>
@@ -544,9 +528,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd17afc6" class="outline-3">
-<h3 id="orgd17afc6"><span class="section-number-3">1.11</span> Git integration</h3>
-<div class="outline-text-3" id="text-1-11">
+<div id="outline-container-org9d20718" class="outline-3">
+<h3 id="org9d20718"><span class="section-number-3">1.10</span> Git integration</h3>
+<div class="outline-text-3" id="text-1-10">
 <ul class="org-ul">
 <li>evil collections comes with evil magit integration</li>
 </ul>
@@ -561,9 +545,9 @@
 </div>
 </div>
 
-<div id="outline-container-org41b11ee" class="outline-3">
-<h3 id="org41b11ee"><span class="section-number-3">1.12</span> File Browser</h3>
-<div class="outline-text-3" id="text-1-12">
+<div id="outline-container-orge4fd7fd" class="outline-3">
+<h3 id="orge4fd7fd"><span class="section-number-3">1.11</span> File Browser</h3>
+<div class="outline-text-3" id="text-1-11">
 <ul class="org-ul">
 <li>TreeMacs file browser, good for project file browsing</li>
 </ul>
@@ -714,13 +698,13 @@ adding some vim like keymappings
 </div>
 </div>
 
-<div id="outline-container-orgee16574" class="outline-3">
-<h3 id="orgee16574"><span class="section-number-3">1.13</span> Language support</h3>
-<div class="outline-text-3" id="text-1-13">
+<div id="outline-container-org807bd7b" class="outline-3">
+<h3 id="org807bd7b"><span class="section-number-3">1.12</span> Language support</h3>
+<div class="outline-text-3" id="text-1-12">
 </div>
-<div id="outline-container-org92b366c" class="outline-4">
-<h4 id="org92b366c"><span class="section-number-4">1.13.1</span> Flycheck</h4>
-<div class="outline-text-4" id="text-1-13-1">
+<div id="outline-container-orgb8e835c" class="outline-4">
+<h4 id="orgb8e835c"><span class="section-number-4">1.12.1</span> Flycheck</h4>
+<div class="outline-text-4" id="text-1-12-1">
 <ul class="org-ul">
 <li>it seems to be a better flymake, if it is too much I will disable</li>
 </ul>
@@ -778,9 +762,9 @@ adding some vim like keymappings
 </div>
 </div>
 
-<div id="outline-container-org93802c5" class="outline-4">
-<h4 id="org93802c5"><span class="section-number-4">1.13.2</span> LSP-mode</h4>
-<div class="outline-text-4" id="text-1-13-2">
+<div id="outline-container-orgc5f9b51" class="outline-4">
+<h4 id="orgc5f9b51"><span class="section-number-4">1.12.2</span> LSP-mode</h4>
+<div class="outline-text-4" id="text-1-12-2">
 <ul class="org-ul">
 <li>using lsp-deferred so that only when a buffer is open, this should make startup faster and emacs a bit more performant (i hope)</li>
 <li>I will only be using the LSP with certain languages, for most languages I will try to refrain from using a language server purely to force myself to be a bit more precise while programming</li>
@@ -821,9 +805,9 @@ adding some vim like keymappings
 </div>
 </div>
 
-<div id="outline-container-org1cc8450" class="outline-4">
-<h4 id="org1cc8450"><span class="section-number-4">1.13.3</span> Company-mode</h4>
-<div class="outline-text-4" id="text-1-13-3">
+<div id="outline-container-orgcd53313" class="outline-4">
+<h4 id="orgcd53313"><span class="section-number-4">1.12.3</span> Company-mode</h4>
+<div class="outline-text-4" id="text-1-12-3">
 <ul class="org-ul">
 <li>this mode allows for an autocomplete window to popup as you code</li>
 <li>i had it enabled in all buffers but was not a huge fan of this so I bound it to the vim COC control space keybinding to initialize it</li>
@@ -855,9 +839,9 @@ adding some vim like keymappings
 </div>
 </div>
 
-<div id="outline-container-orgb2728f5" class="outline-4">
-<h4 id="orgb2728f5"><span class="section-number-4">1.13.4</span> Yas Snippet</h4>
-<div class="outline-text-4" id="text-1-13-4">
+<div id="outline-container-orgac60b54" class="outline-4">
+<h4 id="orgac60b54"><span class="section-number-4">1.12.4</span> Yas Snippet</h4>
+<div class="outline-text-4" id="text-1-12-4">
 <ul class="org-ul">
 <li>what would and IDE be without some snippets?</li>
 <li>using yas snippet seems to be the best</li>
@@ -880,9 +864,9 @@ adding some vim like keymappings
 </div>
 </div>
 
-<div id="outline-container-orgaf95e40" class="outline-4">
-<h4 id="orgaf95e40"><span class="section-number-4">1.13.5</span> Projectile</h4>
-<div class="outline-text-4" id="text-1-13-5">
+<div id="outline-container-org8bcad83" class="outline-4">
+<h4 id="org8bcad83"><span class="section-number-4">1.12.5</span> Projectile</h4>
+<div class="outline-text-4" id="text-1-12-5">
 <ul class="org-ul">
 <li>projectile helps with project management and navigating the project folders.</li>
 </ul>
@@ -906,9 +890,9 @@ adding some vim like keymappings
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf31a691" class="outline-4">
-<h4 id="orgf31a691"><span class="section-number-4">1.13.6</span> colored parens</h4>
-<div class="outline-text-4" id="text-1-13-6">
+<div id="outline-container-org1caff48" class="outline-4">
+<h4 id="org1caff48"><span class="section-number-4">1.12.6</span> colored parens</h4>
+<div class="outline-text-4" id="text-1-12-6">
 <ul class="org-ul">
 <li>easier to see parenthesis colors</li>
 </ul>
@@ -929,23 +913,30 @@ adding some vim like keymappings
 </div>
 </div>
 </div>
-<div id="outline-container-orgf41d0cb" class="outline-4">
-<h4 id="orgf41d0cb"><span class="section-number-4">1.13.7</span> Helm</h4>
-<div class="outline-text-4" id="text-1-13-7">
+<div id="outline-container-org4b95415" class="outline-4">
+<h4 id="org4b95415"><span class="section-number-4">1.12.7</span> Helm</h4>
+<div class="outline-text-4" id="text-1-12-7">
 <ul class="org-ul">
 <li>helm is a fuzzy finder for emacs</li>
 </ul>
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">helm-lsp</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t<span style="color: #f8f8f2;">)</span>
-<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">helm</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t
-  <span style="color: #8be9fd; font-style: italic;">:config</span> <span style="color: #8be9fd;">(</span>helm-mode<span style="color: #8be9fd;">)(</span><span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #bd93f9;">helm-config</span><span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
+<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">helm</span>
+  <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">recommended to use straight</span>
+  <span style="color: #8be9fd; font-style: italic;">:straight</span> t                            
+  <span style="color: #8be9fd; font-style: italic;">:bind</span>
+  <span style="color: #8be9fd;">(</span><span style="color: #bd93f9;">(</span><span style="color: #f1fa8c;">"M-x"</span> . helm-M-x<span style="color: #bd93f9;">)</span><span style="color: #8be9fd;">)</span>
+  <span style="color: #8be9fd;">(</span><span style="color: #bd93f9;">(</span><span style="color: #f1fa8c;">"C-x C-f"</span> . helm-find-files<span style="color: #bd93f9;">)</span><span style="color: #8be9fd;">)</span>
+  <span style="color: #8be9fd; font-style: italic;">:config</span>
+  <span style="color: #8be9fd;">(</span>helm-mode 1<span style="color: #8be9fd;">)</span>
+  <span style="color: #8be9fd;">(</span><span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #bd93f9;">helm-config</span><span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org460e7af" class="outline-4">
-<h4 id="org460e7af"><span class="section-number-4">1.13.8</span> Haskell</h4>
-<div class="outline-text-4" id="text-1-13-8">
+<div id="outline-container-org59c5507" class="outline-4">
+<h4 id="org59c5507"><span class="section-number-4">1.12.8</span> Haskell</h4>
+<div class="outline-text-4" id="text-1-12-8">
 <ul class="org-ul">
 <li>getting the base language support</li>
 </ul>
@@ -1005,9 +996,9 @@ adding some vim like keymappings
 </div>
 </div>
 </div>
-<div id="outline-container-org8437dd9" class="outline-4">
-<h4 id="org8437dd9"><span class="section-number-4">1.13.9</span> Lua</h4>
-<div class="outline-text-4" id="text-1-13-9">
+<div id="outline-container-org512de6a" class="outline-4">
+<h4 id="org512de6a"><span class="section-number-4">1.12.9</span> Lua</h4>
+<div class="outline-text-4" id="text-1-12-9">
 <ul class="org-ul">
 <li>using lua mode with the lsp server that was compiled and installed to .emacs.d/.cache/lsp</li>
 <li>some of the helpful commands and more involved instructions can be found on the <a href="https://emacs-lsp.github.io/lsp-mode/page/lsp-lua-language-server/">emacs-lsp</a> website</li>
@@ -1029,9 +1020,9 @@ adding some vim like keymappings
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb0de94c" class="outline-4">
-<h4 id="orgb0de94c"><span class="section-number-4">1.13.10</span> GoLang</h4>
-<div class="outline-text-4" id="text-1-13-10">
+<div id="outline-container-org696e778" class="outline-4">
+<h4 id="org696e778"><span class="section-number-4">1.12.10</span> GoLang</h4>
+<div class="outline-text-4" id="text-1-12-10">
 <ul class="org-ul">
 <li>Getting go-mode installed</li>
 </ul>
@@ -1052,9 +1043,9 @@ adding some vim like keymappings
 </div>
 </div>
 </div>
-<div id="outline-container-orgb8f9e1a" class="outline-4">
-<h4 id="orgb8f9e1a"><span class="section-number-4">1.13.11</span> Rust</h4>
-<div class="outline-text-4" id="text-1-13-11">
+<div id="outline-container-org6c27f9a" class="outline-4">
+<h4 id="org6c27f9a"><span class="section-number-4">1.12.11</span> Rust</h4>
+<div class="outline-text-4" id="text-1-12-11">
 <ul class="org-ul">
 <li>Rustic seems to be a very well thought out (and hopefully implemented package) it connects to lsp mode / flycheck and uses rust-analyzer by default.</li>
 <li>I will set these just to be extra specific</li>
@@ -1068,9 +1059,9 @@ adding some vim like keymappings
 </div>
 </div>
 </div>
-<div id="outline-container-orgdf8457e" class="outline-4">
-<h4 id="orgdf8457e"><span class="section-number-4">1.13.12</span> JS</h4>
-<div class="outline-text-4" id="text-1-13-12">
+<div id="outline-container-orgd94476b" class="outline-4">
+<h4 id="orgd94476b"><span class="section-number-4">1.12.12</span> JS</h4>
+<div class="outline-text-4" id="text-1-12-12">
 <ul class="org-ul">
 <li>using <b>js Repl</b> to get a repl experience</li>
 </ul>
@@ -1111,9 +1102,9 @@ adding some vim like keymappings
 </div>
 </div>
 </div>
-<div id="outline-container-org7afa57e" class="outline-4">
-<h4 id="org7afa57e"><span class="section-number-4">1.13.13</span> Java</h4>
-<div class="outline-text-4" id="text-1-13-13">
+<div id="outline-container-org3200d6b" class="outline-4">
+<h4 id="org3200d6b"><span class="section-number-4">1.12.13</span> Java</h4>
+<div class="outline-text-4" id="text-1-12-13">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">lsp-java</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t <span style="color: #8be9fd; font-style: italic;">:config</span> <span style="color: #8be9fd;">(</span>add-hook 'java-mode-hook #'lsp-deferred<span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
 <span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">dap-mode</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t <span style="color: #8be9fd; font-style: italic;">:after</span> lsp-mode <span style="color: #8be9fd; font-style: italic;">:config</span> <span style="color: #8be9fd;">(</span>dap-auto-configure-mode<span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
@@ -1122,9 +1113,9 @@ adding some vim like keymappings
 </div>
 </div>
 </div>
-<div id="outline-container-org6ae8c67" class="outline-4">
-<h4 id="org6ae8c67"><span class="section-number-4">1.13.14</span> Python</h4>
-<div class="outline-text-4" id="text-1-13-14">
+<div id="outline-container-org9a45953" class="outline-4">
+<h4 id="org9a45953"><span class="section-number-4">1.12.14</span> Python</h4>
+<div class="outline-text-4" id="text-1-12-14">
 <ul class="org-ul">
 <li>uses lsp-pyright with the open source pyright server. Using this because it can be used with nvim /emacs.</li>
 <li>the settings of which can be found <a href="https://emacs-lsp.github.io/lsp-pyright/">here</a>.</li>
@@ -1146,21 +1137,21 @@ adding some vim like keymappings
 </div>
 </div>
 
-<div id="outline-container-orgf7b7829" class="outline-4">
-<h4 id="orgf7b7829"><span class="section-number-4">1.13.15</span> Lisp(s)</h4>
-<div class="outline-text-4" id="text-1-13-15">
+<div id="outline-container-org05b763a" class="outline-4">
+<h4 id="org05b763a"><span class="section-number-4">1.12.15</span> Lisp(s)</h4>
+<div class="outline-text-4" id="text-1-12-15">
 </div>
 <ol class="org-ol">
-<li><a id="orgc29a899"></a>Guile<br />
-<div class="outline-text-5" id="text-1-13-15-1">
+<li><a id="orgcdafe05"></a>Guile<br />
+<div class="outline-text-5" id="text-1-12-15-1">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">geiser-guile</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t<span style="color: #f8f8f2;">)</span>
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org8e98a26"></a>Racket<br />
-<div class="outline-text-5" id="text-1-13-15-2">
+<li><a id="orgce99150"></a>Racket<br />
+<div class="outline-text-5" id="text-1-12-15-2">
 <ul class="org-ul">
 <li><a href="https://www.racket-mode.com/#Install-Racket-Mode">racket mode</a> website</li>
 </ul>
@@ -1232,8 +1223,8 @@ key bindings
 </ul>
 </div>
 </li>
-<li><a id="orgd1078ea"></a>Lisp<br />
-<div class="outline-text-5" id="text-1-13-15-3">
+<li><a id="orgaf3c6f3"></a>Lisp<br />
+<div class="outline-text-5" id="text-1-12-15-3">
 <ul class="org-ul">
 <li>using the sbcl version of common lisp with slime mode</li>
 <li>org babel enabled</li>
@@ -1245,8 +1236,8 @@ key bindings
 </div>
 </div>
 </li>
-<li><a id="org05b5b25"></a>Clojure<br />
-<div class="outline-text-5" id="text-1-13-15-4">
+<li><a id="org65ff93d"></a>Clojure<br />
+<div class="outline-text-5" id="text-1-12-15-4">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">error handling / linting</span>
 <span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">flycheck-clj-kondo</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t<span style="color: #f8f8f2;">)</span>
@@ -1265,8 +1256,8 @@ key bindings
 </div>
 </li>
 
-<li><a id="org8f1223e"></a>smart parens<br />
-<div class="outline-text-5" id="text-1-13-15-5">
+<li><a id="orgbc09631"></a>smart parens<br />
+<div class="outline-text-5" id="text-1-12-15-5">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">smartparens</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t<span style="color: #f8f8f2;">)</span>
 <span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #bd93f9;">smartparens-config</span><span style="color: #f8f8f2;">)</span>
@@ -1299,8 +1290,8 @@ key bindings
 </div>
 </div>
 </li>
-<li><a id="orgaaff7b4"></a>Geiser<br />
-<div class="outline-text-5" id="text-1-13-15-6">
+<li><a id="orgd1ffcfb"></a>Geiser<br />
+<div class="outline-text-5" id="text-1-12-15-6">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span>general-define-key
  <span style="color: #8be9fd; font-style: italic;">:states</span> '<span style="color: #8be9fd;">(</span>normal<span style="color: #8be9fd;">)</span>
@@ -1320,9 +1311,9 @@ key bindings
 </ol>
 </div>
 
-<div id="outline-container-orgf2f52c8" class="outline-4">
-<h4 id="orgf2f52c8"><span class="section-number-4">1.13.16</span> Markdown</h4>
-<div class="outline-text-4" id="text-1-13-16">
+<div id="outline-container-org840396f" class="outline-4">
+<h4 id="org840396f"><span class="section-number-4">1.12.16</span> Markdown</h4>
+<div class="outline-text-4" id="text-1-12-16">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">markdown-mode</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t
   <span style="color: #8be9fd; font-style: italic;">:config</span>
@@ -1332,9 +1323,9 @@ key bindings
 </div>
 </div>
 
-<div id="outline-container-org982fc92" class="outline-4">
-<h4 id="org982fc92"><span class="section-number-4">1.13.17</span> R</h4>
-<div class="outline-text-4" id="text-1-13-17">
+<div id="outline-container-org88f46b8" class="outline-4">
+<h4 id="org88f46b8"><span class="section-number-4">1.12.17</span> R</h4>
+<div class="outline-text-4" id="text-1-12-17">
 <ul class="org-ul">
 <li>to open an R repl use mx-R, to use lintr you need to install and have a folder <code>~/.R/lintr_cache</code> otherwise it won't work, if you enable company mode you will get completions aswell.</li>
 </ul>
@@ -1414,9 +1405,9 @@ some usefull commands
 </ul>
 </div>
 </div>
-<div id="outline-container-org5f09f27" class="outline-4">
-<h4 id="org5f09f27"><span class="section-number-4">1.13.18</span> cht.sh</h4>
-<div class="outline-text-4" id="text-1-13-18">
+<div id="outline-container-orge35af80" class="outline-4">
+<h4 id="orge35af80"><span class="section-number-4">1.12.18</span> cht.sh</h4>
+<div class="outline-text-4" id="text-1-12-18">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">cheat-sh</span> <span style="color: #8be9fd; font-style: italic;">:ensure</span> t<span style="color: #f8f8f2;">)</span>
 </pre>
@@ -1426,8 +1417,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org30a40c3" class="outline-2">
-<h2 id="org30a40c3"><span class="section-number-2">2</span> Themes</h2>
+<div id="outline-container-org6274fd6" class="outline-2">
+<h2 id="org6274fd6"><span class="section-number-2">2</span> Themes</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>getting rid of some junk</li>
@@ -1459,8 +1450,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-orgc458832" class="outline-4">
-<h4 id="orgc458832"><span class="section-number-4">2.0.1</span> Color theme(s)</h4>
+<div id="outline-container-org6ea5a23" class="outline-4">
+<h4 id="org6ea5a23"><span class="section-number-4">2.0.1</span> Color theme(s)</h4>
 <div class="outline-text-4" id="text-2-0-1">
 <ul class="org-ul">
 <li>a nice dracula theme for tiling window manager setup</li>
@@ -1474,8 +1465,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org9cc6d49" class="outline-4">
-<h4 id="org9cc6d49"><span class="section-number-4">2.0.2</span> modeline</h4>
+<div id="outline-container-orgfb827a3" class="outline-4">
+<h4 id="orgfb827a3"><span class="section-number-4">2.0.2</span> modeline</h4>
 <div class="outline-text-4" id="text-2-0-2">
 <ul class="org-ul">
 <li>smart mode line, seems like a better vanilla mode line</li>
@@ -1491,8 +1482,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-orgd202a0f" class="outline-4">
-<h4 id="orgd202a0f"><span class="section-number-4">2.0.3</span> Tabline</h4>
+<div id="outline-container-org486a650" class="outline-4">
+<h4 id="org486a650"><span class="section-number-4">2.0.3</span> Tabline</h4>
 <div class="outline-text-4" id="text-2-0-3">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">use-package</span> <span style="color: #bd93f9;">centaur-tabs</span>
@@ -1509,8 +1500,8 @@ some usefull commands
 </div>
 </div>
 </div>
-<div id="outline-container-orga60d651" class="outline-4">
-<h4 id="orga60d651"><span class="section-number-4">2.0.4</span> TreeSitter</h4>
+<div id="outline-container-org7a8c18c" class="outline-4">
+<h4 id="org7a8c18c"><span class="section-number-4">2.0.4</span> TreeSitter</h4>
 <div class="outline-text-4" id="text-2-0-4">
 <ul class="org-ul">
 <li>doesn't work on apple silicon</li>
@@ -1528,8 +1519,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org892a432" class="outline-4">
-<h4 id="org892a432"><span class="section-number-4">2.0.5</span> Font's</h4>
+<div id="outline-container-org5149c95" class="outline-4">
+<h4 id="org5149c95"><span class="section-number-4">2.0.5</span> Font's</h4>
 <div class="outline-text-4" id="text-2-0-5">
 <ul class="org-ul">
 <li><b>Font</b> setup, I am a fan of firacode. It is the best because of how it renders 0's and &amp;&amp; symbols (it's not opinion but fact :) )
@@ -1553,8 +1544,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org6b68dbf" class="outline-4">
-<h4 id="org6b68dbf"><span class="section-number-4">2.0.6</span> Errors &amp; warnings</h4>
+<div id="outline-container-orgcdf87ba" class="outline-4">
+<h4 id="orgcdf87ba"><span class="section-number-4">2.0.6</span> Errors &amp; warnings</h4>
 <div class="outline-text-4" id="text-2-0-6">
 <ul class="org-ul">
 <li>getting the error bell sound to go away and just having the mode-line flash</li>
@@ -1572,12 +1563,12 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org4759464" class="outline-2">
-<h2 id="org4759464"><span class="section-number-2">3</span> Org-configuration</h2>
+<div id="outline-container-orgc22f637" class="outline-2">
+<h2 id="orgc22f637"><span class="section-number-2">3</span> Org-configuration</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org01bcb35" class="outline-3">
-<h3 id="org01bcb35"><span class="section-number-3">3.1</span> Org Beautification, basics</h3>
+<div id="outline-container-orge57ffa7" class="outline-3">
+<h3 id="orge57ffa7"><span class="section-number-3">3.1</span> Org Beautification, basics</h3>
 <div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span>add-hook 'org-mode-hook 'org-indent-mode<span style="color: #f8f8f2;">)</span>
@@ -1601,8 +1592,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org12719b2" class="outline-3">
-<h3 id="org12719b2"><span class="section-number-3">3.2</span> Code-Block highlighting</h3>
+<div id="outline-container-org6311ee2" class="outline-3">
+<h3 id="org6311ee2"><span class="section-number-3">3.2</span> Code-Block highlighting</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">setq</span> org-src-fontify-natively t
@@ -1614,8 +1605,8 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-orga1146d7" class="outline-3">
-<h3 id="orga1146d7"><span class="section-number-3">3.3</span> Babel Code-Block Configuration</h3>
+<div id="outline-container-org6584ef0" class="outline-3">
+<h3 id="org6584ef0"><span class="section-number-3">3.3</span> Babel Code-Block Configuration</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>language configuration
@@ -1676,15 +1667,15 @@ some usefull commands
 </div>
 </div>
 
-<div id="outline-container-org02fd6b9" class="outline-2">
-<h2 id="org02fd6b9"><span class="section-number-2">4</span> Key Re-mapping</h2>
+<div id="outline-container-org0455c47" class="outline-2">
+<h2 id="org0455c47"><span class="section-number-2">4</span> Key Re-mapping</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><b>keymaps using General plugin</b></li>
 <li>these are non-package related key maps</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">nvmap</span> <span style="color: #8be9fd; font-style: italic;">:states</span> 'normal <span style="color: #8be9fd; font-style: italic;">:keymaps</span> 'override <span style="color: #8be9fd; font-style: italic;">:prefix</span> <span style="color: #f1fa8c;">"SPC"</span>
+<pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">general-def</span> <span style="color: #8be9fd; font-style: italic;">:states</span> 'normal <span style="color: #8be9fd; font-style: italic;">:keymaps</span> 'override <span style="color: #8be9fd; font-style: italic;">:prefix</span> <span style="color: #f1fa8c;">"SPC"</span>
   <span style="color: #f1fa8c;">"a"</span>     '<span style="color: #8be9fd;">(</span>org-agenda <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"org-agenda"</span><span style="color: #8be9fd;">)</span>
   <span style="color: #f1fa8c;">"c c"</span>   '<span style="color: #8be9fd;">(</span>compile <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Compile"</span><span style="color: #8be9fd;">)</span>
   <span style="color: #f1fa8c;">"c C"</span>   '<span style="color: #8be9fd;">(</span>recompile <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Recompile"</span><span style="color: #8be9fd;">)</span>
@@ -1699,7 +1690,7 @@ some usefull commands
   <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">buffers</span>
   <span style="color: #f1fa8c;">"b"</span>     '<span style="color: #8be9fd;">(</span>switch-to-buffer <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"switch to buffer"</span><span style="color: #8be9fd;">)</span>
   <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">File manipulation</span>
-  <span style="color: #f1fa8c;">"."</span>     '<span style="color: #8be9fd;">(</span>find-file <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Find file"</span><span style="color: #8be9fd;">)</span>
+  <span style="color: #f1fa8c;">"."</span>     '<span style="color: #8be9fd;">(</span>helm-find-files <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Find file"</span><span style="color: #8be9fd;">)</span>
   <span style="color: #f1fa8c;">"f s"</span>   '<span style="color: #8be9fd;">(</span>save-buffer <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Save file"</span><span style="color: #8be9fd;">)</span>
   <span style="color: #f1fa8c;">"f C"</span>   '<span style="color: #8be9fd;">(</span>copy-file <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Copy file"</span><span style="color: #8be9fd;">)</span>
   <span style="color: #f1fa8c;">"f D"</span>   '<span style="color: #8be9fd;">(</span>delete-file <span style="color: #8be9fd; font-style: italic;">:which-key</span> <span style="color: #f1fa8c;">"Delete file"</span><span style="color: #8be9fd;">)</span>
@@ -1717,15 +1708,29 @@ some usefull commands
 </ul>
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #6272a4;">;; </span><span style="color: #6272a4;">better yanking </span>
-<span style="color: #f8f8f2;">(</span>define-key evil-normal-state-map
-            <span style="color: #8be9fd;">(</span>kbd <span style="color: #f1fa8c;">"Y"</span><span style="color: #8be9fd;">)</span>
-            <span style="color: #8be9fd;">(</span>kbd <span style="color: #f1fa8c;">"y$"</span><span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
+<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">general-nmap</span> <span style="color: #f1fa8c;">"Y"</span> <span style="color: #8be9fd;">(</span>kbd <span style="color: #f1fa8c;">"y$"</span><span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
+
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">better searching</span>
+<span style="color: #6272a4;">;; </span><span style="color: #6272a4;">centers each result</span>
+<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">general-nmap</span> <span style="color: #f1fa8c;">"n"</span> 'search-next-center-evil<span style="color: #f8f8f2;">)</span>
+<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">search-next-center-evil</span> <span style="color: #8be9fd;">()</span> 
+  <span style="color: #8be9fd;">(</span><span style="color: #ff79c6; font-weight: bold;">interactive</span><span style="color: #8be9fd;">)</span>
+    <span style="color: #8be9fd;">(</span>evil-search-next<span style="color: #8be9fd;">)</span>
+    <span style="color: #8be9fd;">(</span>evil-scroll-line-to-center
+      <span style="color: #bd93f9;">(</span>line-number-at-pos <span style="color: #ff79c6;">(</span>point<span style="color: #ff79c6;">)</span><span style="color: #bd93f9;">)</span><span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
+
+<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">general-nmap</span> <span style="color: #f1fa8c;">"N"</span> 'search-prev-center-evil<span style="color: #f8f8f2;">)</span>
+<span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">defun</span> <span style="color: #50fa7b; font-weight: bold;">search-prev-center-evil</span> <span style="color: #8be9fd;">()</span> 
+  <span style="color: #8be9fd;">(</span><span style="color: #ff79c6; font-weight: bold;">interactive</span><span style="color: #8be9fd;">)</span>
+    <span style="color: #8be9fd;">(</span>evil-search-previous<span style="color: #8be9fd;">)</span>
+    <span style="color: #8be9fd;">(</span>evil-scroll-line-to-center
+      <span style="color: #bd93f9;">(</span>line-number-at-pos <span style="color: #ff79c6;">(</span>point<span style="color: #ff79c6;">)</span><span style="color: #bd93f9;">)</span><span style="color: #8be9fd;">)</span><span style="color: #f8f8f2;">)</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orge758bab" class="outline-3">
-<h3 id="orge758bab"><span class="section-number-3">4.1</span> zooming</h3>
+<div id="outline-container-orge0c7d29" class="outline-3">
+<h3 id="orge0c7d29"><span class="section-number-3">4.1</span> zooming</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>change text size</li>
@@ -1738,8 +1743,8 @@ some usefull commands
 </div>
 </div>
 </div>
-<div id="outline-container-org7fbc032" class="outline-2">
-<h2 id="org7fbc032"><span class="section-number-2">5</span> Native Comp settings</h2>
+<div id="outline-container-orge4d9542" class="outline-2">
+<h2 id="orge4d9542"><span class="section-number-2">5</span> Native Comp settings</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">setq</span> warning-minimum-level 'error<span style="color: #f8f8f2;">)</span>
@@ -1750,7 +1755,7 @@ some usefull commands
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cade lueker</p>
-<p class="date">Created: 2022-02-02 Wed 19:32</p>
+<p class="date">Created: 2022-02-03 Thu 19:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
