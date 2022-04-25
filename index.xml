@@ -6,7 +6,16 @@
     <description>Recent content on Welcome!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 19:46:16 -0500</lastBuildDate><atom:link href="https://cademichael.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Feb 2022 14:45:11 -0500</lastBuildDate><atom:link href="https://cademichael.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Framework Fallacy of Choice</title>
+      <link>https://cademichael.github.io/posts/framework-fallacy-of-choice/</link>
+      <pubDate>Thu, 17 Feb 2022 14:45:11 -0500</pubDate>
+      
+      <guid>https://cademichael.github.io/posts/framework-fallacy-of-choice/</guid>
+      <description>Currently in my final semester of uni I am taking two courses in which I will use some sort of web framework It&amp;rsquo;s a no brainer that Fullstack Web Development will use a framework, I just didn&amp;rsquo;t know that it would be predetermined  in this course we look at Vue and React I have some experience with Svelte which seems a bit like Vue&amp;rsquo;s promising younger sibling.</description>
+    </item>
+    
     <item>
       <title>Game</title>
       <link>https://cademichael.github.io/game/</link>
@@ -36,10 +45,10 @@
     
     <item>
       <title>Emacs Native Comp &amp; Nix Package Manager</title>
-      <link>https://cademichael.github.io/posts/emacs-native-comp-nix-package-manager/</link>
+      <link>https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/</link>
       <pubDate>Sun, 03 Oct 2021 11:21:20 -0400</pubDate>
       
-      <guid>https://cademichael.github.io/posts/emacs-native-comp-nix-package-manager/</guid>
+      <guid>https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/</guid>
       <description>useful links  for the Mac Os general *nix install  What is native comp / GCC emacs ?</description>
     </item>
     

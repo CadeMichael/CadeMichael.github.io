@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.96.0" />
+
+  <title>Emacs Native Comp &amp; Nix Package Manager &middot; Welcome!</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Emacs Native Comp &amp; Nix Package Manager">
+<meta itemprop="description" content="useful links  for the Mac Os general *nix install  What is native comp / GCC emacs ?"><meta itemprop="datePublished" content="2021-10-03T11:21:20-04:00" />
+<meta itemprop="dateModified" content="2021-10-03T11:21:20-04:00" />
+<meta itemprop="wordCount" content="469">
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs Native Comp &amp; Nix Package Manager"/>
+<meta name="twitter:description" content="useful links  for the Mac Os general *nix install  What is native comp / GCC emacs ?"/>
+
+
+<meta property="og:title" content="Emacs Native Comp &amp; Nix Package Manager" />
+<meta property="og:description" content="useful links  for the Mac Os general *nix install  What is native comp / GCC emacs ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-03T11:21:20-04:00" />
+<meta property="article:modified_time" content="2021-10-03T11:21:20-04:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://cademichael.github.io#author",
+      "name": "Cade Lueker",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://cademichael.github.io/profile.jpg"
+        
+      },
+      "description": "Cade's website"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cademichael.github.io#website",
+      "url": "https://cademichael.github.io",
+      "name": "Welcome!",
+      "description": "Cade's website",
+      "publisher": {
+        "@id": "https://cademichael.github.io#author"
+      },
+      "inLanguage": "en-us"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/#webpage",
+      "url": "https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/",
+      "name": "Emacs Native Comp \u0026 Nix Package Manager",
+      "isPartOf": {
+        "@id": "https://cademichael.github.io#website"
+      },
+      "about": {
+         "@id": "https://cademichael.github.io#author"
+      },
+      "datePublished": "2021-10-03T11:21:20-04:00",
+      "dateModified": "2021-10-03T11:21:20-04:00",
+      "description": "useful links  for the Mac Os general *nix install  What is native comp / GCC emacs ?",
+      "inLanguage": "en-us",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/#webpage"
+      },
+      "headline": "Emacs Native Comp \u0026 Nix Package Manager",
+      "datePublished": "2021-10-03T11:21:20-04:00",
+      "dateModified": "2021-10-03T11:21:20-04:00",
+      "publisher": {
+        "@id": "https://cademichael.github.io#author"
+      },
+      "keywords": [
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "en-us",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #8da2a8;
+  }
+
+  .read-more-link a {
+    border-color: #8da2a8;
+  }
+
+  .read-more-link a:hover {
+    background-color: #8da2a8;
+  }
+
+  .pagination li a {
+    color: #8da2a8;
+    border: 1px solid #8da2a8;
+  }
+
+  .pagination li.active a {
+    background-color: #8da2a8;
+  }
+
+  .pagination li a:hover {
+    background-color: #8da2a8;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #8da2a8;
+  }
+</style>
+
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://cademichael.github.io">
+            <img src="/profile.jpg" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Welcome!</h1>
+
+      
+      <p class="lead">Cade&#39;s website</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://cademichael.github.io">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/contact/">Contact</a>
+        </li><li>
+          <a href="/resume.pdf">Resume</a>
+        </li><li>
+          <a href="/grappling/">Grappling</a>
+        </li><li>
+          <a href="/videos/">Videos</a>
+        </li><li>
+          <a href="/config.html">Emacs Config</a>
+        </li><li>
+          <a href="/game/">Games</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/cade-lueker-79a55b199/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://www.github.com/CadeMichael/" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" rel="me" title="Youtube" target="_blank">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Emacs Native Comp &amp; Nix Package Manager</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-10-03T11:21:20-0400">Oct 3, 2021</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <h5 id="useful-links">useful links</h5>
+<ul>
+<li><a href="https://github.com/sagittaros/emacs-osx">for the Mac Os</a></li>
+<li><a href="https://gist.github.com/mjlbach/179cf58e1b6f5afcb9a99d4aaf54f549">general *nix install</a></li>
+</ul>
+<h3 id="what-is-native-comp--gcc-emacs-">What is native comp / GCC emacs ?</h3>
+<ul>
+<li>Gcc emacs/ emacs native comp/ emacs 28 (have native comp option) are all names for the same thing. Emacs wherein all of the lisp files are compiled down to C code using <strong>just in time compilation</strong>.</li>
+<li>this fixes my main qualm about getting deep into the emacs ecosystem and kept me with one foot in neovim&hellip;
+<ul>
+<li>Elisp is old, kindof slow, and the code base is stagnating</li>
+<li>this makes it a hard sell for many people on the fence like myself. This was the main draw of neovim for me. I love that they went with lua and it seemed almost like an emacs inspired version of vim, faster than both, and almost as extensible as emacs with the convenience of vim.</li>
+</ul>
+</li>
+<li>With JIT compilation everything (in theory) should be faster. I used to get crashes when dealing with large files but have since not experienced any. Finding files, opening &amp; changing buffers all feels crisper and sometimes I forget I am not in a terminal or using nvim and opening / closing buffers. It might be placebo but I also feel like lsp mode is snappier and I get instant completions with every keystroke.</li>
+<li>The last green flag for me is that gcc emacs is available via the <strong>nix</strong> package manager. That means that I have the same emacs on my linux / mac os machines. Although there are customized Mac OS specific emacs versions in Brew and Nix I prefer having the same version on all machines so I know what to expect and can have the same config across machines without worrying about the occasional incompatibility.</li>
+</ul>
+<h3 id="getting-it-installed-via-nix">Getting it installed (via nix)</h3>
+<ul>
+<li>I find nix extremely fascinating, the idea of a functional package-manager that can make your system much more resistant to breaking and instability and works cross platform is one linux users can rally behind. What&rsquo;s even better is that it works on mac os. This means I can use the same packages across machines. I want to learn about package management accessories if you will like <strong>darwin</strong> and <strong>homemanager</strong> but for know I am sticking with <code>nix-env -iA nixpkgs.[packagename]</code>.</li>
+<li>installing gccEmacs in this manor is extremely simple it first requires adding the correct link to an emacs.nix file and then you&rsquo;re all set!</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>mkdir ~/.config/nixpkgs/overlays/ <span style="color:#6272a4"># if these folders don&#39;t exist you have to make them</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span>  ~/.config/nixpkgs/overlays/
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;import (builtins.fetchTarball {
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">    })&#34;</span> &gt;&gt; emacs.nix
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span>
+</span></span><span style="display:flex;"><span>nix-env -iA nixpkgs.emacsGcc <span style="color:#6272a4"># now just wait ~30 minutes depending on your system</span>
+</span></span></code></pre></div><h3 id="some-screen-shots">Some screen shots</h3>
+<ul>
+<li>CPU firing on all cylinders to get everything compiled. <img src="/gccEmacs/compilingGcc.jpg" alt="compiling"></li>
+<li><strong>some screenshots of what this version of emacs looks like on mac os</strong></li>
+<li>Going through code from the <strong>Rust Book</strong> tutorial <img src="/gccEmacs/rustbook.jpg" alt="rust book"></li>
+<li>making this post <img src="/gccEmacs/makingPost.jpg" alt="making this post in emacs"></li>
+</ul>
+
+  </div>
+
+  
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/"
+     data-text="Emacs Native Comp &amp; Nix Package Manager"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/"
+     data-text="Emacs Native Comp &amp; Nix Package Manager"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/"
+     data-text="Emacs Native Comp &amp; Nix Package Manager"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/"
+     data-text="Emacs Native Comp &amp; Nix Package Manager"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://cademichael.github.io/posts/emacs-native-comp--nix-package-manager/"
+     data-text="Emacs Native Comp &amp; Nix Package Manager"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Cade Lueker 2022
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

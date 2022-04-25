@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.96.0" />
 
   <title>TA Java With Vscode Tutorial &middot; Welcome!</title>
 
@@ -297,37 +297,37 @@
 <li>you might have to enable &ldquo;developer settings&rdquo;, I guess this means mac&rsquo;s aren&rsquo;t for developers anymore.</li>
 <li>commands to run in the terminal, commands are the lines followed by $, # marks comments</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ brew install coretto8 <span style="color:#6272a4"># install java</span>
-$ java -version <span style="color:#6272a4"># check the version, should return the following </span>
-openjdk version <span style="color:#f1fa8c">&#34;1.8.0_302&#34;</span>
-OpenJDK Runtime Environment Corretto-8.302.08.1 <span style="color:#ff79c6">(</span>build 1.8.0_302-b08<span style="color:#ff79c6">)</span>
-OpenJDK 64-Bit Server VM Corretto-8.302.08.1 <span style="color:#ff79c6">(</span>build 25.302-b08, mixed mode<span style="color:#ff79c6">)</span>
-$ brew install visual-studio-code <span style="color:#6272a4"># install vs code </span>
-</code></pre></div><p><strong>Linux</strong> if you&rsquo;re using linux this should be a piece of cake</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S openjdk8 <span style="color:#6272a4"># pacman is the package manager for arch, your&#39;s will be different if you are on a differnt linux distro </span>
-$ java -version <span style="color:#6272a4"># check the version, should return the following </span>
-$ sudo pacman -S code <span style="color:#6272a4"># in linux vs code is called code</span>
-</code></pre></div><h4 id="getting-junit">Getting Junit</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ brew install coretto8 <span style="color:#6272a4"># install java</span>
+</span></span><span style="display:flex;"><span>$ java -version <span style="color:#6272a4"># check the version, should return the following </span>
+</span></span><span style="display:flex;"><span>openjdk version <span style="color:#f1fa8c">&#34;1.8.0_302&#34;</span>
+</span></span><span style="display:flex;"><span>OpenJDK Runtime Environment Corretto-8.302.08.1 <span style="color:#ff79c6">(</span>build 1.8.0_302-b08<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>OpenJDK 64-Bit Server VM Corretto-8.302.08.1 <span style="color:#ff79c6">(</span>build 25.302-b08, mixed mode<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>$ brew install visual-studio-code <span style="color:#6272a4"># install vs code </span>
+</span></span></code></pre></div><p><strong>Linux</strong> if you&rsquo;re using linux this should be a piece of cake</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo pacman -S openjdk8 <span style="color:#6272a4"># pacman is the package manager for arch, your&#39;s will be different if you are on a differnt linux distro </span>
+</span></span><span style="display:flex;"><span>$ java -version <span style="color:#6272a4"># check the version, should return the following </span>
+</span></span><span style="display:flex;"><span>$ sudo pacman -S code <span style="color:#6272a4"># in linux vs code is called code</span>
+</span></span></code></pre></div><h4 id="getting-junit">Getting Junit</h4>
 <ul>
 <li>Junit is something we will use later to run tests.</li>
 <li>follow the resource links to download the respective jar files and put in your .bashrc or .zshrc</li>
 <li>I have the jars in a directory called javaTA, you can put this wherever you want so long as your JUNIT_HOME path reflects it.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#6272a4"># java </span>
-<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">JUNIT_HOME</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$HOME</span><span style="color:#f1fa8c">/Desktop/javaTA&#34;</span>
-<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">PATH</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$PATH</span><span style="color:#f1fa8c">:</span><span style="color:#8be9fd;font-style:italic">$JUNIT_HOME</span><span style="color:#f1fa8c">&#34;</span>
-<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">CLASSPATH</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$CLASSPATH</span><span style="color:#f1fa8c">:</span><span style="color:#8be9fd;font-style:italic">$JUNIT_HOME</span><span style="color:#f1fa8c">/junit.jar:</span><span style="color:#8be9fd;font-style:italic">$JUNIT_HOME</span><span style="color:#f1fa8c">/hamcrest-core.jar&#34;</span>
-</code></pre></div><h4 id="using-junit">using JUNIT</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#6272a4"># java </span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">JUNIT_HOME</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$HOME</span><span style="color:#f1fa8c">/Desktop/javaTA&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">PATH</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$PATH</span><span style="color:#f1fa8c">:</span><span style="color:#8be9fd;font-style:italic">$JUNIT_HOME</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">CLASSPATH</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$CLASSPATH</span><span style="color:#f1fa8c">:</span><span style="color:#8be9fd;font-style:italic">$JUNIT_HOME</span><span style="color:#f1fa8c">/junit.jar:</span><span style="color:#8be9fd;font-style:italic">$JUNIT_HOME</span><span style="color:#f1fa8c">/hamcrest-core.jar&#34;</span>
+</span></span></code></pre></div><h4 id="using-junit">using JUNIT</h4>
 <ul>
 <li>to get Junit we have to import it in the header of our test files and run a special command from the terminal.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#ff79c6">import</span> org.junit.*<span style="color:#ff79c6">;</span>
-<span style="color:#ff79c6">import static</span> org.junit.Assert.*<span style="color:#ff79c6">;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> org.junit.*<span style="color:#ff79c6">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import static</span> org.junit.Assert.*<span style="color:#ff79c6">;</span>
+</span></span></code></pre></div><ul>
 <li>then when running your tests simply run</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">java org.junit.runner.JUnitCore <span style="color:#ff79c6">[</span>name of tester class<span style="color:#ff79c6">]</span>
-</code></pre></div><h4 id="using-vs-code-with-java">using vs code with java</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>java org.junit.runner.JUnitCore <span style="color:#ff79c6">[</span>name of tester class<span style="color:#ff79c6">]</span>
+</span></span></code></pre></div><h4 id="using-vs-code-with-java">using vs code with java</h4>
 <ul>
 <li>for this please resist using a linter or lsp. we will compile with the terminal command <code>javac</code> and run with <code>java</code>.</li>
 <li>ex
@@ -336,24 +336,24 @@ $ sudo pacman -S code <span style="color:#6272a4"># in linux vs code is called c
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
-	  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
-		  System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;hello world&#34;</span><span style="color:#ff79c6">);</span>
-	  <span style="color:#ff79c6">}</span>
-<span style="color:#ff79c6">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ javac Test.java <span style="color:#6272a4"># compiling test</span>
-$ java Test <span style="color:#6272a4"># running test</span>
-hello world
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">Test</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>	  <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">main</span><span style="color:#ff79c6">(</span>String<span style="color:#ff79c6">[]</span> args<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+</span></span><span style="display:flex;"><span>		  System<span style="color:#ff79c6">.</span><span style="color:#50fa7b">out</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">println</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">&#34;hello world&#34;</span><span style="color:#ff79c6">);</span>
+</span></span><span style="display:flex;"><span>	  <span style="color:#ff79c6">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>$ javac Test.java <span style="color:#6272a4"># compiling test</span>
+</span></span><span style="display:flex;"><span>$ java Test <span style="color:#6272a4"># running test</span>
+</span></span><span style="display:flex;"><span>hello world
+</span></span></code></pre></div><ul>
 <li>for multi file projects there can be a main function in only one class and although all files will need to be compiled that is the only one that will need to be run.</li>
 <li>compile a multi file project like this</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#6272a4"># either cd into the directory and compile from there</span>
-$ <span style="color:#8be9fd;font-style:italic">cd</span> projectdir
-$ javac *.java <span style="color:#6272a4"># this compiles all files in the dir with .java endings </span>
-<span style="color:#6272a4"># compile all files in the project directory from the outside </span>
-$ javac projectdir/*.java 
-</code></pre></div><h4 id="some-pictures">some pictures</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#6272a4"># either cd into the directory and compile from there</span>
+</span></span><span style="display:flex;"><span>$ <span style="color:#8be9fd;font-style:italic">cd</span> projectdir
+</span></span><span style="display:flex;"><span>$ javac *.java <span style="color:#6272a4"># this compiles all files in the dir with .java endings </span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># compile all files in the project directory from the outside </span>
+</span></span><span style="display:flex;"><span>$ javac projectdir/*.java 
+</span></span></code></pre></div><h4 id="some-pictures">some pictures</h4>
 <ul>
 <li>
 <p>running tests and determining java version</p>
