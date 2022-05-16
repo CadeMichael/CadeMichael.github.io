@@ -14,6 +14,12 @@
     <script>
       tailwind.config = {
         theme: {
+          screens: {
+            sm: "480px",
+            md: "768px",
+            lg: "976px",
+            xl: "1440px",
+          },
           extend: {
             colors: {
               // lower number is darker
@@ -70,7 +76,7 @@
       >
         <!-- Max Description -->
         <div
-          class="text-3xl text-center text-bold text-light3 font-bold p-8 w-3/4"
+          class="text-3xl text-center text-bold text-light3 font-bold md:p-8 md:w-3/4"
         >
           A one rep max is the most weight you can use for one rep when
           performing a lift and is calculated using how many reps you can do at
@@ -94,8 +100,8 @@
           class="flex flex-col items-center"
         >
           <!-- Max Calc -->
-          <div class="bg-dark3 rounded-lg m-8 p-4">
-            <div class="text-light2 font-bold text-xl text-center mb-8">
+          <div class="bg-dark3 rounded-lg md:m-8 md:p-4">
+            <div class="text-light2 font-bold text-xl text-center mt-4 mb-4">
               calculate one rep max
             </div>
             <div class="bg-dark1 rounded-lg p-6 m-4">
@@ -162,7 +168,7 @@
         </div>
         <!-- Rel Description -->
         <div
-          class="text-3xl text-center text-bold text-light3 font-bold p-8 w-3/4"
+          class="text-3xl text-center text-bold text-light3 font-bold md:p-8 md:w-3/4"
         >
           Relative Intesity is a metric of how <i>hard</i> a set is. It
           determines this based on the assumed maximum reps you can do at a
@@ -186,8 +192,8 @@
           class="flex flex-col items-center"
         >
           <!-- Rel Calc -->
-          <div class="bg-dark3 rounded-lg m-8 p-4">
-            <div class="text-light2 font-bold text-xl text-center mb-8">
+          <div class="bg-dark3 rounded-lg md:m-8 md:p-4">
+            <div class="text-light2 font-bold text-xl text-center mt-4 mb-4">
               calculate relative intensity
             </div>
             <div class="bg-dark1 rounded-lg p-6 m-4">
@@ -295,4 +301,3 @@
     </script>
   </body>
 </html>
-
