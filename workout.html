@@ -10,6 +10,14 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Custom Colors Config -->
     <script>
       tailwind.config = {
@@ -52,9 +60,14 @@
     <!-- Header -->
     <section id="header">
       <div
-        class="bg-bgDark p-10 rounded-md text-light3 font-bold text-4xl text-center shadow-lg"
+        class="bg-bgDark p-4 rounded-md text-light3 font-bold text-4xl shadow-lg md:p-10"
       >
-        Open Workout
+        <div class="text-left hover:text-dark1">
+          <a href="https://cademichael.github.io/">
+            <i class="fa-solid fa-angles-left"></i>
+          </a>
+        </div>
+        <div class="text-center -mt-10">Open Workout</div>
       </div>
     </section>
 
@@ -301,4 +314,3 @@
     </script>
   </body>
 </html>
-
