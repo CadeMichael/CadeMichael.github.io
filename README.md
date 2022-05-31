@@ -1,2 +1,0 @@
-## Cade's personal blog 
-
