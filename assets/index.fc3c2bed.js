@@ -38,8 +38,7 @@ const Pe=function(){const e=document.createElement("link").relList;if(e&&e.suppo
           
           <p class="text-lg text-neutral-content">I started learning python back in 2015, my sophomore year of high
             school. At the time I had no interest in CS but it was a class that
-            I had to pass. For the final Project I remember getting shafted by
-            my partner and writing a cheap facebook clone with django that used
+            I had to pass. For the final Project I wrote a cheap facebook clone with django that used
             csv&#39;s to store user info and txt files to store blogs, he did the
             css. Even though I didn&#39;t want to go into CS at the time I gained an
             appreciation for python, its simplicity and elegance, that I would
@@ -157,7 +156,20 @@ const Pe=function(){const e=document.createElement("link").relList;if(e&&e.suppo
             <h3>PHP</h3> 
             <progress class="progress w-96 progress-secondary mb-4" value="40" max="100"></progress>  <br/> 
             <h3>R</h3> 
-            <progress class="progress w-96 progress-secondary mb-4" value="75" max="100"></progress>  <br/></div></div></div></div></div>`,o(e,"class","m-4 mockup-window border border-secondary bg-base-100 shadow-lg"),F(e,"height","95%"),F(e,"width","90%")},m(s,a){H(s,e,a)},p:w,i:w,o:w,d(s){s&&A(e)}}}class Ge extends z{constructor(e){super(),W(this,e,null,ze,N,{})}}function Ke(t){let e;return{c(){e=m("div"),e.innerHTML=`<div class="flex flex-col overflow-scroll h-full"><div class="flex flex-col mb-16"><h1 class="text-3xl mx-6 mt-4"><span class="text-secondary">#</span> The Crypt</h1> 
+            <progress class="progress w-96 progress-secondary mb-4" value="75" max="100"></progress>  <br/></div></div></div></div></div>`,o(e,"class","m-4 mockup-window border border-secondary bg-base-100 shadow-lg"),F(e,"height","95%"),F(e,"width","90%")},m(s,a){H(s,e,a)},p:w,i:w,o:w,d(s){s&&A(e)}}}class Ge extends z{constructor(e){super(),W(this,e,null,ze,N,{})}}function Ke(t){let e;return{c(){e=m("div"),e.innerHTML=`<div class="flex flex-col overflow-scroll h-full"><div class="flex flex-col mb-16"><h1 class="text-3xl mx-6 mt-4"><span class="text-secondary">#</span> KissFM</h1> 
+      <div class="card bg-base-100 mt-4 mx-6 shadow-xl lg:card-side"><div class="card-body"><h2 class="card-title"><span class="text-2xl"><span class="text-secondary">##</span>
+              Terminal File Manager written in Rust</span></h2> 
+          <div class="text-xl"><h3 class="mb-3"><span class="text-info">Language / Framework: </span>Rust &amp; rs-tui</h3> 
+            <h3><span class="text-info">Function:</span>
+            Working with my good friend Ethan Gumin, who is also trying to learn rust, we 
+            came up with the idea for a terminal file manager. Both being avid neovim and tmux users wanted
+            to dogfood something that would allow us to investigate our filesystems more quickly and interact 
+            with neovim. We were able to get the project of the ground and made something extremely usable all 
+            the while becoming much more capable with Rust.</h3></div> 
+          <div class="card-actions justify-end"><a href="https://github.com/ethangumin/kissfm" target="_blank" class="btn btn-info">repo</a></div></div> 
+        <figure class="rounded-lg m-2"><img class="rounded-lg border border-rounded border-info min-w-[20em]" src="images/kfm.png" alt="KissFm"/></figure></div> 
+      
+      <h1 class="text-3xl mx-6 mt-4"><span class="text-secondary">#</span> The Crypt</h1> 
       <div class="card bg-base-100 mt-4 mx-6 shadow-xl lg:card-side"><div class="card-body"><h2 class="card-title"><span class="text-2xl"><span class="text-secondary">##</span> Senior Project flutter encryption
               app</span></h2> 
           <div class="text-xl"><h3 class="mb-3"><span class="text-info">Language / Framework: </span>Flutter &amp;
@@ -171,19 +183,6 @@ const Pe=function(){const e=document.createElement("link").relList;if(e&&e.suppo
               on android and or for Linux Desktop.</h3></div> 
           <div class="card-actions justify-end"><a href="https://github.com/cademichael/seniorproject" target="_blank" class="btn btn-info">repo</a></div></div> 
         <figure class="rounded-lg m-2"><img class="rounded-lg border border-rounded border-info w-[20em]" src="images/crypt.jpg" alt="The Crypt"/></figure></div> 
-      
-      <h1 class="text-3xl mx-6 mt-4"><span class="text-secondary">#</span> KissFM</h1> 
-      <div class="card bg-base-100 mt-4 mx-6 shadow-xl lg:card-side"><div class="card-body"><h2 class="card-title"><span class="text-2xl"><span class="text-secondary">##</span>
-              Terminal File Manager written in Rust</span></h2> 
-          <div class="text-xl"><h3 class="mb-3"><span class="text-info">Language / Framework: </span>Rust &amp; rs-tui</h3> 
-            <h3><span class="text-info">Function:</span>
-            Working with my good friend Ethan Gumin, who is also trying to learn rust, we 
-            came up with the idea for a terminal file manager. Both being avid neovim and tmux users wanted
-            to dogfood something that would allow us to investigate our filesystems more quickly and interact 
-            with neovim. We were able to get the project of the ground and made something extremely usable all 
-            the while becoming much more capable with Rust.</h3></div> 
-          <div class="card-actions justify-end"><a href="https://github.com/ethangumin/kissfm" target="_blank" class="btn btn-info">repo</a></div></div> 
-        <figure class="rounded-lg m-2"><img class="rounded-lg border border-rounded border-info min-w-[20em]" src="images/kfm.png" alt="KissFm"/></figure></div> 
       
       <h1 class="text-3xl mx-6 mt-4"><span class="text-secondary">#</span> Rject</h1> 
       <div class="card bg-base-100 mt-4 mx-6 shadow-xl lg:card-side"><div class="card-body"><h2 class="card-title"><span class="text-2xl"><span class="text-secondary">##</span>
