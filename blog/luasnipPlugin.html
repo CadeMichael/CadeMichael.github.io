@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="../favicon.png" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+		<link href="../_app/immutable/assets/0.AhKB78QT.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.BCHPlpL1.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.C4FhRjEU.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.Bp1JAopm.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.CMUVSBoq.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.D933VBcG.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.D5ZiBpo_.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.CjOIIDBj.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.BktQtEsL.js">
+    <title>Cade Lueker</title>
+  </head>
+  <body data-sveltekit-preload-data="hover" class="d-flex flex-column min-vh-100">
+    <div style="display: contents">  <nav class="navbar navbar-expand-lg nav-underline svelte-zurb3d" data-bs-theme="dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-svelte-h="svelte-1eytg9k"><span class="navbar-toggler-icon"></span></button> <span class="navbar-brand mb-0 h1 svelte-zurb3d" data-svelte-h="svelte-1vnwv4d">Cade Lueker</span> <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto" style="margin-right: 10px;"><li class="nav-item"><a class="nav-link " href="/">Home</a></li> <li class="nav-item"><a class="nav-link " href="/about">About</a></li> <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li></ul></div></div> </nav> <div class="all-content svelte-1b1lzt9"><div class="blog-post svelte-e0j7s0"><article><h1>Setting up Lua Snip</h1> <p>Published: 05-11-2024</p> <nav class="toc" data-svelte-h="svelte-1bxewld"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#installing-the-plugin">Installing the plugin</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#configuring-with-nvim-cmp">Configuring with nvim-cmp</a></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#creating-custom-snippets">Creating Custom Snippets</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#basic-plugins">Basic plugins</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#custom-functions-for-inserting-text">Custom functions for inserting text</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#example-of-plugins-that-need-to-consider-indentation">Example of plugins that need to consider indentation</a></li></ol></li></ol></nav> <ul data-svelte-h="svelte-1uf03g5"><li>lua snip is one of the best plugins for snippets in neovim as it is <ul><li>written in lua</li> <li>is compatible with nvim-cmp</li> <li>allows for complex snippet logic</li></ul></li></ul> <h1 id="installing-the-plugin" data-svelte-h="svelte-3dt5rl"><a aria-hidden="true" tabindex="-1" href="#installing-the-plugin"><span class="icon icon-link"></span></a>Installing the plugin</h1> <p data-svelte-h="svelte-s6s66a">My package manager of choice is <strong><a href="https://github.com/folke/lazy.nvim" rel="nofollow">lazy</a></strong>. Mainly due to its ease of installation and the ability to fragment your package configs.</p> <ul data-svelte-h="svelte-5fbxd1"><li>I have files for each type of plugin, returning a table with their configurations.<ul><li>I prefer having my configurations / keybindings directly under the package installation.</li> <li>this way when I need to change something I know exactly where to go.</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#EA6962">return</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#D4BE98">  &#123;</span></span>
+<span class="line"><span style="color:#D8A657">    "L3MON4D3/LuaSnip"</span><span style="color:#D4BE98">,</span></span>
+<span class="line"><span style="color:#D4BE98">    dependencies </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#D8A657">      'saadparwaiz1/cmp_luasnip'</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;,</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    -- Configuration and Keybindings</span></span>
+<span class="line"><span style="color:#A9B665">    config</span><span style="color:#E78A4E"> =</span><span style="color:#EA6962"> function</span><span style="color:#D4BE98">()</span></span>
+<span class="line"><span style="color:#EA6962">      local</span><span style="color:#D4BE98"> ls </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> require</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">'luasnip'</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">      -- expand</span></span>
+<span class="line"><span style="color:#D4BE98">      vim.keymap.</span><span style="color:#A9B665">set</span><span style="color:#D4BE98">(&#123; </span><span style="color:#D8A657">"i" </span><span style="color:#D4BE98">&#125;, </span><span style="color:#D8A657">"&#x3C;C-K>"</span><span style="color:#D4BE98">, </span><span style="color:#EA6962">function</span><span style="color:#D4BE98">() ls.</span><span style="color:#A9B665">expand</span><span style="color:#D4BE98">() </span><span style="color:#EA6962">end</span><span style="color:#D4BE98">, &#123; silent </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> true</span><span style="color:#D4BE98"> &#125;)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">      -- moving inside snippets</span></span>
+<span class="line"><span style="color:#D4BE98">      vim.keymap.</span><span style="color:#A9B665">set</span><span style="color:#D4BE98">(&#123; </span><span style="color:#D8A657">"i"</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"s" </span><span style="color:#D4BE98">&#125;, </span><span style="color:#D8A657">"&#x3C;C-L>"</span><span style="color:#D4BE98">, </span><span style="color:#EA6962">function</span><span style="color:#D4BE98">() ls.</span><span style="color:#A9B665">jump</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">) </span><span style="color:#EA6962">end</span><span style="color:#D4BE98">, &#123; silent </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> true</span><span style="color:#D4BE98"> &#125;)</span></span>
+<span class="line"><span style="color:#D4BE98">      vim.keymap.</span><span style="color:#A9B665">set</span><span style="color:#D4BE98">(&#123; </span><span style="color:#D8A657">"i"</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"s" </span><span style="color:#D4BE98">&#125;, </span><span style="color:#D8A657">"&#x3C;C-J>"</span><span style="color:#D4BE98">, </span><span style="color:#EA6962">function</span><span style="color:#D4BE98">() ls.</span><span style="color:#A9B665">jump</span><span style="color:#D4BE98">(</span><span style="color:#E78A4E">-</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">) </span><span style="color:#EA6962">end</span><span style="color:#D4BE98">, &#123; silent </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> true</span><span style="color:#D4BE98"> &#125;)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">      -- go through list of possible snippet options</span></span>
+<span class="line"><span style="color:#D4BE98">      vim.keymap.</span><span style="color:#A9B665">set</span><span style="color:#D4BE98">(&#123; </span><span style="color:#D8A657">"i"</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"s" </span><span style="color:#D4BE98">&#125;, </span><span style="color:#D8A657">"&#x3C;C-E>"</span><span style="color:#D4BE98">, </span><span style="color:#EA6962">function</span><span style="color:#D4BE98">()</span></span>
+<span class="line"><span style="color:#EA6962">        if</span><span style="color:#D4BE98"> ls.</span><span style="color:#A9B665">choice_active</span><span style="color:#D4BE98">() </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#D4BE98">          ls.</span><span style="color:#A9B665">change_choice</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#EA6962">        end</span></span>
+<span class="line"><span style="color:#EA6962">      end</span><span style="color:#D4BE98">, &#123; silent </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> true</span><span style="color:#D4BE98"> &#125;)</span></span>
+<span class="line"><span style="color:#EA6962">    end</span></span>
+<span class="line"><span style="color:#D4BE98">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <ul data-svelte-h="svelte-botpz9"><li>we add <strong>cmp_luasnip</strong> for nvim-cmp to have access to our snippets during completion</li></ul> <h2 id="configuring-with-nvim-cmp" data-svelte-h="svelte-1v9n6mq"><a aria-hidden="true" tabindex="-1" href="#configuring-with-nvim-cmp"><span class="icon icon-link"></span></a>Configuring with nvim-cmp</h2> <p data-svelte-h="svelte-16biups">We need to set the snippet framework among other cmp specific settings, for me this is where cmp is installed.</p> <ul data-svelte-h="svelte-lwnfus"><li>this allows for our completion binding in cmp to expand snippets (so not just ‘C-k’ but whatever cmp uses aswell)</li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">-- setting up and configuring cmp</span></span>
+<span class="line"><span style="color:#EA6962">if</span><span style="color:#D4BE98"> cmp </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#D4BE98">  cmp.</span><span style="color:#A9B665">setup</span><span style="color:#D4BE98">(&#123;</span></span>
+<span class="line"><span style="color:#D4BE98">    view </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#D4BE98">      docs </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123; auto_open </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> false</span><span style="color:#D4BE98"> &#125;</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">    snippet </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#A9B665">      expand</span><span style="color:#E78A4E"> =</span><span style="color:#EA6962"> function</span><span style="color:#D4BE98">(args)</span></span>
+<span class="line"><span style="color:#A9B665">        require</span><span style="color:#D8A657"> 'luasnip'</span><span style="color:#D4BE98">.</span><span style="color:#A9B665">lsp_expand</span><span style="color:#D4BE98">(args.body) </span><span style="color:#928374;font-style:italic">-- LuaSnip</span></span>
+<span class="line"><span style="color:#EA6962">      end</span><span style="color:#D4BE98">,</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">    completion </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#D4BE98">      completeopt </span><span style="color:#E78A4E">=</span><span style="color:#D8A657"> 'menu,menuone,noinsert'</span><span style="color:#D4BE98">,</span></span>
+<span class="line"><span style="color:#D4BE98">      max_item_count </span><span style="color:#E78A4E">=</span><span style="color:#D3869B"> 10</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">    window </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#D4BE98">      completion </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.config.window.</span><span style="color:#A9B665">bordered</span><span style="color:#D4BE98">(),</span></span>
+<span class="line"><span style="color:#D4BE98">      documentation </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.config.window.</span><span style="color:#A9B665">bordered</span><span style="color:#D4BE98">(),</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">    mapping </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.mapping.preset.</span><span style="color:#A9B665">insert</span><span style="color:#D4BE98">(&#123;</span></span>
+<span class="line"><span style="color:#D4BE98">      [</span><span style="color:#D8A657">'&#x3C;C-b>'</span><span style="color:#D4BE98">] </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.mapping.</span><span style="color:#A9B665">scroll_docs</span><span style="color:#D4BE98">(</span><span style="color:#E78A4E">-</span><span style="color:#D3869B">4</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#D4BE98">      [</span><span style="color:#D8A657">'&#x3C;C-f>'</span><span style="color:#D4BE98">] </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.mapping.</span><span style="color:#A9B665">scroll_docs</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">4</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#D4BE98">      [</span><span style="color:#D8A657">'&#x3C;C-e>'</span><span style="color:#D4BE98">] </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.mapping.</span><span style="color:#A9B665">abort</span><span style="color:#D4BE98">(),</span></span>
+<span class="line"><span style="color:#D4BE98">      [</span><span style="color:#D8A657">'&#x3C;tab>'</span><span style="color:#D4BE98">] </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.mapping.</span><span style="color:#A9B665">confirm</span><span style="color:#D4BE98">(&#123; select </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> true</span><span style="color:#D4BE98"> &#125;),</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;),</span></span>
+<span class="line"><span style="color:#D4BE98">    sources </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> cmp.config.</span><span style="color:#A9B665">sources</span><span style="color:#D4BE98">(&#123;</span></span>
+<span class="line"><span style="color:#D4BE98">      &#123; name </span><span style="color:#E78A4E">=</span><span style="color:#D8A657"> 'nvim_lsp' </span><span style="color:#D4BE98">&#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">      &#123; name </span><span style="color:#E78A4E">=</span><span style="color:#D8A657"> 'luasnip' </span><span style="color:#D4BE98">&#125;,  </span><span style="color:#928374;font-style:italic">-- LuaSnip</span></span>
+<span class="line"><span style="color:#D4BE98">      &#123; name </span><span style="color:#E78A4E">=</span><span style="color:#D8A657"> 'path' </span><span style="color:#D4BE98">&#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;, &#123;</span></span>
+<span class="line"><span style="color:#D4BE98">      &#123; name </span><span style="color:#E78A4E">=</span><span style="color:#D8A657"> 'buffer' </span><span style="color:#D4BE98">&#125;,</span></span>
+<span class="line"><span style="color:#D4BE98">    &#125;)</span></span>
+<span class="line"><span style="color:#D4BE98">  &#125;)</span></span>
+<span class="line"><span style="color:#EA6962">end</span></span></code></pre><!-- HTML_TAG_END --> <h1 id="creating-custom-snippets" data-svelte-h="svelte-1s8jiso"><a aria-hidden="true" tabindex="-1" href="#creating-custom-snippets"><span class="icon icon-link"></span></a>Creating Custom Snippets</h1> <p data-svelte-h="svelte-1pugcs9">I put my snippets in <code>ftplugin/&lt;lang&gt;.lua</code>, I feel that it keeps my <em>.config/nvim/</em> a bit cleaner and reduces configuration overhead.</p> <ul data-svelte-h="svelte-1tdu083"><li>the inital requires pull in the functions from LuaSnip that will be needed for <em>all</em> types of snippets for simple snippets you only need<ul><li><code>ls</code>  -&gt; LuaSnip</li> <li><code>s</code>   -&gt; Add snippets for a language</li> <li><code>i</code>   -&gt; text insertion</li> <li><code>fmt</code> -&gt; a cleaner declaration for snippets using lua <em>block string</em> <code>[[]]</code></li></ul></li></ul> <h2 id="basic-plugins" data-svelte-h="svelte-bc776w"><a aria-hidden="true" tabindex="-1" href="#basic-plugins"><span class="icon icon-link"></span></a>Basic plugins</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> ls </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> require</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"luasnip"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> s </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.snippet</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> i </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.insert_node</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> fmt </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> require</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"luasnip.extras.fmt"</span><span style="color:#D4BE98">).fmt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4BE98">ls.</span><span style="color:#A9B665">add_snippets</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"python"</span><span style="color:#D4BE98">, &#123;</span></span>
+<span class="line"><span style="color:#A9B665">  s</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"lc"</span><span style="color:#D4BE98">, </span><span style="color:#A9B665">fmt</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">[[</span></span>
+<span class="line"><span style="color:#D8A657">&#123;&#125; = [&#123;&#125; for &#123;&#125; in &#123;&#125;]</span></span>
+<span class="line"><span style="color:#D8A657">  ]]</span><span style="color:#D4BE98">, &#123;</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"var"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">2</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"element"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">3</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"element"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">0</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"list"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#D4BE98">  &#125;)),</span></span>
+<span class="line"><span style="color:#D4BE98">&#125;)</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="custom-functions-for-inserting-text" data-svelte-h="svelte-bdphy7"><a aria-hidden="true" tabindex="-1" href="#custom-functions-for-inserting-text"><span class="icon icon-link"></span></a>Custom functions for inserting text</h2> <p data-svelte-h="svelte-19vk1p8">for ‘dynamic’ snippets that use lua functions to add extra text to snippets we will need the following additional modules from LuaSnip</p> <ul data-svelte-h="svelte-1pvvu4h"><li><code>t</code> -&gt; adding text</li> <li><code>d</code> -&gt; dynamic function that takes<ul><li>a position to insert text</li> <li>a function to generate text</li> <li>positions to gather data to pass into the function</li></ul></li> <li><code>snippet_node</code> -&gt; the return type for the function ‘d’ used for creating dynamic snippets</li></ul> <p data-svelte-h="svelte-1ua5gid">in this example our snippet will look at the parameters supplied to the function and its return type, using both to generate a docstring.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> ls </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> require</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"luasnip"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> s </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.snippet</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> i </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.insert_node</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> t </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.text_node</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> d </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.dynamic_node</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> fmt </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> require</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"luasnip.extras.fmt"</span><span style="color:#D4BE98">).fmt</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> snippet_node </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.snippet_node</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- args would be the nodes &#123;3, 4&#125;</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#EA6962"> function</span><span style="color:#A9B665"> nat_spec_comments</span><span style="color:#D4BE98">(args)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- split params by ','</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> params </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">split</span><span style="color:#D4BE98">(args[</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">][</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">], </span><span style="color:#D8A657">","</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- the return type is the last arg</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> visibility </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> args[</span><span style="color:#D3869B">2</span><span style="color:#D4BE98">][</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">]</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> nodes </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;&#125;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- iterate through params</span></span>
+<span class="line"><span style="color:#EA6962">  for</span><span style="color:#D4BE98"> _, param </span><span style="color:#EA6962">in</span><span style="color:#A9B665"> ipairs</span><span style="color:#D4BE98">(params) </span><span style="color:#EA6962">do</span></span>
+<span class="line"><span style="color:#D4BE98">    param </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">trim</span><span style="color:#D4BE98">(param)</span></span>
+<span class="line"><span style="color:#EA6962">    if</span><span style="color:#D4BE98"> param </span><span style="color:#E78A4E">~=</span><span style="color:#D8A657"> "" </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">      -- for each param create a new text node</span></span>
+<span class="line"><span style="color:#EA6962">      local</span><span style="color:#D4BE98"> parts </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">split</span><span style="color:#D4BE98">(vim.</span><span style="color:#A9B665">trim</span><span style="color:#D4BE98">(param), </span><span style="color:#D8A657">"%s+"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#EA6962">      local</span><span style="color:#D4BE98"> var_name </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> parts[</span><span style="color:#E78A4E">#</span><span style="color:#D4BE98">parts]</span></span>
+<span class="line"><span style="color:#A9B665">      table.insert</span><span style="color:#D4BE98">(nodes, </span><span style="color:#A9B665">t</span><span style="color:#D4BE98">(&#123; </span><span style="color:#D8A657">"/// @param " </span><span style="color:#E78A4E">..</span><span style="color:#D4BE98"> var_name, </span><span style="color:#D8A657">"" </span><span style="color:#D4BE98">&#125;)) </span><span style="color:#928374;font-style:italic">-- ,"" creates a newline</span></span>
+<span class="line"><span style="color:#EA6962">    end</span></span>
+<span class="line"><span style="color:#EA6962">  end</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- check for return</span></span>
+<span class="line"><span style="color:#EA6962">  if</span><span style="color:#A9B665"> string.find</span><span style="color:#D4BE98">(visibility, </span><span style="color:#D8A657">"returns"</span><span style="color:#D4BE98">) </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#A9B665">    table.insert</span><span style="color:#D4BE98">(nodes, </span><span style="color:#A9B665">t</span><span style="color:#D4BE98">(&#123; </span><span style="color:#D8A657">"/// @return"</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"" </span><span style="color:#D4BE98">&#125;))</span></span>
+<span class="line"><span style="color:#EA6962">  end</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- return autogenerated nodes</span></span>
+<span class="line"><span style="color:#EA6962">  return</span><span style="color:#A9B665"> snippet_node</span><span style="color:#D4BE98">(</span><span style="color:#89B482">nil</span><span style="color:#D4BE98">, nodes)</span></span>
+<span class="line"><span style="color:#EA6962">end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4BE98">ls.</span><span style="color:#A9B665">add_snippets</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"solidity"</span><span style="color:#D4BE98">, &#123;</span></span>
+<span class="line"><span style="color:#A9B665">  s</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"function"</span><span style="color:#D4BE98">, </span><span style="color:#A9B665">fmt</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">[[</span></span>
+<span class="line"><span style="color:#D8A657">&#123;docs&#125;function &#123;&#125;(&#123;&#125;) &#123;&#125; &#123;&#123;</span></span>
+<span class="line"><span style="color:#D8A657">    &#123;&#125;</span></span>
+<span class="line"><span style="color:#D8A657">&#125;&#125;</span></span>
+<span class="line"><span style="color:#D8A657">]]</span><span style="color:#D4BE98">, &#123;</span></span>
+<span class="line"><span style="color:#D4BE98">    docs </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> d</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">, nat_spec_comments, &#123; </span><span style="color:#D3869B">3</span><span style="color:#D4BE98">, </span><span style="color:#D3869B">4</span><span style="color:#D4BE98"> &#125;),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">2</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"functionName"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">3</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">4</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"visibility"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">0</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"body"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  &#125;)),</span></span>
+<span class="line"><span style="color:#D4BE98">&#125;)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">--[</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- 'function test(bytes32 a, bytes memory b) returns (bool) &#123;&#125;'</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- becomes...</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- /// @param a</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- /// @param b</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- /// @return</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- function test(bytes32 a, bytes memory b) returns (bool) &#123;&#125;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">--]</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="example-of-plugins-that-need-to-consider-indentation" data-svelte-h="svelte-1bt5aet"><a aria-hidden="true" tabindex="-1" href="#example-of-plugins-that-need-to-consider-indentation"><span class="icon icon-link"></span></a>Example of plugins that need to consider indentation</h2> <p data-svelte-h="svelte-xnjpnc">One consideration when using whitespace based syntax languages like Python, is proper indentation. If you were to use the same approach as above the inserted docstrings would be out of position. To remidy this we use ‘isn’ or <em>indent snippet nodes</em>. This process is very similar but has slight changes that can be frustrating at first.</p> <ul data-svelte-h="svelte-1glcrtq"><li>These snippets showcase the power of using lua to define snippets. We can use advanced logic to parse arguments with a real language (code wars lua challenges make you better at Neovim!!!)</li> <li>we will take in the function parameters then insert the boilerplate for Google Style Documentation.</li> <li>one thing we have to avoid is splitting on all ’,’ as some type hints like <code>tuple[str, int]</code> contain commas that would break the naive approach.<ul><li>to prevent this we write another function to handle parsing the parameters</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">-- additional imports</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> isn </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.indent_snippet_node</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> f </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> ls.function_node</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> k </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> require</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">'luasnip.nodes.key_indexer'</span><span style="color:#D4BE98">).new_key</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">-- make sure type hits like 'tuple[int, str]' get properly parsed</span></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#EA6962"> function</span><span style="color:#A9B665"> parse_params</span><span style="color:#D4BE98">(str)</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> params </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;&#125;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- </span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> balance </span><span style="color:#E78A4E">=</span><span style="color:#D3869B"> 0</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> param </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;&#125;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- Iterate over each character looking for []</span></span>
+<span class="line"><span style="color:#EA6962">  for</span><span style="color:#D4BE98"> j </span><span style="color:#E78A4E">=</span><span style="color:#D3869B"> 1</span><span style="color:#D4BE98">, </span><span style="color:#E78A4E">#</span><span style="color:#D4BE98">str </span><span style="color:#EA6962">do</span></span>
+<span class="line"><span style="color:#EA6962">    local</span><span style="color:#D4BE98"> char </span><span style="color:#E78A4E">=</span><span style="color:#7DAEA3"> str</span><span style="color:#D4BE98">:</span><span style="color:#A9B665">sub</span><span style="color:#D4BE98">(j, j)</span></span>
+<span class="line"><span style="color:#EA6962">    if</span><span style="color:#D4BE98"> char </span><span style="color:#E78A4E">==</span><span style="color:#D8A657"> '[' </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#D4BE98">      balance </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> balance </span><span style="color:#E78A4E">+</span><span style="color:#D3869B"> 1</span></span>
+<span class="line"><span style="color:#EA6962">    elseif</span><span style="color:#D4BE98"> char </span><span style="color:#E78A4E">==</span><span style="color:#D8A657"> ']' </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#D4BE98">      balance </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> balance </span><span style="color:#E78A4E">-</span><span style="color:#D3869B"> 1</span></span>
+<span class="line"><span style="color:#EA6962">    end</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    -- If a comma not within brackets is found, split here.</span></span>
+<span class="line"><span style="color:#EA6962">    if</span><span style="color:#D4BE98"> char </span><span style="color:#E78A4E">==</span><span style="color:#D8A657"> ',' </span><span style="color:#E78A4E">and</span><span style="color:#D4BE98"> balance </span><span style="color:#E78A4E">==</span><span style="color:#D3869B"> 0</span><span style="color:#EA6962"> then</span></span>
+<span class="line"><span style="color:#A9B665">      table.insert</span><span style="color:#D4BE98">(params, </span><span style="color:#A9B665">table.concat</span><span style="color:#D4BE98">(param))</span></span>
+<span class="line"><span style="color:#D4BE98">      param </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;&#125;</span></span>
+<span class="line"><span style="color:#EA6962">    else</span></span>
+<span class="line"><span style="color:#A9B665">      table.insert</span><span style="color:#D4BE98">(param, char)</span></span>
+<span class="line"><span style="color:#EA6962">    end</span></span>
+<span class="line"><span style="color:#EA6962">  end</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- Insert the last parameter.</span></span>
+<span class="line"><span style="color:#A9B665">  table.insert</span><span style="color:#D4BE98">(params, </span><span style="color:#A9B665">table.concat</span><span style="color:#D4BE98">(param))</span></span>
+<span class="line"><span style="color:#EA6962">  return</span><span style="color:#D4BE98"> params</span></span>
+<span class="line"><span style="color:#EA6962">end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#EA6962">local</span><span style="color:#EA6962"> function</span><span style="color:#A9B665"> doc_string</span><span style="color:#D4BE98">(args)</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> raw_params </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> args[</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">][</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">] </span><span style="color:#928374;font-style:italic">-- get the arguments from 'p-key'</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> params </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> parse_params</span><span style="color:#D4BE98">(raw_params) </span><span style="color:#928374;font-style:italic">-- process them</span></span>
+<span class="line"><span style="color:#EA6962">  local</span><span style="color:#D4BE98"> nodes </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> &#123;&#125;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  -- iterate through parsed params</span></span>
+<span class="line"><span style="color:#EA6962">  for</span><span style="color:#D4BE98"> _, param </span><span style="color:#EA6962">in</span><span style="color:#A9B665"> ipairs</span><span style="color:#D4BE98">(params) </span><span style="color:#EA6962">do</span></span>
+<span class="line"><span style="color:#D4BE98">    param </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">trim</span><span style="color:#D4BE98">(param)</span></span>
+<span class="line"><span style="color:#EA6962">    if</span><span style="color:#D4BE98"> param </span><span style="color:#E78A4E">~=</span><span style="color:#D8A657"> "" </span><span style="color:#EA6962">then</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">      -- break apart param name and type hint</span></span>
+<span class="line"><span style="color:#EA6962">      local</span><span style="color:#D4BE98"> parts </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">split</span><span style="color:#D4BE98">(vim.</span><span style="color:#A9B665">trim</span><span style="color:#D4BE98">(param), </span><span style="color:#D8A657">":"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#EA6962">      local</span><span style="color:#D4BE98"> var_name </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">trim</span><span style="color:#D4BE98">(parts[</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">])</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">      -- check for type hints</span></span>
+<span class="line"><span style="color:#EA6962">      if</span><span style="color:#E78A4E"> #</span><span style="color:#D4BE98">parts </span><span style="color:#E78A4E">></span><span style="color:#D3869B"> 1</span><span style="color:#EA6962"> then</span></span>
+<span class="line"><span style="color:#EA6962">        local</span><span style="color:#D4BE98"> type_name </span><span style="color:#E78A4E">=</span><span style="color:#D4BE98"> vim.</span><span style="color:#A9B665">trim</span><span style="color:#D4BE98">(parts[</span><span style="color:#D3869B">2</span><span style="color:#D4BE98">])</span></span>
+<span class="line"><span style="color:#A9B665">        table.insert</span><span style="color:#D4BE98">(nodes, (var_name </span><span style="color:#E78A4E">..</span><span style="color:#D8A657"> ' (' </span><span style="color:#E78A4E">..</span><span style="color:#D4BE98"> type_name </span><span style="color:#E78A4E">..</span><span style="color:#D8A657"> '):'</span><span style="color:#D4BE98">))</span></span>
+<span class="line"><span style="color:#EA6962">      else</span></span>
+<span class="line"><span style="color:#A9B665">        table.insert</span><span style="color:#D4BE98">(nodes, (var_name </span><span style="color:#E78A4E">..</span><span style="color:#D8A657"> ' '</span><span style="color:#D4BE98">))</span></span>
+<span class="line"><span style="color:#EA6962">      end</span></span>
+<span class="line"><span style="color:#EA6962">    end</span></span>
+<span class="line"><span style="color:#EA6962">  end</span></span>
+<span class="line"><span style="color:#EA6962">  return</span><span style="color:#D4BE98"> nodes</span></span>
+<span class="line"><span style="color:#EA6962">end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4BE98">ls.</span><span style="color:#A9B665">add_snippets</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"python"</span><span style="color:#D4BE98">, &#123;</span></span>
+<span class="line"><span style="color:#A9B665">  s</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"dd"</span><span style="color:#D4BE98">, </span><span style="color:#A9B665">fmt</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">[[</span></span>
+<span class="line"><span style="color:#D8A657">def &#123;&#125;(&#123;&#125;):</span></span>
+<span class="line"><span style="color:#D8A657">    """&#123;&#125;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D8A657">    Args:</span></span>
+<span class="line"><span style="color:#D8A657">        &#123;&#125;</span></span>
+<span class="line"><span style="color:#D8A657">    """</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D8A657">    &#123;&#125;</span></span>
+<span class="line"><span style="color:#D8A657">]]</span><span style="color:#D4BE98">, &#123;</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">1</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"name"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">2</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"params"</span><span style="color:#D4BE98">, &#123; key </span><span style="color:#E78A4E">=</span><span style="color:#D8A657"> "p-key" </span><span style="color:#D4BE98">&#125;), </span><span style="color:#928374;font-style:italic">-- give &#123;2&#125; a string key</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">3</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"desc"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    isn</span><span style="color:#D4BE98">(</span><span style="color:#89B482">nil</span><span style="color:#D4BE98">, &#123; </span><span style="color:#A9B665">f</span><span style="color:#D4BE98">(doc_string, </span><span style="color:#A9B665">k</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"p-key"</span><span style="color:#D4BE98">)) &#125;, </span><span style="color:#D8A657">"$PARENT_INDENT</span><span style="color:#A9B665">&#92;t&#92;t</span><span style="color:#D8A657">"</span><span style="color:#D4BE98">),</span></span>
+<span class="line"><span style="color:#A9B665">    i</span><span style="color:#D4BE98">(</span><span style="color:#D3869B">0</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"body"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  &#125;)),</span></span>
+<span class="line"><span style="color:#D4BE98">&#125;)</span></span></code></pre><!-- HTML_TAG_END --></article> </div></div> <footer class="text-center mt-auto" data-svelte-h="svelte-4duh59"><div class="container p-2"><section class="mb-0"> <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" role="button"><i class="fab fa-youtube"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/bigdogbjj/" role="button"><i class="fab fa-instagram"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/cade-lueker-79a55b199/" role="button"><i class="fab fa-linkedin-in"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/cademichael/" role="button"><i class="fab fa-github"></i></a></section></div> <div class="text-center p-3 copyright">Made with [ <img src="/svelte-icon.svg" alt="Svelte" class="icon-svelte"> +
+    <i class="fab fa-sass"></i>
+    + <i class="fab fa-markdown"></i> ]</div></footer> 
+			
+			<script>
+				{
+					__sveltekit_1k2j314 = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.BCHPlpL1.js"),
+						import("../_app/immutable/entry/app.CMUVSBoq.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+<style>
+  body {
+    background-color: #fbf1c7;
+  }
+</style>
