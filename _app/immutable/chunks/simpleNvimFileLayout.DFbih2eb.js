@@ -1,0 +1,17 @@
+import{s as k,n as i}from"./scheduler.Bp1JAopm.js";import{S as g,i as x,e as A,s as m,H,m as d,c as D,k as h,f as v,n as L,l as f,g as p,d as o}from"./index.D933VBcG.js";function b(B){let a,y='<ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#nvim-directory-structure">Nvim directory structure</a></li></ol>',c,l,u='<a aria-hidden="true" tabindex="-1" href="#nvim-directory-structure"><span class="icon icon-link"></span></a>Nvim directory structure',r,e,_=`<pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#D8A657">.</span></span>
+<span class="line"><span style="color:#A9B665">├──</span><span style="color:#D8A657"> readme.md</span></span>
+<span class="line"><span style="color:#A9B665">├──</span><span style="color:#D8A657"> ftplugin</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> cpp.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> go.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> nim.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> ocaml.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> python.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> rust.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> ├──</span><span style="color:#D8A657"> solidity.lua</span></span>
+<span class="line"><span style="color:#A9B665">│  </span><span style="color:#D8A657"> └──</span><span style="color:#D8A657"> telekasten.lua</span></span>
+<span class="line"><span style="color:#A9B665">├──</span><span style="color:#D8A657"> init.lua</span></span>
+<span class="line"><span style="color:#A9B665">├──</span><span style="color:#D8A657"> lazy-lock.json</span></span>
+<span class="line"><span style="color:#A9B665">└──</span><span style="color:#D8A657"> lua</span></span>
+<span class="line"><span style="color:#A9B665">    ├──</span><span style="color:#D8A657"> autocmd.lua</span></span>
+<span class="line"><span style="color:#A9B665">    ├──</span><span style="color:#D8A657"> keymaps.lua</span></span>
+<span class="line"><span style="color:#A9B665">    └──</span><span style="color:#D8A657"> plugs</span></span></code></pre>`,t;return{c(){a=A("nav"),a.innerHTML=y,c=m(),l=A("h1"),l.innerHTML=u,r=m(),e=new H(!1),t=d(),this.h()},l(s){a=D(s,"NAV",{class:!0,"data-svelte-h":!0}),h(a)!=="svelte-hce1pu"&&(a.innerHTML=y),c=v(s),l=D(s,"H1",{id:!0,"data-svelte-h":!0}),h(l)!=="svelte-1c3l24g"&&(l.innerHTML=u),r=v(s),e=L(s,!1),t=d(),this.h()},h(){f(a,"class","toc"),f(l,"id","nvim-directory-structure"),e.a=t},m(s,n){p(s,a,n),p(s,c,n),p(s,l,n),p(s,r,n),e.m(_,s,n),p(s,t,n)},p:i,i,o:i,d(s){s&&(o(a),o(c),o(l),o(r),o(t),e.d())}}}const C={title:"Simple Neovim Configuration with Lazy.nvim",date:"05-17-24"};class M extends g{constructor(a){super(),x(this,a,null,b,k,{})}}export{M as default,C as metadata};
