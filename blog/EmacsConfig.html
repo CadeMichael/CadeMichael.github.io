@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="../favicon.png" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+		<link href="../_app/immutable/assets/0.ChQCKMr8.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.BPKHpvUi.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.CeAp3Xu5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.BzV8Pfuc.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.Cq0bQBf0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.BUIsPQbh.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.D0adphFs.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.GaHfxq64.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.BSjDJg09.js">
+    <title>Cade Lueker</title>
+  </head>
+  <body data-sveltekit-preload-data="hover" class="d-flex flex-column min-vh-100">
+    <div style="display: contents">  <nav class="navbar navbar-expand-lg nav-underline svelte-zurb3d" data-bs-theme="dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-svelte-h="svelte-1eytg9k"><span class="navbar-toggler-icon"></span></button> <span class="navbar-brand mb-0 h1 svelte-zurb3d" data-svelte-h="svelte-1vnwv4d">Cade Lueker</span> <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto" style="margin-right: 10px;"><li class="nav-item"><a class="nav-link " href="/">Home</a></li> <li class="nav-item"><a class="nav-link " href="/about">About</a></li> <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li></ul></div></div> </nav> <div class="all-content svelte-1b1lzt9"><div class="blog-post svelte-e0j7s0"><article><h1>Emacs config, returning into the void</h1> <p>Published: 07-04-24</p> <nav class="toc" data-svelte-h="svelte-19uvy1f"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#returning-to-emacs">Returning to Emacs</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#must-haves">Must Haves</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#installation">Installation</a><ol class="toc-level toc-level-3"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#macos">MacOs</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#linux">Linux</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#file-layout">File layout</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#essential-packages">Essential Packages</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#straightel">Straight.el</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#emacs-configuration">Emacs Configuration</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#use-package-setup-and-integration-with-straight">Use-package setup and integration with straight</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#evil-mode-and-associated-packages">Evil mode and associated packages</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#completion-ui-and-project-searching">Completion ui and project searching</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#global-keybindings">Global keybindings</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#version-control-git-tooling">Version control (git) tooling</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#language-tooling">Language tooling</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#rust-specific-tooling">Rust specific tooling</a></li></ol></li></ol></nav> <h1 id="returning-to-emacs" data-svelte-h="svelte-4jyqw4"><a aria-hidden="true" tabindex="-1" href="#returning-to-emacs"><span class="icon icon-link"></span></a>Returning to Emacs</h1> <h2 id="must-haves" data-svelte-h="svelte-6ii770"><a aria-hidden="true" tabindex="-1" href="#must-haves"><span class="icon icon-link"></span></a>Must Haves</h2> <p data-svelte-h="svelte-24t0oo">to get roped back into emacs I my two goals are <strong>minimalism</strong> and what I would consider a bare minimum set of features.</p> <ol data-svelte-h="svelte-1ruu0q1"><li>lsp <em>(eglot)</em><ul><li>need lsp to be productive</li></ul></li> <li>pacakge management <em>(straight.el)</em><ul><li>not cloning packages or using a gui</li></ul></li> <li>completion <em>(vertico / consult)</em><ul><li>command and file searching completion</li></ul></li> <li>project searching <em>(consult)</em><ul><li>need to quickly search files, not just ’/’ and search in buffer</li></ul></li> <li>treesitter <em>(treesit</em>)<ul><li>better syntax highlighting</li> <li><em>folding</em></li></ul></li> <li>vim bindings <em>(evil)</em><ul><li>can’t do anything else now</li></ul></li> <li>the distinguishing emacs feature <strong>Repl support</strong><ul><li>no one has better repl interopt with interpreted languages than emacs</li></ul></li> <li>Running code without leaving editor (editing buffer) <em>(quickrun)</em></li></ol> <p data-svelte-h="svelte-1ri2z5x">I have a few other packages installed but the main goal of all of them is to satisfy that list.</p> <h2 id="installation" data-svelte-h="svelte-b9folw"><a aria-hidden="true" tabindex="-1" href="#installation"><span class="icon icon-link"></span></a>Installation</h2> <h3 id="macos" data-svelte-h="svelte-zkx8od"><a aria-hidden="true" tabindex="-1" href="#macos"><span class="icon icon-link"></span></a>MacOs</h3> <h3 id="linux" data-svelte-h="svelte-17nfcrm"><a aria-hidden="true" tabindex="-1" href="#linux"><span class="icon icon-link"></span></a>Linux</h3> <h2 id="file-layout" data-svelte-h="svelte-27ps1a"><a aria-hidden="true" tabindex="-1" href="#file-layout"><span class="icon icon-link"></span></a>File layout</h2> <ul data-svelte-h="svelte-1ip4svz"><li>in your <code>~/.config/emacs/</code> directory<ul><li><code>init.el</code></li> <li><code>early-init.el</code></li> <li><code>config.el</code></li></ul></li></ul> <h2 id="essential-packages" data-svelte-h="svelte-scc5c3"><a aria-hidden="true" tabindex="-1" href="#essential-packages"><span class="icon icon-link"></span></a>Essential Packages</h2> <ul data-svelte-h="svelte-17vbjkb"><li>straight</li> <li>use-package</li> <li>evil <ul><li>evil-collection</li> <li>undo-fu</li></ul></li> <li>vertico</li> <li>orderless</li> <li>company</li> <li>which-key<ul><li>marginalia</li></ul></li> <li>quickrun</li> <li>treesit-fold</li></ul> <h2 id="straightel" data-svelte-h="svelte-1lw1p6z"><a aria-hidden="true" tabindex="-1" href="#straightel"><span class="icon icon-link"></span></a>Straight.el</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">;; ~/.config/emacs/init.el</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#7DAEA3">defvar</span><span style="color:#D4BE98"> bootstrap-version)</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#E78A4E">let</span><span style="color:#D4BE98"> ((bootstrap-file</span></span>
+<span class="line"><span style="color:#D4BE98">       (</span><span style="color:#A9B665">expand-file-name</span></span>
+<span class="line"><span style="color:#D8A657">        "straight/repos/straight.el/bootstrap.el"</span></span>
+<span class="line"><span style="color:#D4BE98">        (</span><span style="color:#EA6962">or</span><span style="color:#D4BE98"> (</span><span style="color:#A9B665">bound-and-true-p</span><span style="color:#D4BE98"> straight-base-dir)</span></span>
+<span class="line"><span style="color:#D4BE98">            user-emacs-directory)))</span></span>
+<span class="line"><span style="color:#D4BE98">      (bootstrap-version </span><span style="color:#D3869B">7</span><span style="color:#D4BE98">))</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#EA6962">unless</span><span style="color:#D4BE98"> (</span><span style="color:#A9B665">file-exists-p</span><span style="color:#D4BE98"> bootstrap-file)</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#A9B665">with-current-buffer</span></span>
+<span class="line"><span style="color:#D4BE98">        (</span><span style="color:#A9B665">url-retrieve-synchronously</span></span>
+<span class="line"><span style="color:#D8A657">         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"</span></span>
+<span class="line"><span style="color:#D4BE98">         'silent 'inhibit-cookies)</span></span>
+<span class="line"><span style="color:#D4BE98">      (</span><span style="color:#A9B665">goto-char</span><span style="color:#D4BE98"> (</span><span style="color:#A9B665">point-max</span><span style="color:#D4BE98">))</span></span>
+<span class="line"><span style="color:#D4BE98">      (</span><span style="color:#A9B665">eval-print-last-sexp</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#EA6962">load</span><span style="color:#D4BE98"> bootstrap-file </span><span style="color:#D3869B">nil</span><span style="color:#D4BE98"> 'nomessage))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; ~/.config/emacs/early-init.el</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> package-enable-at-startup </span><span style="color:#D3869B">nil</span><span style="color:#D4BE98">)</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="emacs-configuration" data-svelte-h="svelte-156wla7"><a aria-hidden="true" tabindex="-1" href="#emacs-configuration"><span class="icon icon-link"></span></a>Emacs Configuration</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> emacs</span></span>
+<span class="line"><span style="color:#D4BE98">  :straight </span><span style="color:#D3869B">nil</span></span>
+<span class="line"><span style="color:#D4BE98">  :preface</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#7DAEA3">defun</span><span style="color:#A9B665"> load-config-file</span><span style="color:#D4BE98"> (file)</span></span>
+<span class="line"><span style="color:#D8A657">    "Load files in the config dir."</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#EA6962">load</span><span style="color:#D4BE98"> (</span><span style="color:#A9B665">expand-file-name file my-config-dir</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#7DAEA3">defun</span><span style="color:#A9B665"> reload-emacs-config</span><span style="color:#D4BE98"> ()</span></span>
+<span class="line"><span style="color:#D8A657">    "Reload config.el emacs configuration."</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#E78A4E">interactive</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#EA6962">load</span><span style="color:#D4BE98"> (</span><span style="color:#A9B665">expand-file-name </span><span style="color:#D8A657">"config.el"</span><span style="color:#A9B665"> my-config-dir</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#7DAEA3">defun</span><span style="color:#A9B665"> open-config-file</span><span style="color:#D4BE98"> ()</span></span>
+<span class="line"><span style="color:#D8A657">    "Open this file ie 'config.el'."</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#E78A4E">interactive</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#A9B665">find-file </span><span style="color:#D4BE98">(</span><span style="color:#A9B665">expand-file-name </span><span style="color:#D8A657">"config.el"</span><span style="color:#A9B665"> my-config-dir</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; System</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> warning-minimul-level :error)   </span><span style="color:#928374;font-style:italic">; only warn on errors</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#928374;font-style:italic">                                 ; no warnings</span></span>
+<span class="line"><span style="color:#D4BE98">   native-comp-async-report-warnings-errors </span><span style="color:#D3869B">nil</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> ring-bell-function 'ignore)     </span><span style="color:#928374;font-style:italic">; no bell noise</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> make-backup-files </span><span style="color:#D3869B">nil</span><span style="color:#D4BE98">)          </span><span style="color:#928374;font-style:italic">; no temp files</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> read-extended-command-predicate </span><span style="color:#928374;font-style:italic">; only show 'M-x' commands relevant to mode</span></span>
+<span class="line"><span style="color:#D4BE98">	#'command-completion-default-include-p)</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> enable-recursive-minibuffers t) </span><span style="color:#928374;font-style:italic">; allow opening minibufs in minibufs</span></span>
+<span class="line"><span style="color:#D4BE98">  (setopt use-short-answers t)		</span><span style="color:#928374;font-style:italic">; y or n</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; Theme</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#EA6962">if</span><span style="color:#D4BE98"> (</span><span style="color:#EA6962">eq</span><span style="color:#D4BE98"> system-type 'darwin)          </span><span style="color:#928374;font-style:italic">; set font based on OS</span></span>
+<span class="line"><span style="color:#D4BE98">      (</span><span style="color:#A9B665">add-to-list</span><span style="color:#D4BE98"> 'default-frame-alist</span></span>
+<span class="line"><span style="color:#D4BE98">		   '(font </span><span style="color:#E78A4E">.</span><span style="color:#D8A657"> "Hack Nerd Font 16"</span><span style="color:#D4BE98">))</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#A9B665">add-to-list</span><span style="color:#D4BE98"> 'default-frame-alist</span></span>
+<span class="line"><span style="color:#D4BE98">		 '(font </span><span style="color:#E78A4E">.</span><span style="color:#D8A657"> "Blex Mono Nerd Font 18"</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> inhibit-startup-message t)      </span><span style="color:#928374;font-style:italic">; no splash screen</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">menu-bar-mode</span><span style="color:#D3869B"> -1</span><span style="color:#D4BE98">)                    </span><span style="color:#928374;font-style:italic">; no menu bar</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">tool-bar-mode</span><span style="color:#D3869B"> -1</span><span style="color:#D4BE98">)                    </span><span style="color:#928374;font-style:italic">; no tool bar</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">scroll-bar-mode</span><span style="color:#D3869B"> -1</span><span style="color:#D4BE98">)                  </span><span style="color:#928374;font-style:italic">; no scroll bar</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">global-visual-line-mode</span><span style="color:#D4BE98">)		</span><span style="color:#928374;font-style:italic">; better line wrapping</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; Org mode / notes</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">require</span><span style="color:#D4BE98"> 'org-tempo)                  </span><span style="color:#928374;font-style:italic">; org snippets</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> org-startup-indented t)         </span><span style="color:#928374;font-style:italic">; indent org mode</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#928374;font-style:italic">                                 ; no indent in src blocks</span></span>
+<span class="line"><span style="color:#D4BE98">   org-edit-src-content-indentation </span><span style="color:#D3869B">0</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> org-src-preserve-indentation t) </span><span style="color:#928374;font-style:italic">; fix src block indents</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> org-src-tab-acts-natively t)    </span><span style="color:#928374;font-style:italic">; allow indenting in src blocks</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">org-babel-do-load-languages</span><span style="color:#928374;font-style:italic">          ; load babel languages</span></span>
+<span class="line"><span style="color:#D4BE98">   'org-babel-load-languages</span></span>
+<span class="line"><span style="color:#D4BE98">   '((python </span><span style="color:#E78A4E">.</span><span style="color:#D4BE98"> t)))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4BE98">  :hook</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; Programming mode hooks</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">prog-mode</span><span style="color:#E78A4E"> .</span><span style="color:#D4BE98"> display-line-numbers-mode)</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">prog-mode</span><span style="color:#E78A4E"> .</span><span style="color:#D4BE98"> hl-line-mode)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; Folding for non ts-modes</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">emacs-lisp-mode</span><span style="color:#E78A4E"> .</span><span style="color:#D4BE98"> hs-minor-mode)</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">c++-mode</span><span style="color:#E78A4E"> .</span><span style="color:#D4BE98"> hs-minor-mode))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="use-package-setup-and-integration-with-straight" data-svelte-h="svelte-1jmhhgu"><a aria-hidden="true" tabindex="-1" href="#use-package-setup-and-integration-with-straight"><span class="icon icon-link"></span></a>Use-package setup and integration with straight</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">;; Package management and setup with use-package</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">straight-use-package</span><span style="color:#D4BE98"> 'use-package)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Make straight the default</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> straight</span></span>
+<span class="line"><span style="color:#D4BE98">  :custom</span></span>
+<span class="line"><span style="color:#D4BE98">  (straight-use-package-by-default t)</span></span>
+<span class="line"><span style="color:#D4BE98">  (straight-cache-autoloads t))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="evil-mode-and-associated-packages" data-svelte-h="svelte-znbqel"><a aria-hidden="true" tabindex="-1" href="#evil-mode-and-associated-packages"><span class="icon icon-link"></span></a>Evil mode and associated packages</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">;; Undo for evil mode</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> undo-fu)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Evil mode</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> evil</span></span>
+<span class="line"><span style="color:#D4BE98">  :init</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> evil-want-keybinding </span><span style="color:#D3869B">nil</span><span style="color:#D4BE98">)  </span><span style="color:#928374;font-style:italic">; needed for evil-collection</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> evil-want-C-u-scroll t)    </span><span style="color:#928374;font-style:italic">; allow scroll up with 'C-u'</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> evil-want-C-d-scroll t)    </span><span style="color:#928374;font-style:italic">; allow scroll down with 'C-d'</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> evil-undo-system 'undo-fu) </span><span style="color:#928374;font-style:italic">; undo system for 'C-r'</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (evil-mode </span><span style="color:#D3869B">1</span><span style="color:#D4BE98">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Path management to keep env variable consistent</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> exec-path-from-shell</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (exec-path-from-shell-initialize))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Evil collections for keybindings accross modes</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> evil-collection</span></span>
+<span class="line"><span style="color:#D4BE98">  :after evil</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (evil-collection-init))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="completion-ui-and-project-searching" data-svelte-h="svelte-q31tdm"><a aria-hidden="true" tabindex="-1" href="#completion-ui-and-project-searching"><span class="icon icon-link"></span></a>Completion ui and project searching</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">;; Orderless to get better completions</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> orderless</span></span>
+<span class="line"><span style="color:#D4BE98">  :custom</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">completion-styles</span></span>
+<span class="line"><span style="color:#D4BE98">   '(basic partial-completion orderless))) </span><span style="color:#928374;font-style:italic">; orderless needs to be last</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Vertico for completion UI</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> vertico</span></span>
+<span class="line"><span style="color:#D4BE98">  :init</span></span>
+<span class="line"><span style="color:#D4BE98">  (vertico-mode))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Company mode for text completion popup</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> company</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (global-company-mode t))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Consult for searching, grepping, and project exploration</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> consult)</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> consult-flycheck)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Get detailed popup descriptions</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> marginalia</span></span>
+<span class="line"><span style="color:#D4BE98">  :init</span></span>
+<span class="line"><span style="color:#D4BE98">  (marginalia-mode))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Keybindings packages and settings</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Which key, in emacs 30 it will just be a "(require 'which-key)"</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> which-key</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (which-key-mode))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="global-keybindings" data-svelte-h="svelte-14sb0ng"><a aria-hidden="true" tabindex="-1" href="#global-keybindings"><span class="icon icon-link"></span></a>Global keybindings</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> general</span></span>
+<span class="line"><span style="color:#D4BE98">  :after magit</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (general-evil-setup)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; global keybindings</span></span>
+<span class="line"><span style="color:#D4BE98">  (general-create-definer global/leader-keys</span></span>
+<span class="line"><span style="color:#D4BE98">    :states '(normal insert visual emacs)</span></span>
+<span class="line"><span style="color:#D4BE98">    :keymaps 'override</span></span>
+<span class="line"><span style="color:#D4BE98">    :prefix </span><span style="color:#D8A657">"SPC"</span></span>
+<span class="line"><span style="color:#D4BE98">    :global-prefix </span><span style="color:#D8A657">"C-SPC"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  (global/leader-keys</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    ;; SPC +</span></span>
+<span class="line"><span style="color:#D8A657">    "r r"</span><span style="color:#D4BE98"> '(reload-emacs-config :wk </span><span style="color:#D8A657">"reload config"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "b s"</span><span style="color:#D4BE98"> '(consult-buffer :wk </span><span style="color:#D8A657">"consult buffer"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "b k"</span><span style="color:#D4BE98"> '(</span><span style="color:#A9B665">kill-buffer-and-window</span><span style="color:#D4BE98"> :wk </span><span style="color:#D8A657">"kill buffer and window"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "o c"</span><span style="color:#D4BE98"> '(open-config-file :wk </span><span style="color:#D8A657">"open config file"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    ;; use "--" to pass options to </span><span style="color:#D4BE98;font-style:italic">&#96;ripgrep'</span></span>
+<span class="line"><span style="color:#D8A657">    "f r"</span><span style="color:#D4BE98"> '(consult-ripgrep :wk </span><span style="color:#D8A657">"consult ripgrep"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "f f"</span><span style="color:#D4BE98"> '(consult-find :wk </span><span style="color:#D8A657">"consult find"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "p s"</span><span style="color:#D4BE98"> '(project-switch-project :wk </span><span style="color:#D8A657">"project switch"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "p k"</span><span style="color:#D4BE98"> '(project-kill-buffers :wk </span><span style="color:#D8A657">"project kill buffers"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "p F"</span><span style="color:#D4BE98"> '(project-forget-project :wk </span><span style="color:#D8A657">"project forget"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "p R"</span><span style="color:#D4BE98"> '(project-remember-projects-under :wk </span><span style="color:#D8A657">"project remember projects under"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "p !"</span><span style="color:#D4BE98"> '(project-shell-command :wk </span><span style="color:#D8A657">"project shell command"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "p &#x26;"</span><span style="color:#D4BE98"> '(project-async-shell-command :wk </span><span style="color:#D8A657">"project async shell command"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "c c"</span><span style="color:#D4BE98"> '(quickrun :wk </span><span style="color:#D8A657">"quickrun"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "c a"</span><span style="color:#D4BE98"> '(quickrun-with-arg :wk </span><span style="color:#D8A657">"quickrun with arg"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "E"</span><span style="color:#D4BE98"> '(consult-flymake :wk </span><span style="color:#D8A657">"consult flymake"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "m"</span><span style="color:#D4BE98"> '(consult-imenu :wk </span><span style="color:#D8A657">"consult imenu"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "g"</span><span style="color:#D4BE98"> '(magit :wk </span><span style="color:#D8A657">"magit"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "/"</span><span style="color:#D4BE98"> '(consult-line :wk </span><span style="color:#D8A657">"consult find line"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "."</span><span style="color:#D4BE98"> '(</span><span style="color:#A9B665">find-file</span><span style="color:#D4BE98"> :wk </span><span style="color:#D8A657">"find file"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    ":"</span><span style="color:#D4BE98"> '(</span><span style="color:#A9B665">execute-extended-command</span><span style="color:#D4BE98"> :wk </span><span style="color:#D8A657">"execute extended command"</span><span style="color:#D4BE98">) </span><span style="color:#928374;font-style:italic">; M-x</span></span>
+<span class="line"><span style="color:#D8A657">    "!"</span><span style="color:#D4BE98"> '(</span><span style="color:#A9B665">shell-command</span><span style="color:#D4BE98"> :wk </span><span style="color:#D8A657">"shell command"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D8A657">    "&#x26;"</span><span style="color:#D4BE98"> '(</span><span style="color:#A9B665">async-shell-command</span><span style="color:#D4BE98"> :wk </span><span style="color:#D8A657">"async shell command"</span><span style="color:#D4BE98">)))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="version-control-git-tooling" data-svelte-h="svelte-1x40wy6"><a aria-hidden="true" tabindex="-1" href="#version-control-git-tooling"><span class="icon icon-link"></span></a>Version control (git) tooling</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">;; Version control management</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> magit)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Show where changes are in a vc tracked file</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> git-gutter</span></span>
+<span class="line"><span style="color:#D4BE98">  :init</span></span>
+<span class="line"><span style="color:#D4BE98">  (global-git-gutter-mode </span><span style="color:#D3869B">+1</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (general-nmap 'override</span></span>
+<span class="line"><span style="color:#D8A657">    "[g"</span><span style="color:#D4BE98"> 'git-gutter:previous-hunk</span></span>
+<span class="line"><span style="color:#D8A657">    "]g"</span><span style="color:#D4BE98"> 'git-gutter:next-hunk))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="language-tooling" data-svelte-h="svelte-1vbqtfa"><a aria-hidden="true" tabindex="-1" href="#language-tooling"><span class="icon icon-link"></span></a>Language tooling</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">;; Running code more dynamically</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> quickrun)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Project configurations</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> project</span></span>
+<span class="line"><span style="color:#D4BE98">  :straight </span><span style="color:#D3869B">nil</span></span>
+<span class="line"><span style="color:#D4BE98">  :preface</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  ;; find cmake projects</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#7DAEA3">defun</span><span style="color:#A9B665"> project-find-cmake</span><span style="color:#D4BE98"> (dir)</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#A9B665">when-let </span><span style="color:#D4BE98">((</span><span style="color:#A9B665">root </span><span style="color:#D4BE98">(</span><span style="color:#A9B665">locate-dominating-file dir </span><span style="color:#D8A657">"CMakeLists.txt"</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">      (</span><span style="color:#EA6962">cons</span><span style="color:#D4BE98"> '</span><span style="color:#A9B665">cmake-lists root</span><span style="color:#D4BE98">)))</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">cl-defmethod</span><span style="color:#D4BE98"> project-root ((project (head cmake-lists)))</span></span>
+<span class="line"><span style="color:#D4BE98">    (</span><span style="color:#EA6962">cdr</span><span style="color:#D4BE98"> project))</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#A9B665">add-hook</span><span style="color:#D4BE98"> 'project-find-functions 'project-find-cmake))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Eglot with limited mini buffer madness</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> eglot</span></span>
+<span class="line"><span style="color:#D4BE98">  :straight </span><span style="color:#D3869B">nil</span></span>
+<span class="line"><span style="color:#D4BE98">  :custom</span></span>
+<span class="line"><span style="color:#D4BE98">  (eldoc-echo-area-use-multiline-p </span><span style="color:#D3869B">nil</span><span style="color:#D4BE98">))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Treesitter for syntax</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> treesit</span></span>
+<span class="line"><span style="color:#D4BE98">  :straight </span><span style="color:#D3869B">nil</span></span>
+<span class="line"><span style="color:#D4BE98">  :config</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> treesit-font-lock-level </span><span style="color:#D3869B">4</span><span style="color:#D4BE98">) </span><span style="color:#928374;font-style:italic">; maximum highlighting</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> major-mode-remap-alist</span></span>
+<span class="line"><span style="color:#D4BE98">	'((</span><span style="color:#A9B665">python-mode</span><span style="color:#E78A4E"> .</span><span style="color:#D4BE98"> python-ts-mode)</span></span>
+<span class="line"><span style="color:#D4BE98">	  (</span><span style="color:#A9B665">c-mode</span><span style="color:#E78A4E"> .</span><span style="color:#D4BE98"> c-ts-mode))))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">;; Folding for </span><span style="color:#D4BE98;font-style:italic">&#96;treesit'</span><span style="color:#928374;font-style:italic"> supported languages</span></span>
+<span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> treesit-fold</span></span>
+<span class="line"><span style="color:#D4BE98">  :straight</span></span>
+<span class="line"><span style="color:#D4BE98">  (treesit-fold :type git :host github :repo </span><span style="color:#D8A657">"emacs-tree-sitter/treesit-fold"</span><span style="color:#D4BE98">)</span></span>
+<span class="line"><span style="color:#D4BE98">  :init</span></span>
+<span class="line"><span style="color:#D4BE98">  (global-treesit-fold-mode))</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="rust-specific-tooling" data-svelte-h="svelte-1lhk5uu"><a aria-hidden="true" tabindex="-1" href="#rust-specific-tooling"><span class="icon icon-link"></span></a>Rust specific tooling</h2> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#D4BE98">(</span><span style="color:#A9B665">use-package</span><span style="color:#D4BE98"> rust-mode</span></span>
+<span class="line"><span style="color:#D4BE98">  :init</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> rust-mode-form t)</span></span>
+<span class="line"><span style="color:#D4BE98">  (</span><span style="color:#E78A4E">setq</span><span style="color:#D4BE98"> rust-mode-treesitter-derive t))</span></span></code></pre><!-- HTML_TAG_END --></article> </div></div> <footer class="text-center mt-auto" data-svelte-h="svelte-1ej1xq0"><div class="container p-2"><section class="mb-0"> <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" role="button"><i class="fab fa-youtube"></i></a>        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/cade-lueker-79a55b199/" role="button"><i class="fab fa-linkedin-in"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/cademichael/" role="button"><i class="fab fa-github"></i></a></section></div> <div class="text-center p-3 copyright">Made with [ <img src="/svelte-icon.svg" alt="Svelte" class="icon-svelte"> +
+    <i class="fab fa-sass"></i>
+    + <i class="fab fa-markdown"></i> ]</div></footer> 
+			
+			<script>
+				{
+					__sveltekit_1ry28ac = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.BPKHpvUi.js"),
+						import("../_app/immutable/entry/app.Cq0bQBf0.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+<style>
+  body {
+    background-color: #fbf1c7;
+  }
+</style>
