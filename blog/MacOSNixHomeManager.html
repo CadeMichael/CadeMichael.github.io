@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="../favicon.png" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+		<link href="../_app/immutable/assets/0.ChQCKMr8.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.Bglws09I.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.D0W15Bjh.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.BzV8Pfuc.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.WjejH3lp.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.D6kgxu3v.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.BUIsPQbh.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.BRF0pZkB.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.C42_FQFO.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.DDVbAsKO.js">
+    <title>Cade Lueker</title>
+  </head>
+  <body data-sveltekit-preload-data="hover" class="d-flex flex-column min-vh-100">
+    <div style="display: contents">  <nav class="navbar navbar-expand-lg nav-underline svelte-zurb3d" data-bs-theme="dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-svelte-h="svelte-1eytg9k"><span class="navbar-toggler-icon"></span></button> <span class="navbar-brand mb-0 h1 svelte-zurb3d" data-svelte-h="svelte-1vnwv4d">Cade Lueker</span> <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto" style="margin-right: 10px;"><li class="nav-item"><a class="nav-link " href="/">Home</a></li> <li class="nav-item"><a class="nav-link " href="/about">About</a></li> <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li></ul></div></div> </nav> <div class="all-content svelte-1b1lzt9"><div class="blog-post svelte-e0j7s0"><article><h1>Nix as a package manager for Mac Os and Debian Systems</h1> <p>Published: 11-16-24</p> <nav class="toc" data-svelte-h="svelte-15kulrl"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#why-nix-on-non-nixos-systems">Why Nix on Non Nixos Systems?</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#resources">Resources</a></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#installation">Installation</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#nix">Nix</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#channels">Channels</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#home-manager">Home Manager</a></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#setting-up-home-manager">Setting up Home manager</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#using-programs-with-graphics-acceleration">Using programs with graphics acceleration</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#macos">MacOS</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#popos">PopOS</a></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#reflections">Reflections</a></li></ol></nav> <h1 id="why-nix-on-non-nixos-systems" data-svelte-h="svelte-85xpd3"><a aria-hidden="true" tabindex="-1" href="#why-nix-on-non-nixos-systems"><span class="icon icon-link"></span></a>Why Nix on Non Nixos Systems?</h1> <h2 id="resources" data-svelte-h="svelte-xwcryz"><a aria-hidden="true" tabindex="-1" href="#resources"><span class="icon icon-link"></span></a>Resources</h2> <ul data-svelte-h="svelte-3kujzq"><li>some good websites with documentation for the determinate nix installer, home manager, and nix usage in general<ul><li><a href="https://nix-community.github.io/home-manager/" rel="nofollow">home-manager docs</a></li> <li><a href="https://github.com/DeterminateSystems/nix-installer" rel="nofollow">determinate systems</a></li> <li><a href="https://zero-to-nix.com/" rel="nofollow">zero to nix</a></li> <li><a href="https://nixos.wiki/wiki/Home_Manager" rel="nofollow">home-manager wiki</a></li></ul></li></ul> <h1 id="installation" data-svelte-h="svelte-1d4reqo"><a aria-hidden="true" tabindex="-1" href="#installation"><span class="icon icon-link"></span></a>Installation</h1> <h2 id="nix" data-svelte-h="svelte-9fcu1l"><a aria-hidden="true" tabindex="-1" href="#nix"><span class="icon icon-link"></span></a>Nix</h2> <ul data-svelte-h="svelte-con91a"><li>using the determinate systems nix installer<ul><li>built with rust</li> <li>allows flakes by default</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#A9B665">curl</span><span style="color:#D8A657"> --proto</span><span style="color:#A9B665"> '=https'</span><span style="color:#D8A657"> --tlsv1.2</span><span style="color:#D8A657"> -sSf</span><span style="color:#D8A657"> -L</span><span style="color:#D8A657"> https://install.determinate.systems/nix</span><span style="color:#E78A4E"> |</span><span style="color:#A9B665"> </span></span>
+<span class="line"><span style="color:#A9B665">  sh</span><span style="color:#D8A657"> -s</span><span style="color:#D8A657"> --</span><span style="color:#D8A657"> install</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="channels" data-svelte-h="svelte-1xofp9o"><a aria-hidden="true" tabindex="-1" href="#channels"><span class="icon icon-link"></span></a>Channels</h2> <ul data-svelte-h="svelte-hq5qut"><li>using channels which is essentially the repo with all nix packages that get used to install packages on your system</li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic"># unstable / master</span></span>
+<span class="line"><span style="color:#A9B665">nix-channel</span><span style="color:#D8A657"> --add</span><span style="color:#D8A657"> https://nixos.org/channels/nixos-unstable</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="home-manager" data-svelte-h="svelte-16bjjqa"><a aria-hidden="true" tabindex="-1" href="#home-manager"><span class="icon icon-link"></span></a>Home Manager</h2> <ul data-svelte-h="svelte-scj39g"><li>Installation of home-manager<ul><li>installing via channels</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic"># when using 'unstable' channel</span></span>
+<span class="line"><span style="color:#A9B665">nix-channel</span><span style="color:#D8A657"> --add</span><span style="color:#D8A657"> https://github.com/nix-community/home-manager/archive/master.tar.gz</span><span style="color:#D8A657"> home-manager</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A9B665">nix-channel</span><span style="color:#D8A657"> --update</span></span></code></pre><!-- HTML_TAG_END --> <ul data-svelte-h="svelte-1ai02gh"><li>Useful commands<ul><li>for installing</li> <li>updating</li> <li>cleaning out cached files no longer in use</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic"># add a new nix channel</span></span>
+<span class="line"><span style="color:#A9B665">nix-channel</span><span style="color:#D8A657"> --add</span><span style="color:#D8A657"> some-channel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic"># update channels (must be run after adding a new channel)</span></span>
+<span class="line"><span style="color:#A9B665">nix-channel</span><span style="color:#D8A657"> --update</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic"># remove old nix versions -d deletes all old versions</span></span>
+<span class="line"><span style="color:#A9B665">nix-college-garbage</span><span style="color:#D8A657"> -d</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic"># build and switch to new home-manager generation</span></span>
+<span class="line"><span style="color:#A9B665">home-manager</span><span style="color:#D8A657"> switch</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic"># some handy alias</span></span>
+<span class="line"><span style="color:#7DAEA3">alias</span><span style="color:#D4BE98"> hms</span><span style="color:#E78A4E">=</span><span style="color:#A9B665">'home-manager switch'</span></span>
+<span class="line"><span style="color:#7DAEA3">alias</span><span style="color:#D4BE98"> hmd</span><span style="color:#E78A4E">=</span><span style="color:#A9B665">'home-manager switch &#x26;&#x26; nix-collect-garbage -d'</span></span></code></pre><!-- HTML_TAG_END --> <h1 id="setting-up-home-manager" data-svelte-h="svelte-bzqz0r"><a aria-hidden="true" tabindex="-1" href="#setting-up-home-manager"><span class="icon icon-link"></span></a>Setting up Home manager</h1> <ul data-svelte-h="svelte-1116o01"><li>your home manager config lives in <code>$HOME/.config/home-manager/home.nix</code><ul><li>it is where you declare profile specific packages and configurations</li></ul></li></ul> <h2 id="using-programs-with-graphics-acceleration" data-svelte-h="svelte-1ootylk"><a aria-hidden="true" tabindex="-1" href="#using-programs-with-graphics-acceleration"><span class="icon icon-link"></span></a>Using programs with graphics acceleration</h2> <ul data-svelte-h="svelte-1lrkivi"><li>to use these packages you might need to ‘wrap’ them in a package that detects what GPU’s are available on your system</li> <li>for this I am using <code>nixgl</code> which determines which GPU framework to use and wraps your desired package with it, ensuring that it will run properly on your system.</li></ul> <h2 id="macos" data-svelte-h="svelte-ch9s6f"><a aria-hidden="true" tabindex="-1" href="#macos"><span class="icon icon-link"></span></a>MacOS</h2> <ul data-svelte-h="svelte-1fk5dt4"><li>on MacOs I was having issues with zsh_history so I decided to set it manually.<ul><li>You can use home manager to manage your dotfiles but I prefer <strong>gnu stow</strong>, it is a bit more simple and works accross machines without nix and home manager</li> <li>I <strong>do not</strong> use nix for GUI applications. This might be a skill issue but you need a script to let <em>Spotlight</em> know where apps are to open them and I prefer <em>Homebrew</em> for GUI applications.</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#D4BE98">&#123; config</span><span style="color:#E78A4E">,</span><span style="color:#D4BE98"> pkgs</span><span style="color:#E78A4E">,</span><span style="color:#E78A4E"> ... </span><span style="color:#D4BE98">&#125;:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic"># when you need an older package</span></span>
+<span class="line"><span style="color:#928374;font-style:italic"># let</span></span>
+<span class="line"><span style="color:#928374;font-style:italic"># pkgStable = import &#x3C;stable> &#123; &#125;;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic"># in</span></span>
+<span class="line"><span style="color:#D4BE98">&#123;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # User information</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">username</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">cade</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">homeDirectory</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">/Users/cade</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Compatible Home Manager release</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">stateVersion</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">24.05</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Allow home manager to configure fonts</span></span>
+<span class="line"><span style="color:#D8A657">  fonts</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">fontconfig</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">enable</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> true</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Installed packages</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">packages</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> [</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Terminal</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">bat</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">coreutils</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">eza</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">fh</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">fzf</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">gawk</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">htop</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">imagemagick</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">lazygit</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">pfetch</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">qrencode</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">ripgrep</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">starship</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">tree-sitter</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">yazi</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">zellij</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">zoxide</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Fonts (Nerd fonts is now in unstable)</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">nerd-fonts</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">hack</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">nerd-fonts</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">blex-mono</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Editor</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">neovim</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Verification</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">souffle</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Languages</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # -> lua</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">luajit</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">lua-language-server</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # -> go</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">go</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">gopls</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # -> haskell</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">ghc</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">cabal-install</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">stack</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # -> nix</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">nixd</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">nixfmt-rfc-style</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # -> python</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">uv</span></span>
+<span class="line"><span style="color:#D4BE98">  ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # ~/.nix-profile/etc/profile.d/hm-session-vars.sh</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">sessionVariables</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> &#123;</span></span>
+<span class="line"><span style="color:#D8A657">    EDITOR</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">nvim</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">    HISTFILE</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">$HOME/.zsh_history</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">    HISTSIZE</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> 1000</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">    SAVEHIST</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> 1000</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D4BE98">  &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Let Home Manager install and manage itself.</span></span>
+<span class="line"><span style="color:#D8A657">  programs</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">home-manager</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">enable</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> true</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D4BE98">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <h2 id="popos" data-svelte-h="svelte-s38flb"><a aria-hidden="true" tabindex="-1" href="#popos"><span class="icon icon-link"></span></a>PopOS</h2> <ul data-svelte-h="svelte-1tnv29b"><li>my ‘generic linux’ home manager config mirrors my MacOs one with one important change<ul><li><code>targets.genericLinux.enable = true;</code></li> <li>this allows for a more ‘native’ integration of nix packages into your non nixos linux distribution</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#D4BE98">&#123; config</span><span style="color:#E78A4E">,</span><span style="color:#D4BE98"> pkgs</span><span style="color:#E78A4E">,</span><span style="color:#E78A4E"> ... </span><span style="color:#D4BE98">&#125;:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4BE98">&#123;</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Home Manager general setup</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">username</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">cade</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">homeDirectory</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">/home/cade</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">  targets</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">genericLinux</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">enable</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> true</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D8A657">  fonts</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">fontconfig</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">enable</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> true</span><span style="color:#D4BE98">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Home manager version at install time</span></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">stateVersion</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> "</span><span style="color:#D8A657">24.05</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98">; </span><span style="color:#928374;font-style:italic"># Please read the comment before changing.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D8A657">  nixGL</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">packages</span><span style="color:#E78A4E"> =</span><span style="color:#A9B665"> import</span><span style="color:#D8A657"> &#x3C;nixgl></span><span style="color:#D4BE98"> &#123; </span><span style="color:#EA6962">inherit</span><span style="color:#D8A657"> pkgs</span><span style="color:#D4BE98">; &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D8A657">  home</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">packages</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> [</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Terminal</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">bat</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">fzf</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">lazygit</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">ripgrep</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">tmux</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">tree</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">zoxide</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # GUI Applications</span></span>
+<span class="line"><span style="color:#D4BE98">    (config</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">lib</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">nixGL</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">wrap pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">rio)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Languages</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # -> lua</span></span>
+<span class="line"><span style="color:#D4BE98">    pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">lua-language-server</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # Fonts</span></span>
+<span class="line"><span style="color:#D4BE98">    (pkgs</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">nerdfonts</span><span style="color:#E78A4E">.</span><span style="color:#D4BE98">override &#123; </span><span style="color:#D8A657">fonts</span><span style="color:#E78A4E"> =</span><span style="color:#D4BE98"> [ </span><span style="color:#D4BE98">"</span><span style="color:#D8A657">CascadiaCode</span><span style="color:#D4BE98">"</span><span style="color:#D4BE98"> ]; &#125;)</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">    # </span><span style="color:#928374;font-weight:bold">!!!</span><span style="color:#928374;font-style:italic"> nerd fonts are in the unstable nix channel as 'pkgs.nerd-fonts.&#x3C;font name>'</span></span>
+<span class="line"><span style="color:#D4BE98">  ];</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Home Manager can also manage your environment variables through</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # 'home.sessionVariables'. These will be explicitly sourced when using a</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # shell provided by Home Manager. If you don't want to manage your shell</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # through Home Manager then you have to manually source 'hm-session-vars.sh'</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # located at either</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # or</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # or</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #  /etc/profiles/per-user/cade/etc/profile.d/hm-session-vars.sh</span></span>
+<span class="line"><span style="color:#928374;font-style:italic">  #</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#928374;font-style:italic">  # Let Home Manager install and manage itself.</span></span>
+<span class="line"><span style="color:#D8A657">  programs</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">home-manager</span><span style="color:#D4BE98">.</span><span style="color:#D8A657">enable</span><span style="color:#E78A4E"> =</span><span style="color:#D3869B"> true</span><span style="color:#D4BE98">;</span></span>
+<span class="line"><span style="color:#D4BE98">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <h1 id="reflections" data-svelte-h="svelte-a0v5je"><a aria-hidden="true" tabindex="-1" href="#reflections"><span class="icon icon-link"></span></a>Reflections</h1> <ul data-svelte-h="svelte-wvd52p"><li>It took some time to dive into nix and home-manager but I believe that it was worth it.</li> <li>For school I am using a good deal of niche packages and nix has helped me ease the installation of them accross mac and debian (based systems). I love debian but every time I have to use some niche research software I don’t want to build it from source and nix helps with this.</li> <li>I prefer having something stable and using nix on top of it as an added benefit. It is like the Blade of Nixos, none of it’s weaknesses all of its strengths.</li> <li>Additionally learning more about nix and the nix ecosystem led me to use flakes, not for configuration, but for developing with beta software such as Lean4 (they said it’s beta software not me I ❤️ Lean4) and it allowed me to work on projects across machines without worrying about versioning conflicts.</li></ul></article> </div></div> <footer class="text-center mt-auto" data-svelte-h="svelte-1ej1xq0"><div class="container p-2"><section class="mb-0"> <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" role="button"><i class="fab fa-youtube"></i></a>        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/cade-lueker-79a55b199/" role="button"><i class="fab fa-linkedin-in"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/cademichael/" role="button"><i class="fab fa-github"></i></a></section></div> <div class="text-center p-3 copyright">Made with [ <img src="/svelte-icon.svg" alt="Svelte" class="icon-svelte"> +
+    <i class="fab fa-sass"></i>
+    + <i class="fab fa-markdown"></i> ]</div></footer> 
+			
+			<script>
+				{
+					__sveltekit_1cjp3ed = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.Bglws09I.js"),
+						import("../_app/immutable/entry/app.WjejH3lp.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 5],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+<style>
+  body {
+    background-color: #fbf1c7;
+  }
+</style>
