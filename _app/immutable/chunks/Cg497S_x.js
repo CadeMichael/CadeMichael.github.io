@@ -1,30 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <!-- <link rel="icon" href="../favicon.png" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-		<link href="../_app/immutable/assets/0.BNj_cfjs.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.OiuJWF98.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CX1Np2dK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CrGyUMwP.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.d4DVq7AJ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C1FmrZbK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/uW2q-9yC.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.CZF2ljHd.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B34US4W-.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.BJejOd4G.js">
-    <title>Cade Lueker</title>
-  </head>
-  <body data-sveltekit-preload-data="hover" class="d-flex flex-column min-vh-100">
-    <div style="display: contents">  <nav class="navbar navbar-expand-lg nav-underline svelte-zurb3d" data-bs-theme="dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-svelte-h="svelte-1eytg9k"><span class="navbar-toggler-icon"></span></button> <span class="navbar-brand mb-0 h1 svelte-zurb3d" data-svelte-h="svelte-1vnwv4d">Cade Lueker</span> <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto" style="margin-right: 10px;"><li class="nav-item"><a class="nav-link " href="/">Home</a></li> <li class="nav-item"><a class="nav-link " href="/about">About</a></li> <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li></ul></div></div> </nav> <div class="all-content svelte-1b1lzt9"><div class="blog-post svelte-e0j7s0"><article><h1>Advent of Code 2024 day 3 in Lua and Regex</h1> <p>Published: 01-16-25</p> <nav class="toc" data-svelte-h="svelte-o210rm"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#lua-">Lua ?</a></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#part-one">Part one</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#lua-regex">Lua Regex</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#part-1-solution">Part 1 solution</a></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#part-2">Part 2</a></li></ol></nav> <h1 id="lua-" data-svelte-h="svelte-fwelf7"><a aria-hidden="true" tabindex="-1" href="#lua-"><span class="icon icon-link"></span></a>Lua ?</h1> <ul data-svelte-h="svelte-akswo5"><li>Ok I know I said I would do the advent of codes in <strong>Zig</strong> but day 3 felt tailor made for Lua. I did a few days last year in Lua and it helped tremendously with Nvim plugins and configuration, and showed me the power of <strong>Lua regex</strong>.</li> <li>Zig doesn’t yet have a regex library and the ones that are 3rd party seem somewhat unmaintained. So I decided to reach for good old <strong>Lua</strong> and it was suprisingly easy and the code is surprisingly performant.</li></ul> <h1 id="part-one" data-svelte-h="svelte-sdioh3"><a aria-hidden="true" tabindex="-1" href="#part-one"><span class="icon icon-link"></span></a>Part one</h1> <ul data-svelte-h="svelte-hc9ii"><li>essentially we just need to find and perform all the ‘multiplication’ operations in our input
-<ul><li>they look like <code>mul(num1, num2)</code>, and the numbers can be at most 3 digits long. There are a bunch of ‘partial matches’ and a simple regex will solve it easily</li></ul></li></ul> <h2 id="lua-regex" data-svelte-h="svelte-zfn8uf"><a aria-hidden="true" tabindex="-1" href="#lua-regex"><span class="icon icon-link"></span></a>Lua Regex</h2> <ul data-svelte-h="svelte-s4aaaw"><li>the Lua regex syntax has some differences to what I would consider ‘normal’ regex but works surprisingly well and I’d bet it is part of what made Lua a great choice for Nvim.</li> <li>for this problem we want to match <code>mul(num, num)</code>, with each number being at most 3 digits long</li> <li>match ‘mul(’
+import{s as as,n as N}from"./CrGyUMwP.js";import{S as es,i as os,d as n,a,k as x,c as t,l as p,g as e,m as X,n as Y,h as c,j as o,H as $}from"./uW2q-9yC.js";function ts(ss){let i,R='<ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#lua-">Lua ?</a></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#part-one">Part one</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#lua-regex">Lua Regex</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#part-1-solution">Part 1 solution</a></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#part-2">Part 2</a></li></ol>',g,r,q='<a aria-hidden="true" tabindex="-1" href="#lua-"><span class="icon icon-link"></span></a>Lua ?',k,h,z="<li>Ok I know I said I would do the advent of codes in <strong>Zig</strong> but day 3 felt tailor made for Lua. I did a few days last year in Lua and it helped tremendously with Nvim plugins and configuration, and showed me the power of <strong>Lua regex</strong>.</li> <li>Zig doesn’t yet have a regex library and the ones that are 3rd party seem somewhat unmaintained. So I decided to reach for good old <strong>Lua</strong> and it was suprisingly easy and the code is surprisingly performant.</li>",H,y,J='<a aria-hidden="true" tabindex="-1" href="#part-one"><span class="icon icon-link"></span></a>Part one',T,f,O=`<li>essentially we just need to find and perform all the ‘multiplication’ operations in our input
+<ul><li>they look like <code>mul(num1, num2)</code>, and the numbers can be at most 3 digits long. There are a bunch of ‘partial matches’ and a simple regex will solve it easily</li></ul></li>`,_,d,Z='<a aria-hidden="true" tabindex="-1" href="#lua-regex"><span class="icon icon-link"></span></a>Lua Regex',M,A,V=`<li>the Lua regex syntax has some differences to what I would consider ‘normal’ regex but works surprisingly well and I’d bet it is part of what made Lua a great choice for Nvim.</li> <li>for this problem we want to match <code>mul(num, num)</code>, with each number being at most 3 digits long</li> <li>match ‘mul(’
 <ul><li><code>mul%(</code> -&gt; the <code>%</code> before the <code>(</code> denotes that this is a char to match not part of a regex</li></ul></li> <li>matching for a number, at most 3 digits long
 <ul><li><code>(%d%d?%d?)</code> -&gt; here the <code>()</code> denote a regex expression, <code>%d</code> represents a digit, and <code>%d?</code> represents an optional digit.</li></ul></li> <li>matching the ending parenthesis ’)’
-<ul><li><code>%)</code> -&gt; match for the closing parenthesis char.</li></ul></li></ul> <h2 id="part-1-solution" data-svelte-h="svelte-18ofgbf"><a aria-hidden="true" tabindex="-1" href="#part-1-solution"><span class="icon icon-link"></span></a>Part 1 solution</h2> <ul data-svelte-h="svelte-1e9e9pb"><li>here we can use a simple <code>gmatch()</code> to match for the occurrences of digits within a <code>mult()</code> <ul><li>we convert these strings to numbers, multiply them and add the product to our sum</li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">-- Part 1</span></span>
+<ul><li><code>%)</code> -&gt; match for the closing parenthesis char.</li></ul></li>`,C,E,F='<a aria-hidden="true" tabindex="-1" href="#part-1-solution"><span class="icon icon-link"></span></a>Part 1 solution',I,m,G="<li>here we can use a simple <code>gmatch()</code> to match for the occurrences of digits within a <code>mult()</code> <ul><li>we convert these strings to numbers, multiply them and add the product to our sum</li></ul></li>",S,v,ls=`<pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#928374;font-style:italic">-- Part 1</span></span>
 <span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> sum </span><span style="color:#E78A4E">=</span><span style="color:#D3869B"> 0</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#928374;font-style:italic">-- open the file</span></span>
@@ -40,10 +18,10 @@
 <span class="line"><span style="color:#A9B665">  print</span><span style="color:#D4BE98">(sum)</span></span>
 <span class="line"><span style="color:#EA6962">else</span></span>
 <span class="line"><span style="color:#A9B665">  print</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"Cannot open file."</span><span style="color:#D4BE98">)</span></span>
-<span class="line"><span style="color:#EA6962">end</span></span></code></pre><!-- HTML_TAG_END --> <ul data-svelte-h="svelte-129y4jq"><li>and part 1 takes roughly 750 micro seconds to run! I’m always surprised by Lua’s performance and simplicity. Just 13 lines of code (without blank lines)!
-<ul><li>I am using LuaJit, so performance is better than ‘regular’ Lua.</li></ul></li></ul> <h1 id="part-2" data-svelte-h="svelte-ced17p"><a aria-hidden="true" tabindex="-1" href="#part-2"><span class="icon icon-link"></span></a>Part 2</h1> <ul data-svelte-h="svelte-zm0g7y"><li>part two is a little more complex.</li> <li>there are also <code>do()</code> and <code>don&#39;t()</code> strings in our input and we only sum the multiplications between <code>do()</code>s
+<span class="line"><span style="color:#EA6962">end</span></span></code></pre>`,w,B,K=`<li>and part 1 takes roughly 750 micro seconds to run! I’m always surprised by Lua’s performance and simplicity. Just 13 lines of code (without blank lines)!
+<ul><li>I am using LuaJit, so performance is better than ‘regular’ Lua.</li></ul></li>`,P,u,Q='<a aria-hidden="true" tabindex="-1" href="#part-2"><span class="icon icon-link"></span></a>Part 2',U,D,W=`<li>part two is a little more complex.</li> <li>there are also <code>do()</code> and <code>don&#39;t()</code> strings in our input and we only sum the multiplications between <code>do()</code>s
 <ul><li>do achieve this we track the indexes of <code>do()</code> and <code>don&#39;t()</code> to make sure our current position is within a do block.</li> <li>when doing a regex with <code>find()</code> we can declare parameters for the location of the start and end of the pattern found.
-<ul><li>this is the mechanism that allows us to find where we have “do”s and “don’t”s.</li></ul></li></ul></li></ul> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> sum </span><span style="color:#E78A4E">=</span><span style="color:#D3869B"> 0</span></span>
+<ul><li>this is the mechanism that allows us to find where we have “do”s and “don’t”s.</li></ul></li></ul></li>`,j,L,ns=`<pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> sum </span><span style="color:#E78A4E">=</span><span style="color:#D3869B"> 0</span></span>
 <span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> enabled </span><span style="color:#E78A4E">=</span><span style="color:#89B482"> true</span><span style="color:#928374;font-style:italic"> -- whether we are in a 'do()' block</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#EA6962">local</span><span style="color:#D4BE98"> file </span><span style="color:#E78A4E">=</span><span style="color:#A9B665"> io.open</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"input.txt"</span><span style="color:#D4BE98">, </span><span style="color:#D8A657">"r"</span><span style="color:#D4BE98">)</span></span>
@@ -86,37 +64,4 @@
 <span class="line"><span style="color:#A9B665">  print</span><span style="color:#D4BE98">(sum)   </span><span style="color:#928374;font-style:italic">-- This should print 161 for the given example</span></span>
 <span class="line"><span style="color:#EA6962">else</span></span>
 <span class="line"><span style="color:#A9B665">  print</span><span style="color:#D4BE98">(</span><span style="color:#D8A657">"Cannot open file."</span><span style="color:#D4BE98">)</span></span>
-<span class="line"><span style="color:#EA6962">end</span></span></code></pre><!-- HTML_TAG_END --></article> </div></div> <footer class="text-center mt-auto" data-svelte-h="svelte-1ej1xq0"><div class="container p-2"><section class="mb-0"> <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" role="button"><i class="fab fa-youtube"></i></a>        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/cade-lueker-79a55b199/" role="button"><i class="fab fa-linkedin-in"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/cademichael/" role="button"><i class="fab fa-github"></i></a></section></div> <div class="text-center p-3 copyright">Made with [ <img src="/svelte-icon.svg" alt="Svelte" class="icon-svelte"> +
-    <i class="fab fa-sass"></i>
-    + <i class="fab fa-markdown"></i> ]</div></footer> 
-			
-			<script>
-				{
-					__sveltekit_1vxb1h0 = {
-						base: new URL("..", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("../_app/immutable/entry/start.OiuJWF98.js"),
-						import("../_app/immutable/entry/app.d4DVq7AJ.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 5],
-							data: [null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-</html>
-<style>
-  body {
-    background-color: #fbf1c7;
-  }
-</style>
+<span class="line"><span style="color:#EA6962">end</span></span></code></pre>`,b;return{c(){i=c("nav"),i.innerHTML=R,g=o(),r=c("h1"),r.innerHTML=q,k=o(),h=c("ul"),h.innerHTML=z,H=o(),y=c("h1"),y.innerHTML=J,T=o(),f=c("ul"),f.innerHTML=O,_=o(),d=c("h2"),d.innerHTML=Z,M=o(),A=c("ul"),A.innerHTML=V,C=o(),E=c("h2"),E.innerHTML=F,I=o(),m=c("ul"),m.innerHTML=G,S=o(),v=new $(!1),w=o(),B=c("ul"),B.innerHTML=K,P=o(),u=c("h1"),u.innerHTML=Q,U=o(),D=c("ul"),D.innerHTML=W,j=o(),L=new $(!1),b=Y(),this.h()},l(s){i=t(s,"NAV",{class:!0,"data-svelte-h":!0}),p(i)!=="svelte-o210rm"&&(i.innerHTML=R),g=e(s),r=t(s,"H1",{id:!0,"data-svelte-h":!0}),p(r)!=="svelte-fwelf7"&&(r.innerHTML=q),k=e(s),h=t(s,"UL",{"data-svelte-h":!0}),p(h)!=="svelte-akswo5"&&(h.innerHTML=z),H=e(s),y=t(s,"H1",{id:!0,"data-svelte-h":!0}),p(y)!=="svelte-sdioh3"&&(y.innerHTML=J),T=e(s),f=t(s,"UL",{"data-svelte-h":!0}),p(f)!=="svelte-hc9ii"&&(f.innerHTML=O),_=e(s),d=t(s,"H2",{id:!0,"data-svelte-h":!0}),p(d)!=="svelte-zfn8uf"&&(d.innerHTML=Z),M=e(s),A=t(s,"UL",{"data-svelte-h":!0}),p(A)!=="svelte-s4aaaw"&&(A.innerHTML=V),C=e(s),E=t(s,"H2",{id:!0,"data-svelte-h":!0}),p(E)!=="svelte-18ofgbf"&&(E.innerHTML=F),I=e(s),m=t(s,"UL",{"data-svelte-h":!0}),p(m)!=="svelte-1e9e9pb"&&(m.innerHTML=G),S=e(s),v=X(s,!1),w=e(s),B=t(s,"UL",{"data-svelte-h":!0}),p(B)!=="svelte-129y4jq"&&(B.innerHTML=K),P=e(s),u=t(s,"H1",{id:!0,"data-svelte-h":!0}),p(u)!=="svelte-ced17p"&&(u.innerHTML=Q),U=e(s),D=t(s,"UL",{"data-svelte-h":!0}),p(D)!=="svelte-zm0g7y"&&(D.innerHTML=W),j=e(s),L=X(s,!1),b=Y(),this.h()},h(){x(i,"class","toc"),x(r,"id","lua-"),x(y,"id","part-one"),x(d,"id","lua-regex"),x(E,"id","part-1-solution"),v.a=w,x(u,"id","part-2"),L.a=b},m(s,l){a(s,i,l),a(s,g,l),a(s,r,l),a(s,k,l),a(s,h,l),a(s,H,l),a(s,y,l),a(s,T,l),a(s,f,l),a(s,_,l),a(s,d,l),a(s,M,l),a(s,A,l),a(s,C,l),a(s,E,l),a(s,I,l),a(s,m,l),a(s,S,l),v.m(ls,s,l),a(s,w,l),a(s,B,l),a(s,P,l),a(s,u,l),a(s,U,l),a(s,D,l),a(s,j,l),L.m(ns,s,l),a(s,b,l)},p:N,i:N,o:N,d(s){s&&(n(i),n(g),n(r),n(k),n(h),n(H),n(y),n(T),n(f),n(_),n(d),n(M),n(A),n(C),n(E),n(I),n(m),n(S),v.d(),n(w),n(B),n(P),n(u),n(U),n(D),n(j),n(b),L.d())}}}const ps={title:"Advent of Code 2024 day 3 in Lua and Regex",date:"01-16-25"},{title:rs,date:ys}=ps;class ds extends es{constructor(i){super(),os(this,i,null,ts,as,{})}}export{ds as default,ps as metadata};
