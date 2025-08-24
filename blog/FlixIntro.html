@@ -8,33 +8,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
 		<link href="../_app/immutable/assets/0.B1HFxwMM.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.wkyiYJLK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DV_drMBf.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.B3eV4J36.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/toLMjgXM.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/CrGyUMwP.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.DFriJ4Rv.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.D4RpWVDH.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/C1FmrZbK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/uW2q-9yC.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.Zwdsr9x3.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cx-io09U.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.DdB2VOpZ.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.BwZ0Rfn5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BjqsW4S-.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.Wfp5QV-J.js">
     <title>Cade Lueker</title>
   </head>
   <body data-sveltekit-preload-data="hover" class="d-flex flex-column min-vh-100">
-    <div style="display: contents">  <nav class="navbar navbar-expand-lg nav-underline svelte-o3pmng" data-bs-theme="dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-svelte-h="svelte-1eytg9k"><span class="navbar-toggler-icon"></span></button> <span class="navbar-brand mb-0 h1 svelte-o3pmng" data-svelte-h="svelte-1vnwv4d">Cade Lueker</span> <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto" style="margin-right: 10px;"><li class="nav-item"><a class="nav-link " href="/">Home</a></li> <li class="nav-item"><a class="nav-link " href="/about">About</a></li> <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li></ul></div></div> </nav> <div class="all-content svelte-1b1lzt9"><div class="blog-post svelte-e0j7s0"><article><h1>Introduction to the Flix programming language</h1> <p>Published: 07-14-25</p> <nav class="toc" data-svelte-h="svelte-11ukb7v"><ol class="toc-level toc-level-1"></ol></nav></article> </div></div> <footer class="text-center mt-auto" data-svelte-h="svelte-1ej1xq0"><div class="container p-2"><section class="mb-0"> <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" role="button"><i class="fab fa-youtube"></i></a>        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/cade-lueker-79a55b199/" role="button"><i class="fab fa-linkedin-in"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/cademichael/" role="button"><i class="fab fa-github"></i></a></section></div> <div class="text-center p-3 copyright">Made with [ <img src="/svelte-icon.svg" alt="Svelte" class="icon-svelte"> +
+    <div style="display: contents">  <nav class="navbar navbar-expand-lg nav-underline svelte-o3pmng" data-bs-theme="dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-svelte-h="svelte-1eytg9k"><span class="navbar-toggler-icon"></span></button> <span class="navbar-brand mb-0 h1 svelte-o3pmng" data-svelte-h="svelte-1vnwv4d">Cade Lueker</span> <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto" style="margin-right: 10px;"><li class="nav-item"><a class="nav-link " href="/">Home</a></li> <li class="nav-item"><a class="nav-link " href="/about">About</a></li> <li class="nav-item"><a class="nav-link active" href="/blog">Blog</a></li></ul></div></div> </nav> <div class="all-content svelte-1b1lzt9"><div class="blog-post svelte-e0j7s0"><article><h1>Introduction to the Flix programming language</h1> <p>Published: 07-14-25</p> <nav class="toc" data-svelte-h="svelte-1p6ct1b"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#what-is-flix">What is Flix?</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#background">background</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#the-why">the why</a><ol class="toc-level toc-level-3"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#effects-in-flix">Effects in Flix</a></li></ol></li></ol></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#setup">Setup</a></li><li class="toc-item toc-item-h1"><a class="toc-link toc-link-h1" href="#resources">Resources</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#papers">Papers</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#talks">Talks</a></li></ol></li></ol></nav> <h1 id="what-is-flix" data-svelte-h="svelte-nzauja"><a aria-hidden="true" tabindex="-1" href="#what-is-flix"><span class="icon icon-link"></span></a>What is Flix?</h1> <h2 id="background" data-svelte-h="svelte-5bj5w8"><a aria-hidden="true" tabindex="-1" href="#background"><span class="icon icon-link"></span></a>background</h2> <p data-svelte-h="svelte-17lgha1"><a href="https://flix.dev/" rel="nofollow">Flix</a> is a JVM language. I want to preface any fancy category theory talk and PL research focused features could scare people away.
+Flix can import and run Java packages, giving it a boost over many similar research languages in my opinion. The standard library doesn’t have something?
+Ok use a Java library. Flix feels somewhat production ready, it comes with a good LSP, fast compiler, and built in Test support. This is an oversimplification,
+but there is a good deal of truth behind it. A research language that doesn’t have do do everything at once to be useful is great for getting off the ground running.</p> <p data-svelte-h="svelte-1rd3ymw">Flix’s compiler is written in Scala using the <code>asm</code> bytecode library, and delivers performant <code>jar</code> executables. I am biased as I worked as a researcher alongside Professor Magnus Madsen’s Lab, where Flix was created. The lab there has really talented researchers, and almost more importantly for a large software project, extremely apt programmers. There is usually a divide between the quality of one’s research and their software engineering chops, but this is not the case with Magnus’s lab.</p> <h2 id="the-why" data-svelte-h="svelte-9cwemf"><a aria-hidden="true" tabindex="-1" href="#the-why"><span class="icon icon-link"></span></a>the why</h2> <p data-svelte-h="svelte-1fln3ob">Why do we need a new language? There are already so many, and most are barely used or useful. Well, programming is changing and I think it’s most likely a good thing.The essence of computation is abstraction, and new abstractions are always being proposed some of which are pretty groundbreaking. Flix incorporates one such innovation, <strong>Algebraic Effects</strong>.</p> <p data-svelte-h="svelte-1f7owu6">Before going into Effects I think it’s helpful to think of a previous great abstraction, the <strong>Monad</strong>. Monads allow for the sequencing of computations that might have effects (and are monoids in the category of endofunctors of course). They’re great but they are not the easiest things to use, especially when composing them. If you have ever seen a video of ice divers, people who dive and swim under ice, sometimes they have trouble finding the hole prepared to leave the ice. That is somewhat what it feels like to program with monads. Once a value is in a monad it hard to get it out. The high bar of functional theory needed for effective monad use makes them useful but somewhat exclusionary.</p> <p data-svelte-h="svelte-cvdb3a">Effects give similar benefits to monads (and many effect libraries are written with monads), being the encapsulation of computations and possible side Effects, but feel much easier to use from the perspective of a software engineer. An Effect invokes the idea of throwing errors and there are parallels but Algebraic Effects can express much more than throwing errors. To best understand Effect systems there are two main concepts that must be understood. The <strong>Effect</strong>, and the <strong>Handler</strong>.</p> <p data-svelte-h="svelte-gmmk6u">Think of the Effect as an invoice or an I owe you. In essence you are telling the program what a function returns, without giving the logic of the function.
+Conversely think of a Handler as the fulfillment of that invoice / IOU. It is the implementation that returns the type requested by the Effect. When a function has Effects, the Effects are included in the type signature of the function. If a function handles an Effect it is no longer in the type signature of the function, as the <em>Effect is Handled</em>.</p> <p data-svelte-h="svelte-ttdk5k">This psuedo code is an oversimplification but helps to illustrate this point.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>effect Say &#123;</span></span>
+<span class="line"><span>    hello(): String</span></span>
+<span class="line"><span>    bye(): String</span></span>
+<span class="line"><span>&#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def greet(): &#x3C;effect Say> &#123; // greet has Say effect</span></span>
+<span class="line"><span>    if (meeting) &#123;</span></span>
+<span class="line"><span>        Say.hello()</span></span>
+<span class="line"><span>    &#125; else &#123;</span></span>
+<span class="line"><span>        Say.bye()</span></span>
+<span class="line"><span>    &#125;</span></span>
+<span class="line"><span>&#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def main &#123; // main has no effects because they are handled</span></span>
+<span class="line"><span>    run &#123;</span></span>
+<span class="line"><span>        greet()</span></span>
+<span class="line"><span>    &#125; with &#123; // handle effects</span></span>
+<span class="line"><span>        hello() &#123;return "hello"&#125;</span></span>
+<span class="line"><span>        bye() &#123;return "bye"&#125;</span></span>
+<span class="line"><span>    &#125;</span></span>
+<span class="line"><span>&#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-rc9spa">Ok, this looks like a roundabout way to program, why not just define <code>hello()</code> and <code>bye()</code>? Well what if we aren’t just using English? We can define handlers for
+any greetings in any language. This makes our code more flexible, but isn’t anything that interfaces in OOP or Trait’s in FP couldn’t accomplish so what gives? Effects allow for more modularity without as much boilerplate. Additionally, with more complicated Effects we have continuations, meaning we can go back into the function at the stack frame in which the Effect was invoked.</p> <h3 id="effects-in-flix" data-svelte-h="svelte-1rgw99g"><a aria-hidden="true" tabindex="-1" href="#effects-in-flix"><span class="icon icon-link"></span></a>Effects in Flix</h3> <p data-svelte-h="svelte-1c1whe4">Flix has some of the best language support for Effects. This is mainly opinion but given the JVM preface I don’t think there is much of a debate.
+Effect oriented languages have been springing up and although great they feel more “researchy” in the sense that it feels impossible to write large
+projects with them. Flix feels like a general purpose language with Effects. You could write Flix without ever writing an Effect. The only interface with
+Effects you would have are in the type signatures of Functions.</p> <p data-svelte-h="svelte-5jeqwx">For example let’s look at the default <code>main</code> function when you init a project.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>def main(): Unit  IO =</span></span>
+<span class="line"><span>    println("Hello World!")</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-y0v0vo">Here <code>Unit \ IO</code> denotes a function that returns nothing (ie Unit) with the IO Effect. Being a builtin function <code>println</code> doesn’t Require handling <code>IO</code>. But handlers in Flix have some of the most developer friendly syntax (in my opinion). You denote effectful code with <code>run</code> and handle them with <code>with</code>.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123; // declaring 'DivByZero' effect</span></span>
+<span class="line"><span>    def divByZero(): Void</span></span>
+<span class="line"><span>&#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def divide(x: Int32, y: Int32): Int32  DivByZero = // 'divide' has effect 'DivByZero'</span></span>
+<span class="line"><span>    if (y == 0) &#123;</span></span>
+<span class="line"><span>        DivByZero.divByZero()</span></span>
+<span class="line"><span>    &#125; else &#123;</span></span>
+<span class="line"><span>        x / y</span></span>
+<span class="line"><span>    &#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def main(): Unit  IO = // 'main' doesn't have 'DivByZero' effect as it is handled within the function</span></span>
+<span class="line"><span>    run &#123;</span></span>
+<span class="line"><span>        println(divide(3, 2));</span></span>
+<span class="line"><span>        println(divide(3, 0))</span></span>
+<span class="line"><span>    &#125; with handler DivByZero &#123;</span></span>
+<span class="line"><span>        // every handled effect has an extra parameter, a continuation, for when you want to resume post handling</span></span>
+<span class="line"><span>        def divByZero(_resume) = println("Oops: Division by Zero!")</span></span>
+<span class="line"><span>    &#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-17tl2zs">We can see how Effects allow more modular code as changing <code>divByZero</code> or providing different implementation doesn’t change where it is called.
+To show a basic usage of continuations we can refactor the <code>divByZero</code> Effect to return a default value using a <strong>continuation</strong></p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123;</span></span>
+<span class="line"><span>    def divByZero(x: Int32, y: Int32): Int32</span></span>
+<span class="line"><span>&#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def divide(x: Int32, y: Int32): Int32  DivByZero = </span></span>
+<span class="line"><span>    DivByZero.divByZero(x, y)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def main(): Unit  IO = </span></span>
+<span class="line"><span>    run &#123;</span></span>
+<span class="line"><span>        println(divide(3, 2)); // outputs 1</span></span>
+<span class="line"><span>        println(divide(3, 0))  // outputs "oops" 0</span></span>
+<span class="line"><span>    &#125; with handler DivByZero &#123;</span></span>
+<span class="line"><span>        // every handled effect has an extra parameter, a continuation, for when you want to resume post handling</span></span>
+<span class="line"><span>        def divByZero(x, y, resume) = match y &#123;</span></span>
+<span class="line"><span>            case 0 => println("oops"); resume(0)</span></span>
+<span class="line"><span>            case i => resume(x/i)</span></span>
+<span class="line"><span>        &#125;</span></span>
+<span class="line"><span>    &#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-18ge4f9">Here we handle division in the Effect Handler. The <code>divide</code> function is redundant but serves to show how Effects show up in type signatures.
+Unhandled Effects must show up in the return type, but once handled they no longer need to. This can be seen in a more complicated example that show
+how to define a handler function, and a helper to apply the handler in the <code>main</code> function.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123;</span></span>
+<span class="line"><span>    def div(x: Int32, y: Int32): Int32</span></span>
+<span class="line"><span>&#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// handle DivByZero in function &#96;f&#96;</span></span>
+<span class="line"><span>def handle(f: a -> b  ef): a -> b  (ef - DivByZero) + IO = x -> // return type lacks 'DivByZero'</span></span>
+<span class="line"><span>   run &#123;</span></span>
+<span class="line"><span>       f(x)</span></span>
+<span class="line"><span>   &#125; with handler DivByZero &#123; // define handler</span></span>
+<span class="line"><span>        def div(a, b, resume) = match b &#123;</span></span>
+<span class="line"><span>            case 0 => println("oops"); resume(0)</span></span>
+<span class="line"><span>            case i => resume(a/i)</span></span>
+<span class="line"><span>        &#125;</span></span>
+<span class="line"><span>   &#125;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// helper to handle the effect in a &#96;main&#96; function</span></span>
+<span class="line"><span>def runDivWithIO(f: Unit -> a  ef): a  (ef - DivByZero) +  &#123;IO&#125; = handle(f)()</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def main(): Unit  IO = </span></span>
+<span class="line"><span>    run &#123;</span></span>
+<span class="line"><span>        println(DivByZero.div(3, 2));</span></span>
+<span class="line"><span>        println(DivByZero.div(3, 0))</span></span>
+<span class="line"><span>    &#125; with runDivWithIO</span></span></code></pre><!-- HTML_TAG_END --> <h1 id="setup" data-svelte-h="svelte-jq0h7h"><a aria-hidden="true" tabindex="-1" href="#setup"><span class="icon icon-link"></span></a>Setup</h1> <p data-svelte-h="svelte-1a3ky8z">Flix relies on its LSP for semantic highlighting and has great VSCode support. The plugin can be installed via the plugin panel. Additionally there is a
+good Neovim <a href="https://github.com/flix/nvim" rel="nofollow">plugin</a> to get up and running. Flix relies on the <strong>flix.jar</strong> which is essentially a jvm binary containing the compiler
+and LSP. VSCode will download one into it’s Cache or it can be <a href="https://github.com/flix/flix/releases/latest" rel="nofollow">downloaded</a> locally for use on a per project basis.</p> <p data-svelte-h="svelte-tnj9pa">When using the jar from the CLI simply prefix any commands with <code>java -jar flix.jar</code>. For instance if I’m using the jar at the root of my project, to initialize
+the project I would call <code>java -jar flix.jar init</code>.</p> <p data-svelte-h="svelte-185e5ya">The Flix <a href="https://doc.flix.dev/introduction.html" rel="nofollow">book</a> provides full setup instructions and great documentation / examples to get started with the language!</p> <h1 id="resources" data-svelte-h="svelte-10dcxat"><a aria-hidden="true" tabindex="-1" href="#resources"><span class="icon icon-link"></span></a>Resources</h1> <h2 id="papers" data-svelte-h="svelte-1t0a0n"><a aria-hidden="true" tabindex="-1" href="#papers"><span class="icon icon-link"></span></a>Papers</h2> <p data-svelte-h="svelte-135v9qx">Some good papers on Effects…</p> <ul data-svelte-h="svelte-atp0e6"><li><a href="https://www.sciencedirect.com/science/article/pii/S1571066115000705?via%3Dihub" rel="nofollow">An Introduction to Algebraic Effects and Handlers. Invited tutorial paper.</a></li> <li><a href="https://dl.acm.org/doi/10.1145/3408981" rel="nofollow">Effect handlers, evidently.</a></li></ul> <h2 id="talks" data-svelte-h="svelte-xdvqs9"><a aria-hidden="true" tabindex="-1" href="#talks"><span class="icon icon-link"></span></a>Talks</h2> <p data-svelte-h="svelte-1xpwh97">Some good Flix talks…</p> <ul data-svelte-h="svelte-jcu7jl"><li><a href="https://www.youtube.com/watch?v=RNZeAmp1EaA" rel="nofollow">Principles of the Flix Programming Language</a></li> <li><a href="https://www.youtube.com/watch?v=2LSOqikNqxM" rel="nofollow">An Introduction to Functional Imperative Programming in Flix</a></li></ul></article> </div></div> <footer class="text-center mt-auto" data-svelte-h="svelte-1ej1xq0"><div class="container p-2"><section class="mb-0"> <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCsFz3xPT6LXXWcq_EbB1r-Q" role="button"><i class="fab fa-youtube"></i></a>        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/cade-lueker-79a55b199/" role="button"><i class="fab fa-linkedin-in"></i></a>  <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com/cademichael/" role="button"><i class="fab fa-github"></i></a></section></div> <div class="text-center p-3 copyright">Made with [ <img src="/svelte-icon.svg" alt="Svelte" class="icon-svelte"> +
     <i class="fab fa-sass"></i>
     + <i class="fab fa-markdown"></i> ]</div></footer> 
 			
 			<script>
 				{
-					__sveltekit_ta1hq4 = {
+					__sveltekit_1wxhf77 = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.wkyiYJLK.js"),
-						import("../_app/immutable/entry/app.DFriJ4Rv.js")
+						import("../_app/immutable/entry/start.B3eV4J36.js"),
+						import("../_app/immutable/entry/app.D4RpWVDH.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
