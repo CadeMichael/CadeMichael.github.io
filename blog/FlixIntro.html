@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
 		<link href="../_app/immutable/assets/0.B1HFxwMM.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.B3eV4J36.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/toLMjgXM.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.DNDbD3y4.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BWUehsg5.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/CrGyUMwP.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.D4RpWVDH.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.GELVEbAP.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/C1FmrZbK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/uW2q-9yC.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.BwZ0Rfn5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BjqsW4S-.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.Wfp5QV-J.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.DeQCknTB.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/ByxmXXB_.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.BVa_mqeL.js">
     <title>Cade Lueker</title>
   </head>
   <body data-sveltekit-preload-data="hover" class="d-flex flex-column min-vh-100">
@@ -49,7 +49,7 @@ any greetings in any language. This makes our code more flexible, but isn’t an
 Effect oriented languages have been springing up and although great they feel more “researchy” in the sense that it feels impossible to write large
 projects with them. Flix feels like a general purpose language with Effects. You could write Flix without ever writing an Effect. The only interface with
 Effects you would have are in the type signatures of Functions.</p> <p data-svelte-h="svelte-5jeqwx">For example let’s look at the default <code>main</code> function when you init a project.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>def main(): Unit  IO =</span></span>
-<span class="line"><span>    println("Hello World!")</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-y0v0vo">Here <code>Unit \ IO</code> denotes a function that returns nothing (ie Unit) with the IO Effect. Being a builtin function <code>println</code> doesn’t Require handling <code>IO</code>. But handlers in Flix have some of the most developer friendly syntax (in my opinion). You denote effectful code with <code>run</code> and handle them with <code>with</code>.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123; // declaring 'DivByZero' effect</span></span>
+<span class="line"><span>    println("Hello World!")</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-y0v0vo">Here <code>Unit \ IO</code> denotes a function that returns nothing (ie Unit) with the IO Effect. Being a builtin function <code>println</code> doesn’t Require handling <code>IO</code>. But handlers in Flix have some of the most developer friendly syntax (in my opinion). You denote effectful code with <code>run</code> and handle them with <code>with</code>.</p> <p data-svelte-h="svelte-1ah8tv2">This example is straight from Flix’s documentation and demonstrates effects that don’t resume. In essence these are Exceptions we see in other languages. In this example think of the <code>run {} with {}</code> syntax as <code>try {} catch {}</code> in common languages.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123; // declaring 'DivByZero' effect</span></span>
 <span class="line"><span>    def divByZero(): Void</span></span>
 <span class="line"><span>&#125;</span></span>
 <span class="line"><span></span></span>
@@ -67,8 +67,8 @@ Effects you would have are in the type signatures of Functions.</p> <p data-svel
 <span class="line"><span>    &#125; with handler DivByZero &#123;</span></span>
 <span class="line"><span>        // every handled effect has an extra parameter, a continuation, for when you want to resume post handling</span></span>
 <span class="line"><span>        def divByZero(_resume) = println("Oops: Division by Zero!")</span></span>
-<span class="line"><span>    &#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-17tl2zs">We can see how Effects allow more modular code as changing <code>divByZero</code> or providing different implementation doesn’t change where it is called.
-To show a basic usage of continuations we can refactor the <code>divByZero</code> Effect to return a default value using a <strong>continuation</strong></p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123;</span></span>
+<span class="line"><span>    &#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-qkhxyc">To show a basic usage of continuations we can refactor the <code>divByZero</code> Effect to return a default value using a <strong>continuation</strong>.
+We can see how Effects allow more modular code as changing <code>divByZero</code> or providing different implementation doesn’t change where it is called.</p> <!-- HTML_TAG_START --><pre class="shiki gruvbox" style="background-color:#292828;color:#d4be98" tabindex="0"><code><span class="line"><span>eff DivByZero &#123;</span></span>
 <span class="line"><span>    def divByZero(x: Int32, y: Int32): Int32</span></span>
 <span class="line"><span>&#125;</span></span>
 <span class="line"><span></span></span>
@@ -118,15 +118,15 @@ the project I would call <code>java -jar flix.jar init</code>.</p> <p data-svelt
 			
 			<script>
 				{
-					__sveltekit_1wxhf77 = {
+					__sveltekit_19dxjvd = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.B3eV4J36.js"),
-						import("../_app/immutable/entry/app.D4RpWVDH.js")
+						import("../_app/immutable/entry/start.DNDbD3y4.js"),
+						import("../_app/immutable/entry/app.GELVEbAP.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
